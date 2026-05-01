@@ -1,0 +1,7638 @@
+{
+  "fetched_at": "2026-05-01T00:11:18.033418+00:00",
+  "league": {
+    "league_id": "1335118685588701184",
+    "name": "The Phoenix League",
+    "season": "2026",
+    "status": "pre_draft",
+    "total_rosters": 12,
+    "scoring_settings": {
+      "sack": 1.0,
+      "fgm_40_49": 4.0,
+      "bonus_rec_te": 0.5,
+      "pass_int": -2.0,
+      "pts_allow_0": 10.0,
+      "pass_2pt": 2.0,
+      "st_td": 6.0,
+      "rec_td": 6.0,
+      "idp_blk_kick": 3.0,
+      "fgm_30_39": 3.0,
+      "fgm_50_59": 5.0,
+      "idp_fum_ret_yd": 0.1,
+      "xpmiss": -1.0,
+      "rush_td_50p": 2.0,
+      "rush_td": 6.0,
+      "rec_2pt": 2.0,
+      "idp_tkl_loss": 1.0,
+      "idp_tkl_solo": 1.0,
+      "st_fum_rec": 1.0,
+      "fgmiss": -1.0,
+      "ff": 1.0,
+      "idp_int": 4.0,
+      "rec": 0.5,
+      "idp_int_ret_yd": 0.1,
+      "idp_safe": 2.0,
+      "pts_allow_14_20": 1.0,
+      "fgm_0_19": 3.0,
+      "idp_def_td": 6.0,
+      "int": 2.0,
+      "def_st_fum_rec": 1.0,
+      "fum_lost": -2.0,
+      "pts_allow_1_6": 7.0,
+      "fgm_60p": 6.0,
+      "idp_sack": 2.0,
+      "fgm_20_29": 3.0,
+      "pts_allow_21_27": 0.0,
+      "xpm": 1.0,
+      "rush_2pt": 2.0,
+      "fum_rec": 2.0,
+      "idp_pass_def": 1.5,
+      "def_st_td": 6.0,
+      "def_td": 6.0,
+      "idp_fum_rec": 2.0,
+      "rec_td_40p": 1.0,
+      "safe": 2.0,
+      "pass_yd": 0.04,
+      "rec_td_50p": 2.0,
+      "blk_kick": 2.0,
+      "pass_td": 4.0,
+      "idp_qb_hit": 1.0,
+      "rush_yd": 0.1,
+      "fum": 0.0,
+      "pts_allow_28_34": -1.0,
+      "pts_allow_35p": -4.0,
+      "fum_rec_td": 6.0,
+      "rec_yd": 0.1,
+      "rush_td_40p": 1.0,
+      "def_st_ff": 1.0,
+      "pts_allow_7_13": 4.0,
+      "idp_ff": 3.0,
+      "st_ff": 1.0,
+      "idp_tkl_ast": 0.5
+    },
+    "roster_positions": [
+      "QB",
+      "RB",
+      "RB",
+      "WR",
+      "WR",
+      "TE",
+      "FLEX",
+      "FLEX",
+      "SUPER_FLEX",
+      "K",
+      "DL",
+      "LB",
+      "DB",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN"
+    ]
+  },
+  "draft": {
+    "draft_id": "1335118685605498880",
+    "status": "pre_draft",
+    "type": "linear",
+    "start_time": 1777852806000,
+    "settings": {
+      "alpha_sort": 0,
+      "autopause_enabled": 0,
+      "autopause_end_time": 600,
+      "autopause_start_time": 240,
+      "autostart": 0,
+      "cpu_autopick": 1,
+      "enforce_position_limits": 1,
+      "nomination_timer": 60,
+      "pick_timer": 0,
+      "player_type": 1,
+      "reversal_round": 3,
+      "rounds": 4,
+      "slots_bn": 19,
+      "slots_db": 1,
+      "slots_dl": 1,
+      "slots_flex": 2,
+      "slots_k": 1,
+      "slots_lb": 1,
+      "slots_qb": 1,
+      "slots_rb": 2,
+      "slots_super_flex": 1,
+      "slots_te": 1,
+      "slots_wr": 2,
+      "teams": 12
+    },
+    "slot_to_roster_id": {
+      "1": 8,
+      "10": 9,
+      "11": 3,
+      "12": 4,
+      "2": 7,
+      "3": 5,
+      "4": 1,
+      "5": 10,
+      "6": 2,
+      "7": 11,
+      "8": 12,
+      "9": 6
+    }
+  },
+  "owner_user_id": "1250202714625822720",
+  "users": [
+    {
+      "user_id": "471565122205118464",
+      "display_name": "Ehmji",
+      "team_name": "The COGAK",
+      "avatar": "0b99d6cc26aa7519e37cdfb269184da3",
+      "is_owner": false
+    },
+    {
+      "user_id": "735364170605785088",
+      "display_name": "rteach",
+      "team_name": null,
+      "avatar": "e7af4deab0289b4f5505646424895246",
+      "is_owner": false
+    },
+    {
+      "user_id": "737396737739747328",
+      "display_name": "cwalsh27",
+      "team_name": "Bombay Redemption Tour",
+      "avatar": "4f4090e5e9c3941414db40a871e3e909",
+      "is_owner": false
+    },
+    {
+      "user_id": "777197702722293760",
+      "display_name": "Gittelboat",
+      "team_name": "House Boat",
+      "avatar": "82aec8e811b839b8ec25d7b458afd57b",
+      "is_owner": false
+    },
+    {
+      "user_id": "854837614308589568",
+      "display_name": "Diggs38",
+      "team_name": "Club o Unrelenting Mermen",
+      "avatar": "15d7cf259bc30eab8f6120f45f652fb6",
+      "is_owner": false
+    },
+    {
+      "user_id": "870394362662707200",
+      "display_name": "CThompson1512",
+      "team_name": "Shadows of the Reaper",
+      "avatar": "f0edbf4278f53f9425db175073df6584",
+      "is_owner": true
+    },
+    {
+      "user_id": "997687270926819328",
+      "display_name": "Purpsaint",
+      "team_name": null,
+      "avatar": "15d7cf259bc30eab8f6120f45f652fb6",
+      "is_owner": false
+    },
+    {
+      "user_id": "997765009897779200",
+      "display_name": "palm94",
+      "team_name": "The Honored Ones",
+      "avatar": null,
+      "is_owner": false
+    },
+    {
+      "user_id": "998073516438233088",
+      "display_name": "elik513",
+      "team_name": "Washington Rubble",
+      "avatar": "b3338675f635c2c1f42b469621d38ec6",
+      "is_owner": false
+    },
+    {
+      "user_id": "999028952767311872",
+      "display_name": "jackgretzky69",
+      "team_name": "The One-Eyed Monster",
+      "avatar": "d90061f6cfc375eb2c4734a7ca73c459",
+      "is_owner": false
+    },
+    {
+      "user_id": "999872444359901184",
+      "display_name": "JohnnyTsunami28",
+      "team_name": null,
+      "avatar": "15d7cf259bc30eab8f6120f45f652fb6",
+      "is_owner": false
+    },
+    {
+      "user_id": "1250202714625822720",
+      "display_name": "colindiggs",
+      "team_name": "Oakland Park Ooze",
+      "avatar": "b810a803bf9f1bc325534bb370b80d8f",
+      "is_owner": false
+    },
+    {
+      "user_id": "1251197674233790464",
+      "display_name": "ninan",
+      "team_name": "Greased Lightning ",
+      "avatar": "d55d1f7075eda01948318de4af616075",
+      "is_owner": false
+    },
+    {
+      "user_id": "1251589886188736512",
+      "display_name": "cwatts984",
+      "team_name": "Dingle Berries",
+      "avatar": "51385ba57cd089261f6de9ce483b8716",
+      "is_owner": false
+    },
+    {
+      "user_id": "1251591897974059008",
+      "display_name": "n8thegreat1",
+      "team_name": "Meat Eaters",
+      "avatar": "225f32316b64fea92fe1442290acbd8d",
+      "is_owner": false
+    }
+  ],
+  "rosters": [
+    {
+      "roster_id": 1,
+      "owner_id": "870394362662707200",
+      "co_owners": [],
+      "players": [
+        "11564",
+        "12670",
+        "6151",
+        "5816",
+        "4098",
+        "11834",
+        "5045",
+        "12544",
+        "9500",
+        "8144",
+        "11705",
+        "11600",
+        "11562",
+        "12498",
+        "5726",
+        "12512",
+        "1479",
+        "11628",
+        "10444",
+        "11786",
+        "9221",
+        "4066",
+        "10226",
+        "10927",
+        "1233",
+        "12474",
+        "8135",
+        "8408",
+        "4892",
+        "8180",
+        "9501",
+        "6790",
+        "5844",
+        "12542",
+        "8119",
+        "6786"
+      ],
+      "starters": [
+        "11564",
+        "9221",
+        "12512",
+        "6786",
+        "8144",
+        "5844",
+        "11628",
+        "5045",
+        "4892",
+        "11786",
+        "5816",
+        "1233",
+        "11705"
+      ],
+      "taxi": [
+        "11834",
+        "12542",
+        "12544",
+        "12670"
+      ],
+      "reserve": [],
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "fpts": 0,
+      "fpts_against": null
+    },
+    {
+      "roster_id": 2,
+      "owner_id": "777197702722293760",
+      "co_owners": [],
+      "players": [
+        "5846",
+        "5001",
+        "10880",
+        "2307",
+        "12711",
+        "7528",
+        "12500",
+        "12688",
+        "7611",
+        "9225",
+        "12481",
+        "4950",
+        "8148",
+        "11632",
+        "12490",
+        "9226",
+        "11676",
+        "12533",
+        "12641",
+        "4866",
+        "12496",
+        "12522",
+        "12523",
+        "9484",
+        "7083",
+        "12509",
+        "4135",
+        "4219",
+        "6801",
+        "7587",
+        "8147",
+        "10232",
+        "6768",
+        "1373",
+        "8136",
+        "11616"
+      ],
+      "starters": [
+        "12522",
+        "4866",
+        "9226",
+        "11632",
+        "5846",
+        "9484",
+        "6801",
+        "12481",
+        "10232",
+        "12711",
+        "4135",
+        "10880",
+        "0"
+      ],
+      "taxi": [
+        "11676",
+        "12500",
+        "12523",
+        "12688"
+      ],
+      "reserve": [],
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "fpts": 0,
+      "fpts_against": null
+    },
+    {
+      "roster_id": 3,
+      "owner_id": "1250202714625822720",
+      "co_owners": [],
+      "players": [
+        "12501",
+        "6813",
+        "12738",
+        "6819",
+        "8210",
+        "9502",
+        "11687",
+        "3451",
+        "12506",
+        "9230",
+        "4018",
+        "11646",
+        "12534",
+        "5332",
+        "8183",
+        "2393",
+        "12483",
+        "11678",
+        "8112",
+        "7525",
+        "11627",
+        "12508",
+        "3973",
+        "8143",
+        "8137",
+        "11638",
+        "12518",
+        "4881",
+        "7839",
+        "11589",
+        "12529",
+        "10905",
+        "7553"
+      ],
+      "starters": [
+        "4881",
+        "6813",
+        "12529",
+        "8112",
+        "8137",
+        "12518",
+        "7525",
+        "11638",
+        "8183",
+        "3451",
+        "3973",
+        "5332",
+        "10905"
+      ],
+      "taxi": [
+        "12738"
+      ],
+      "reserve": [],
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "fpts": 0,
+      "fpts_against": null
+    },
+    {
+      "roster_id": 4,
+      "owner_id": "999028952767311872",
+      "co_owners": [],
+      "players": [
+        "7527",
+        "9753",
+        "4971",
+        "4017",
+        "1466",
+        "4984",
+        "12467",
+        "3161",
+        "8150",
+        "5960",
+        "5840",
+        "5127",
+        "11583",
+        "5892",
+        "7567",
+        "10892",
+        "9481",
+        "11742",
+        "4983",
+        "8676",
+        "10213",
+        "7591",
+        "4034",
+        "11596",
+        "8146",
+        "11651",
+        "5947",
+        "9506",
+        "6650",
+        "827",
+        "8110",
+        "1166",
+        "5906",
+        "8154",
+        "11635",
+        "19"
+      ],
+      "starters": [
+        "4984",
+        "4034",
+        "5892",
+        "11635",
+        "8146",
+        "8110",
+        "8150",
+        "4983",
+        "1166",
+        "6650",
+        "10892",
+        "5960",
+        "4971"
+      ],
+      "taxi": [
+        "11583",
+        "11596",
+        "11651",
+        "12467"
+      ],
+      "reserve": [],
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "fpts": 0,
+      "fpts_against": null
+    },
+    {
+      "roster_id": 5,
+      "owner_id": "997765009897779200",
+      "co_owners": [
+        "735364170605785088"
+      ],
+      "players": [
+        "7588",
+        "5409",
+        "11566",
+        "8139",
+        "9758",
+        "11924",
+        "8293",
+        "9492",
+        "8126",
+        "12471",
+        "11815",
+        "11626",
+        "8230",
+        "8228",
+        "8121",
+        "9757",
+        "10218",
+        "12472",
+        "10980",
+        "11581",
+        "8151",
+        "5041",
+        "6869",
+        "11559",
+        "10888",
+        "17",
+        "5991",
+        "9220",
+        "9511",
+        "7694",
+        "7569",
+        "12455",
+        "11633",
+        "10859",
+        "8117",
+        "8659",
+        "4037",
+        "7538",
+        "12535",
+        "11647"
+      ],
+      "starters": [
+        "9758",
+        "11647",
+        "8151",
+        "8121",
+        "4037",
+        "5409",
+        "7569",
+        "8228",
+        "7588",
+        "17",
+        "5991",
+        "8659",
+        "8293"
+      ],
+      "taxi": [
+        "11815",
+        "11924",
+        "9220",
+        "9492"
+      ],
+      "reserve": [
+        "11581",
+        "5041",
+        "8230",
+        "9757"
+      ],
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "fpts": 0,
+      "fpts_against": null
+    },
+    {
+      "roster_id": 6,
+      "owner_id": "471565122205118464",
+      "co_owners": [
+        "999872444359901184"
+      ],
+      "players": [
+        "10216",
+        "6806",
+        "4033",
+        "12510",
+        "11569",
+        "8122",
+        "8330",
+        "12521",
+        "12520",
+        "12547",
+        "8289",
+        "11603",
+        "12497",
+        "11631",
+        "12492",
+        "12536",
+        "12634",
+        "9509",
+        "10229",
+        "11565",
+        "12048",
+        "10917",
+        "11577",
+        "12489",
+        "9228",
+        "12514",
+        "9999",
+        "7607",
+        "4137",
+        "8125",
+        "12597",
+        "9488",
+        "4943",
+        "8698",
+        "12493",
+        "11533"
+      ],
+      "starters": [
+        "4943",
+        "9509",
+        "12489",
+        "9488",
+        "12514",
+        "12493",
+        "11631",
+        "10229",
+        "9228",
+        "11533",
+        "8289",
+        "10917",
+        "12597"
+      ],
+      "taxi": [
+        "12510",
+        "12520",
+        "12521",
+        "12634"
+      ],
+      "reserve": [],
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "fpts": 0,
+      "fpts_against": null
+    },
+    {
+      "roster_id": 7,
+      "owner_id": "854837614308589568",
+      "co_owners": [],
+      "players": [
+        "2747",
+        "11435",
+        "7594",
+        "6803",
+        "7600",
+        "11623",
+        "5030",
+        "12574",
+        "12526",
+        "4147",
+        "11685",
+        "12541",
+        "4217",
+        "12457",
+        "12530",
+        "8917",
+        "12470",
+        "4981",
+        "12504",
+        "12543",
+        "11576",
+        "3271",
+        "6183",
+        "8167",
+        "7841",
+        "96",
+        "11618",
+        "1339",
+        "6804",
+        "6904",
+        "10222",
+        "11557",
+        "7828",
+        "12699",
+        "6783"
+      ],
+      "starters": [
+        "6904",
+        "11435",
+        "4147",
+        "8167",
+        "6783",
+        "4217",
+        "8917",
+        "7600",
+        "96",
+        "2747",
+        "6183",
+        "7841",
+        "12530"
+      ],
+      "taxi": [
+        "12470",
+        "12543",
+        "12699"
+      ],
+      "reserve": [],
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "fpts": 0,
+      "fpts_against": null
+    },
+    {
+      "roster_id": 8,
+      "owner_id": "998073516438233088",
+      "co_owners": [
+        "997687270926819328"
+      ],
+      "players": [
+        "5843",
+        "12485",
+        "11575",
+        "11619",
+        "11643",
+        "11256",
+        "11783",
+        "9482",
+        "12503",
+        "12484",
+        "11729",
+        "8161",
+        "5927",
+        "12502",
+        "12469",
+        "11563",
+        "12718",
+        "12531",
+        "2306",
+        "12499",
+        "2028",
+        "1945",
+        "12775",
+        "3198",
+        "7136",
+        "11630",
+        "11650",
+        "12487",
+        "9480",
+        "12519",
+        "8131",
+        "11620",
+        "6125",
+        "7585",
+        "12507"
+      ],
+      "starters": [
+        "11563",
+        "12507",
+        "3198",
+        "11620",
+        "5927",
+        "9480",
+        "12519",
+        "12502",
+        "8161",
+        "1945",
+        "6125",
+        "5843",
+        "7136"
+      ],
+      "taxi": [
+        "12487",
+        "12531",
+        "12775"
+      ],
+      "reserve": [],
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "fpts": 0,
+      "fpts_against": null
+    },
+    {
+      "roster_id": 9,
+      "owner_id": "1251197674233790464",
+      "co_owners": [],
+      "players": [
+        "12505",
+        "6865",
+        "8188",
+        "5849",
+        "12015",
+        "8311",
+        "3257",
+        "6789",
+        "4144",
+        "12578",
+        "6136",
+        "4454",
+        "4199",
+        "7571",
+        "8280",
+        "5017",
+        "11299",
+        "4177",
+        "12568",
+        "6271",
+        "8130",
+        "12540",
+        "12567",
+        "5346",
+        "12482",
+        "2216",
+        "2133",
+        "7564",
+        "11608",
+        "13079",
+        "7049",
+        "8138",
+        "3294",
+        "11584",
+        "9487"
+      ],
+      "starters": [
+        "3257",
+        "8138",
+        "11584",
+        "7564",
+        "7049",
+        "8130",
+        "2216",
+        "9487",
+        "3294",
+        "12015",
+        "8280",
+        "5346",
+        "5017"
+      ],
+      "taxi": [
+        "12567",
+        "12568",
+        "12578"
+      ],
+      "reserve": [],
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "fpts": 0,
+      "fpts_against": null
+    },
+    {
+      "roster_id": 10,
+      "owner_id": "1251589886188736512",
+      "co_owners": [],
+      "players": [
+        "11599",
+        "7648",
+        "9756",
+        "11604",
+        "5850",
+        "12566",
+        "7672",
+        "6149",
+        "11539",
+        "6039",
+        "12516",
+        "5862",
+        "11637",
+        "12486",
+        "7547",
+        "3163",
+        "11624",
+        "9494",
+        "11655",
+        "5022",
+        "11792",
+        "8142",
+        "4070",
+        "11597",
+        "12545",
+        "5872",
+        "8392",
+        "9486",
+        "6797",
+        "8205",
+        "8111",
+        "11370",
+        "11610",
+        "5876",
+        "9504",
+        "12602"
+      ],
+      "starters": [
+        "6797",
+        "5850",
+        "11655",
+        "7547",
+        "5872",
+        "11604",
+        "8142",
+        "5022",
+        "3163",
+        "11539",
+        "5862",
+        "7648",
+        "8392"
+      ],
+      "taxi": [
+        "11599",
+        "12516",
+        "12566",
+        "12602"
+      ],
+      "reserve": [],
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "fpts": 0,
+      "fpts_against": null
+    },
+    {
+      "roster_id": 11,
+      "owner_id": "1251591897974059008",
+      "co_owners": [],
+      "players": [
+        "8155",
+        "7002",
+        "4035",
+        "11560",
+        "12412",
+        "6815",
+        "9754",
+        "12713",
+        "6794",
+        "11570",
+        "9508",
+        "7543",
+        "2449",
+        "6826",
+        "6949",
+        "8129",
+        "12462",
+        "1234",
+        "4039",
+        "7640",
+        "6770",
+        "9229",
+        "5848",
+        "8207",
+        "4993",
+        "10219",
+        "6945",
+        "7523",
+        "9479",
+        "9493",
+        "3321",
+        "11586",
+        "8208",
+        "7765",
+        "12690",
+        "10949",
+        "12524",
+        "11571",
+        "12517",
+        "11579"
+      ],
+      "starters": [
+        "6770",
+        "8155",
+        "7543",
+        "9493",
+        "6794",
+        "7002",
+        "11579",
+        "2449",
+        "7523",
+        "12713",
+        "7765",
+        "6949",
+        "10949"
+      ],
+      "taxi": [
+        "11571",
+        "12462",
+        "12524",
+        "12690"
+      ],
+      "reserve": [
+        "12412",
+        "3321",
+        "6945",
+        "9229"
+      ],
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "fpts": 0,
+      "fpts_against": null
+    },
+    {
+      "roster_id": 12,
+      "owner_id": "737396737739747328",
+      "co_owners": [],
+      "players": [
+        "11640",
+        "12185",
+        "1426",
+        "2505",
+        "5970",
+        "11665",
+        "9997",
+        "11625",
+        "5012",
+        "9224",
+        "10236",
+        "7090",
+        "8339",
+        "4960",
+        "12511",
+        "12476",
+        "2374",
+        "12495",
+        "12527",
+        "3214",
+        "5967",
+        "5859",
+        "8132",
+        "7021",
+        "12897",
+        "4046",
+        "8259",
+        "1837",
+        "6130",
+        "6119",
+        "5870",
+        "7526",
+        "8134",
+        "421",
+        "11439"
+      ],
+      "starters": [
+        "421",
+        "9224",
+        "7021",
+        "9997",
+        "5859",
+        "2505",
+        "7526",
+        "12527",
+        "10236",
+        "8259",
+        "11665",
+        "6119",
+        "8339"
+      ],
+      "taxi": [
+        "11640",
+        "12476",
+        "12495",
+        "12511"
+      ],
+      "reserve": [],
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "fpts": 0,
+      "fpts_against": null
+    }
+  ],
+  "draft_picks": [],
+  "traded_picks": [
+    {
+      "round": 1,
+      "season": "2026",
+      "roster_id": 1,
+      "owner_id": 5,
+      "previous_owner_id": 1
+    },
+    {
+      "round": 2,
+      "season": "2026",
+      "roster_id": 1,
+      "owner_id": 5,
+      "previous_owner_id": 1
+    },
+    {
+      "round": 3,
+      "season": "2026",
+      "roster_id": 1,
+      "owner_id": 3,
+      "previous_owner_id": 1
+    },
+    {
+      "round": 2,
+      "season": "2026",
+      "roster_id": 2,
+      "owner_id": 12,
+      "previous_owner_id": 2
+    },
+    {
+      "round": 3,
+      "season": "2026",
+      "roster_id": 4,
+      "owner_id": 8,
+      "previous_owner_id": 4
+    },
+    {
+      "round": 3,
+      "season": "2026",
+      "roster_id": 5,
+      "owner_id": 1,
+      "previous_owner_id": 5
+    },
+    {
+      "round": 1,
+      "season": "2026",
+      "roster_id": 6,
+      "owner_id": 2,
+      "previous_owner_id": 6
+    },
+    {
+      "round": 4,
+      "season": "2026",
+      "roster_id": 7,
+      "owner_id": 7,
+      "previous_owner_id": 1
+    },
+    {
+      "round": 1,
+      "season": "2026",
+      "roster_id": 11,
+      "owner_id": 8,
+      "previous_owner_id": 11
+    },
+    {
+      "round": 4,
+      "season": "2026",
+      "roster_id": 12,
+      "owner_id": 4,
+      "previous_owner_id": 12
+    }
+  ],
+  "players": {
+    "6783": {
+      "first_name": "Jerry",
+      "last_name": "Jeudy",
+      "full_name": "Jerry Jeudy",
+      "position": "WR",
+      "team": "CLE",
+      "age": 27,
+      "years_exp": 6,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "8311": {
+      "first_name": "Terrel",
+      "last_name": "Bernard",
+      "full_name": "Terrel Bernard",
+      "position": "LB",
+      "team": "BUF",
+      "age": 26,
+      "years_exp": 4,
+      "college": "Baylor",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "MLB",
+      "status": "Active"
+    },
+    "4971": {
+      "first_name": "Derwin",
+      "last_name": "James",
+      "full_name": "Derwin James",
+      "position": "DB",
+      "team": "LAC",
+      "age": 29,
+      "years_exp": 8,
+      "college": "Florida State",
+      "fantasy_positions": [
+        "DB"
+      ],
+      "depth_chart_position": "NB",
+      "status": "Active"
+    },
+    "6130": {
+      "first_name": "Devin",
+      "last_name": "Singletary",
+      "full_name": "Devin Singletary",
+      "position": "RB",
+      "team": "NYG",
+      "age": 28,
+      "years_exp": 7,
+      "college": "Florida Atlantic",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "9504": {
+      "first_name": "Kayshon",
+      "last_name": "Boutte",
+      "full_name": "Kayshon Boutte",
+      "position": "WR",
+      "team": "NE",
+      "age": 23,
+      "years_exp": 3,
+      "college": "LSU",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "11633": {
+      "first_name": "Jamari",
+      "last_name": "Thrash",
+      "full_name": "Jamari Thrash",
+      "position": "WR",
+      "team": "CLE",
+      "age": 25,
+      "years_exp": 2,
+      "college": "Louisville",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "11581": {
+      "first_name": "MarShawn",
+      "last_name": "Lloyd",
+      "full_name": "MarShawn Lloyd",
+      "position": "RB",
+      "team": "GB",
+      "age": 25,
+      "years_exp": 2,
+      "college": "USC",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "11435": {
+      "first_name": "Emanuel",
+      "last_name": "Wilson",
+      "full_name": "Emanuel Wilson",
+      "position": "RB",
+      "team": "SEA",
+      "age": 26,
+      "years_exp": 3,
+      "college": "Fort Valley State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "9753": {
+      "first_name": "Zach",
+      "last_name": "Charbonnet",
+      "full_name": "Zach Charbonnet",
+      "position": "RB",
+      "team": "SEA",
+      "age": 25,
+      "years_exp": 3,
+      "college": "UCLA",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "11608": {
+      "first_name": "Isaiah",
+      "last_name": "Williams",
+      "full_name": "Isaiah Williams",
+      "position": "WR",
+      "team": "NYJ",
+      "age": 25,
+      "years_exp": 2,
+      "college": "Illinois",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "7528": {
+      "first_name": "Najee",
+      "last_name": "Harris",
+      "full_name": "Najee Harris",
+      "position": "RB",
+      "age": 27,
+      "years_exp": 5,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "status": "Active"
+    },
+    "2449": {
+      "first_name": "Stefon",
+      "last_name": "Diggs",
+      "full_name": "Stefon Diggs",
+      "position": "WR",
+      "age": 32,
+      "years_exp": 11,
+      "college": "Maryland",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "status": "Active"
+    },
+    "10219": {
+      "first_name": "Chris",
+      "last_name": "Rodriguez",
+      "full_name": "Chris Rodriguez",
+      "position": "RB",
+      "team": "JAX",
+      "age": 26,
+      "years_exp": 3,
+      "college": "Kentucky",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "2505": {
+      "first_name": "Darren",
+      "last_name": "Waller",
+      "full_name": "Darren Waller",
+      "position": "TE",
+      "age": 33,
+      "years_exp": 11,
+      "college": "Georgia Tech",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "status": "Active"
+    },
+    "8917": {
+      "first_name": "KaVontae",
+      "last_name": "Turpin",
+      "full_name": "KaVontae Turpin",
+      "position": "WR",
+      "team": "DAL",
+      "age": 29,
+      "years_exp": 4,
+      "college": "TCU",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "12547": {
+      "first_name": "Kyle",
+      "last_name": "Williams",
+      "full_name": "Kyle Williams",
+      "position": "WR",
+      "team": "NE",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Washington State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "4033": {
+      "first_name": "David",
+      "last_name": "Njoku",
+      "full_name": "David Njoku",
+      "position": "TE",
+      "age": 29,
+      "years_exp": 9,
+      "college": "Miami (FL)",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "status": "Active"
+    },
+    "12520": {
+      "first_name": "Xavier",
+      "last_name": "Restrepo",
+      "full_name": "Xavier Restrepo",
+      "position": "WR",
+      "team": "TEN",
+      "age": 24,
+      "years_exp": 1,
+      "college": "Miami (FL)",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "6770": {
+      "first_name": "Joe",
+      "last_name": "Burrow",
+      "full_name": "Joe Burrow",
+      "position": "QB",
+      "team": "CIN",
+      "age": 29,
+      "years_exp": 6,
+      "college": "LSU",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "11439": {
+      "first_name": "Jaleel",
+      "last_name": "McLaughlin",
+      "full_name": "Jaleel McLaughlin",
+      "position": "RB",
+      "team": "DEN",
+      "age": 25,
+      "years_exp": 3,
+      "college": "Youngstown State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "9511": {
+      "first_name": "Keaton",
+      "last_name": "Mitchell",
+      "full_name": "Keaton Mitchell",
+      "position": "RB",
+      "team": "LAC",
+      "age": 24,
+      "years_exp": 3,
+      "college": "East Carolina",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12502": {
+      "first_name": "Gunnar",
+      "last_name": "Helm",
+      "full_name": "Gunnar Helm",
+      "position": "TE",
+      "team": "TEN",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Texas",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "11565": {
+      "first_name": "J.J.",
+      "last_name": "McCarthy",
+      "full_name": "J.J. McCarthy",
+      "position": "QB",
+      "team": "MIN",
+      "age": 23,
+      "years_exp": 2,
+      "college": "Michigan",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "6151": {
+      "first_name": "Miles",
+      "last_name": "Sanders",
+      "full_name": "Miles Sanders",
+      "position": "RB",
+      "age": 28,
+      "years_exp": 7,
+      "college": "Penn State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "status": "Active"
+    },
+    "1373": {
+      "first_name": "Geno",
+      "last_name": "Smith",
+      "full_name": "Geno Smith",
+      "position": "QB",
+      "team": "NYJ",
+      "age": 35,
+      "years_exp": 13,
+      "college": "West Virginia",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "4981": {
+      "first_name": "Calvin",
+      "last_name": "Ridley",
+      "full_name": "Calvin Ridley",
+      "position": "WR",
+      "team": "TEN",
+      "age": 31,
+      "years_exp": 8,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "7526": {
+      "first_name": "Jaylen",
+      "last_name": "Waddle",
+      "full_name": "Jaylen Waddle",
+      "position": "WR",
+      "team": "DEN",
+      "age": 27,
+      "years_exp": 5,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "11655": {
+      "first_name": "Tyrone",
+      "last_name": "Tracy",
+      "full_name": "Tyrone Tracy",
+      "position": "RB",
+      "team": "NYG",
+      "age": 26,
+      "years_exp": 2,
+      "college": "Purdue",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12516": {
+      "first_name": "Kalel",
+      "last_name": "Mullings",
+      "full_name": "Kalel Mullings",
+      "position": "RB",
+      "team": "TEN",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Michigan",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "5870": {
+      "first_name": "Daniel",
+      "last_name": "Jones",
+      "full_name": "Daniel Jones",
+      "position": "QB",
+      "team": "IND",
+      "age": 28,
+      "years_exp": 7,
+      "college": "Duke",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "12670": {
+      "first_name": "KeAndre",
+      "last_name": "Lambert-Smith",
+      "full_name": "KeAndre Lambert-Smith",
+      "position": "WR",
+      "team": "LAC",
+      "age": 24,
+      "years_exp": 1,
+      "college": "Auburn",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "8147": {
+      "first_name": "John",
+      "last_name": "Metchie",
+      "full_name": "John Metchie",
+      "position": "WR",
+      "team": "CAR",
+      "age": 25,
+      "years_exp": 4,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "3973": {
+      "first_name": "Myles",
+      "last_name": "Garrett",
+      "full_name": "Myles Garrett",
+      "position": "DE",
+      "team": "CLE",
+      "age": 30,
+      "years_exp": 9,
+      "college": "Texas A&M",
+      "fantasy_positions": [
+        "DL"
+      ],
+      "depth_chart_position": "RDE",
+      "status": "Active"
+    },
+    "8293": {
+      "first_name": "Coby",
+      "last_name": "Bryant",
+      "full_name": "Coby Bryant",
+      "position": "DB",
+      "team": "CHI",
+      "age": 27,
+      "years_exp": 4,
+      "college": "Cincinnati",
+      "fantasy_positions": [
+        "DB"
+      ],
+      "depth_chart_position": "FS",
+      "status": "Active"
+    },
+    "9480": {
+      "first_name": "Brenton",
+      "last_name": "Strange",
+      "full_name": "Brenton Strange",
+      "position": "TE",
+      "team": "JAX",
+      "age": 25,
+      "years_exp": 3,
+      "college": "Penn State",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "5726": {
+      "first_name": "Robert",
+      "last_name": "Spillane",
+      "full_name": "Robert Spillane",
+      "position": "LB",
+      "team": "NE",
+      "age": 30,
+      "years_exp": 8,
+      "college": "Western Michigan",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "LILB",
+      "status": "Active"
+    },
+    "8161": {
+      "first_name": "Malik",
+      "last_name": "Willis",
+      "full_name": "Malik Willis",
+      "position": "QB",
+      "team": "MIA",
+      "age": 26,
+      "years_exp": 4,
+      "college": "Liberty",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "11256": {
+      "first_name": "Tyson",
+      "last_name": "Bagent",
+      "full_name": "Tyson Bagent",
+      "position": "QB",
+      "team": "CHI",
+      "age": 25,
+      "years_exp": 3,
+      "college": "Shepherd (WV)",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "6136": {
+      "first_name": "Jarrett",
+      "last_name": "Stidham",
+      "full_name": "Jarrett Stidham",
+      "position": "QB",
+      "team": "DEN",
+      "age": 29,
+      "years_exp": 7,
+      "college": "Auburn",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "12503": {
+      "first_name": "Isaiah",
+      "last_name": "Bond",
+      "full_name": "Isaiah Bond",
+      "position": "WR",
+      "team": "CLE",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Texas",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "11584": {
+      "first_name": "Bucky",
+      "last_name": "Irving",
+      "full_name": "Bucky Irving",
+      "position": "RB",
+      "team": "TB",
+      "age": 23,
+      "years_exp": 2,
+      "college": "Oregon",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "11705": {
+      "first_name": "Tykee",
+      "last_name": "Smith",
+      "full_name": "Tykee Smith",
+      "position": "DB",
+      "team": "TB",
+      "age": 25,
+      "years_exp": 2,
+      "college": "Georgia",
+      "fantasy_positions": [
+        "DB"
+      ],
+      "depth_chart_position": "SS",
+      "status": "Active"
+    },
+    "8134": {
+      "first_name": "Khalil",
+      "last_name": "Shakir",
+      "full_name": "Khalil Shakir",
+      "position": "WR",
+      "team": "BUF",
+      "age": 26,
+      "years_exp": 4,
+      "college": "Boise State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "12483": {
+      "first_name": "Jack",
+      "last_name": "Bech",
+      "full_name": "Jack Bech",
+      "position": "WR",
+      "team": "LV",
+      "age": 23,
+      "years_exp": 1,
+      "college": "TCU",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "7594": {
+      "first_name": "Chuba",
+      "last_name": "Hubbard",
+      "full_name": "Chuba Hubbard",
+      "position": "RB",
+      "team": "CAR",
+      "age": 26,
+      "years_exp": 5,
+      "college": "Oklahoma State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12185": {
+      "first_name": "Spencer",
+      "last_name": "Shrader",
+      "full_name": "Spencer Shrader",
+      "position": "K",
+      "team": "IND",
+      "age": 26,
+      "years_exp": 2,
+      "college": "Notre Dame",
+      "fantasy_positions": [
+        "K"
+      ],
+      "depth_chart_position": "K",
+      "status": "Active"
+    },
+    "12469": {
+      "first_name": "Dylan",
+      "last_name": "Sampson",
+      "full_name": "Dylan Sampson",
+      "position": "RB",
+      "team": "CLE",
+      "age": 21,
+      "years_exp": 1,
+      "college": "Tennessee",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "8112": {
+      "first_name": "Drake",
+      "last_name": "London",
+      "full_name": "Drake London",
+      "position": "WR",
+      "team": "ATL",
+      "age": 24,
+      "years_exp": 4,
+      "college": "USC",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "10892": {
+      "first_name": "Will",
+      "last_name": "Anderson",
+      "full_name": "Will Anderson",
+      "position": "DL",
+      "team": "HOU",
+      "age": 24,
+      "years_exp": 3,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "DL",
+        "LB"
+      ],
+      "depth_chart_position": "LDE",
+      "status": "Active"
+    },
+    "7567": {
+      "first_name": "Kenneth",
+      "last_name": "Gainwell",
+      "full_name": "Kenneth Gainwell",
+      "position": "RB",
+      "team": "TB",
+      "age": 27,
+      "years_exp": 5,
+      "college": "Memphis",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12522": {
+      "first_name": "Cam",
+      "last_name": "Ward",
+      "full_name": "Cam Ward",
+      "position": "QB",
+      "team": "TEN",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Miami (FL)",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "12470": {
+      "first_name": "Riley",
+      "last_name": "Leonard",
+      "full_name": "Riley Leonard",
+      "position": "QB",
+      "team": "IND",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Notre Dame",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "12471": {
+      "first_name": "DJ",
+      "last_name": "Giddens",
+      "full_name": "DJ Giddens",
+      "position": "RB",
+      "team": "IND",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Kansas State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "5906": {
+      "first_name": "Dawson",
+      "last_name": "Knox",
+      "full_name": "Dawson Knox",
+      "position": "TE",
+      "team": "BUF",
+      "age": 29,
+      "years_exp": 7,
+      "college": "Ole Miss",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "4066": {
+      "first_name": "Evan",
+      "last_name": "Engram",
+      "full_name": "Evan Engram",
+      "position": "TE",
+      "team": "DEN",
+      "age": 31,
+      "years_exp": 9,
+      "college": "Ole Miss",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "11632": {
+      "first_name": "Malik",
+      "last_name": "Nabers",
+      "full_name": "Malik Nabers",
+      "position": "WR",
+      "team": "NYG",
+      "age": 22,
+      "years_exp": 2,
+      "college": "LSU",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "7569": {
+      "first_name": "Nico",
+      "last_name": "Collins",
+      "full_name": "Nico Collins",
+      "position": "WR",
+      "team": "HOU",
+      "age": 27,
+      "years_exp": 5,
+      "college": "Michigan",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "5892": {
+      "first_name": "David",
+      "last_name": "Montgomery",
+      "full_name": "David Montgomery",
+      "position": "RB",
+      "team": "HOU",
+      "age": 28,
+      "years_exp": 7,
+      "college": "Iowa State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "421": {
+      "first_name": "Matthew",
+      "last_name": "Stafford",
+      "full_name": "Matthew Stafford",
+      "position": "QB",
+      "team": "LAR",
+      "age": 38,
+      "years_exp": 17,
+      "college": "Georgia",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "7553": {
+      "first_name": "Kyle",
+      "last_name": "Pitts",
+      "full_name": "Kyle Pitts",
+      "position": "TE",
+      "team": "ATL",
+      "age": 25,
+      "years_exp": 5,
+      "college": "Florida",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "12540": {
+      "first_name": "Chimere",
+      "last_name": "Dike",
+      "full_name": "Chimere Dike",
+      "position": "WR",
+      "team": "TEN",
+      "age": 24,
+      "years_exp": 1,
+      "college": "Florida",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "11924": {
+      "first_name": "Tanner",
+      "last_name": "Mordecai",
+      "full_name": "Tanner Mordecai",
+      "position": "QB",
+      "age": 25,
+      "years_exp": 1,
+      "college": "Wisconsin",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "status": "Active"
+    },
+    "8144": {
+      "first_name": "Chris",
+      "last_name": "Olave",
+      "full_name": "Chris Olave",
+      "position": "WR",
+      "team": "NO",
+      "age": 25,
+      "years_exp": 4,
+      "college": "Ohio State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "2374": {
+      "first_name": "Tyler",
+      "last_name": "Lockett",
+      "full_name": "Tyler Lockett",
+      "position": "WR",
+      "age": 33,
+      "years_exp": 11,
+      "college": "Kansas State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "status": "Active"
+    },
+    "6768": {
+      "first_name": "Tua",
+      "last_name": "Tagovailoa",
+      "full_name": "Tua Tagovailoa",
+      "position": "QB",
+      "team": "ATL",
+      "age": 28,
+      "years_exp": 6,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "5970": {
+      "first_name": "Greg",
+      "last_name": "Dortch",
+      "full_name": "Greg Dortch",
+      "position": "WR",
+      "team": "DET",
+      "age": 27,
+      "years_exp": 7,
+      "college": "Wake Forest",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "8110": {
+      "first_name": "Jake",
+      "last_name": "Ferguson",
+      "full_name": "Jake Ferguson",
+      "position": "TE",
+      "team": "DAL",
+      "age": 27,
+      "years_exp": 4,
+      "college": "Wisconsin",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "7021": {
+      "first_name": "Rico",
+      "last_name": "Dowdle",
+      "full_name": "Rico Dowdle",
+      "position": "RB",
+      "team": "PIT",
+      "age": 27,
+      "years_exp": 6,
+      "college": "South Carolina",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "11626": {
+      "first_name": "Xavier",
+      "last_name": "Legette",
+      "full_name": "Xavier Legette",
+      "position": "WR",
+      "team": "CAR",
+      "age": 25,
+      "years_exp": 2,
+      "college": "South Carolina",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "11637": {
+      "first_name": "Keon",
+      "last_name": "Coleman",
+      "full_name": "Keon Coleman",
+      "position": "WR",
+      "team": "BUF",
+      "age": 22,
+      "years_exp": 2,
+      "college": "Florida State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "6650": {
+      "first_name": "Chase",
+      "last_name": "McLaughlin",
+      "full_name": "Chase McLaughlin",
+      "position": "K",
+      "team": "TB",
+      "age": 30,
+      "years_exp": 7,
+      "college": "Illinois",
+      "fantasy_positions": [
+        "K"
+      ],
+      "depth_chart_position": "K",
+      "status": "Active"
+    },
+    "4199": {
+      "first_name": "Aaron",
+      "last_name": "Jones",
+      "full_name": "Aaron Jones",
+      "position": "RB",
+      "team": "MIN",
+      "age": 31,
+      "years_exp": 9,
+      "college": "UTEP",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "5850": {
+      "first_name": "Josh",
+      "last_name": "Jacobs",
+      "full_name": "Josh Jacobs",
+      "position": "RB",
+      "team": "GB",
+      "age": 28,
+      "years_exp": 7,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12455": {
+      "first_name": "Brashard",
+      "last_name": "Smith",
+      "full_name": "Brashard Smith",
+      "position": "RB",
+      "team": "KC",
+      "age": 23,
+      "years_exp": 1,
+      "college": "SMU",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12526": {
+      "first_name": "Tetairoa",
+      "last_name": "McMillan",
+      "full_name": "Tetairoa McMillan",
+      "position": "WR",
+      "team": "CAR",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Arizona",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "8207": {
+      "first_name": "Tyler",
+      "last_name": "Goodson",
+      "full_name": "Tyler Goodson",
+      "position": "RB",
+      "team": "ATL",
+      "age": 25,
+      "years_exp": 4,
+      "college": "Iowa",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "11599": {
+      "first_name": "Cade",
+      "last_name": "Stover",
+      "full_name": "Cade Stover",
+      "position": "TE",
+      "team": "HOU",
+      "age": 25,
+      "years_exp": 2,
+      "college": "Ohio State",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "11647": {
+      "first_name": "Kimani",
+      "last_name": "Vidal",
+      "full_name": "Kimani Vidal",
+      "position": "RB",
+      "team": "LAC",
+      "age": 24,
+      "years_exp": 2,
+      "college": "Troy",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "8129": {
+      "first_name": "Dameon",
+      "last_name": "Pierce",
+      "full_name": "Dameon Pierce",
+      "position": "RB",
+      "team": "PHI",
+      "age": 26,
+      "years_exp": 4,
+      "college": "Florida",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "4217": {
+      "first_name": "George",
+      "last_name": "Kittle",
+      "full_name": "George Kittle",
+      "position": "TE",
+      "team": "SF",
+      "age": 32,
+      "years_exp": 9,
+      "college": "Iowa",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "8119": {
+      "first_name": "Jahan",
+      "last_name": "Dotson",
+      "full_name": "Jahan Dotson",
+      "position": "WR",
+      "team": "ATL",
+      "age": 26,
+      "years_exp": 4,
+      "college": "Penn State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "5927": {
+      "first_name": "Terry",
+      "last_name": "McLaurin",
+      "full_name": "Terry McLaurin",
+      "position": "WR",
+      "team": "WAS",
+      "age": 30,
+      "years_exp": 7,
+      "college": "Ohio State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "7672": {
+      "first_name": "Ernest",
+      "last_name": "Jones",
+      "full_name": "Ernest Jones",
+      "position": "LB",
+      "team": "SEA",
+      "age": 26,
+      "years_exp": 5,
+      "college": "South Carolina",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "RILB",
+      "status": "Active"
+    },
+    "8188": {
+      "first_name": "Tyquan",
+      "last_name": "Thornton",
+      "full_name": "Tyquan Thornton",
+      "position": "WR",
+      "team": "KC",
+      "age": 25,
+      "years_exp": 4,
+      "college": "Baylor",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "3161": {
+      "first_name": "Carson",
+      "last_name": "Wentz",
+      "full_name": "Carson Wentz",
+      "position": "QB",
+      "team": "MIN",
+      "age": 33,
+      "years_exp": 10,
+      "college": "North Dakota State",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "11610": {
+      "first_name": "Malik",
+      "last_name": "Washington",
+      "full_name": "Malik Washington",
+      "position": "WR",
+      "team": "MIA",
+      "age": 25,
+      "years_exp": 2,
+      "college": "Virginia",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "8208": {
+      "first_name": "Tyler",
+      "last_name": "Badie",
+      "full_name": "Tyler Badie",
+      "position": "RB",
+      "team": "DEN",
+      "age": 26,
+      "years_exp": 4,
+      "college": "Missouri",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "1426": {
+      "first_name": "DeAndre",
+      "last_name": "Hopkins",
+      "full_name": "DeAndre Hopkins",
+      "position": "WR",
+      "age": 33,
+      "years_exp": 13,
+      "college": "Clemson",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "status": "Active"
+    },
+    "12545": {
+      "first_name": "Tyler",
+      "last_name": "Shough",
+      "full_name": "Tyler Shough",
+      "position": "QB",
+      "team": "NO",
+      "age": 26,
+      "years_exp": 1,
+      "college": "Louisville",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "11651": {
+      "first_name": "Isaac",
+      "last_name": "Guerendo",
+      "full_name": "Isaac Guerendo",
+      "position": "RB",
+      "team": "SF",
+      "age": 25,
+      "years_exp": 2,
+      "college": "Louisville",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12462": {
+      "first_name": "Damien",
+      "last_name": "Martinez",
+      "full_name": "Damien Martinez",
+      "position": "RB",
+      "team": "GB",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Miami (FL)",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "10888": {
+      "first_name": "Jalen",
+      "last_name": "Carter",
+      "full_name": "Jalen Carter",
+      "position": "DL",
+      "team": "PHI",
+      "age": 25,
+      "years_exp": 3,
+      "college": "Georgia",
+      "fantasy_positions": [
+        "DL"
+      ],
+      "depth_chart_position": "RDE",
+      "status": "Active"
+    },
+    "4039": {
+      "first_name": "Cooper",
+      "last_name": "Kupp",
+      "full_name": "Cooper Kupp",
+      "position": "WR",
+      "team": "SEA",
+      "age": 32,
+      "years_exp": 9,
+      "college": "Eastern Washington",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "4135": {
+      "first_name": "Trey",
+      "last_name": "Hendrickson",
+      "full_name": "Trey Hendrickson",
+      "position": "DE",
+      "team": "BAL",
+      "age": 31,
+      "years_exp": 9,
+      "college": "Florida Atlantic",
+      "fantasy_positions": [
+        "DL"
+      ],
+      "depth_chart_position": "LDE",
+      "status": "Active"
+    },
+    "8408": {
+      "first_name": "Jordan",
+      "last_name": "Mason",
+      "full_name": "Jordan Mason",
+      "position": "RB",
+      "team": "MIN",
+      "age": 26,
+      "years_exp": 4,
+      "college": "Georgia Tech",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "5017": {
+      "first_name": "Jessie",
+      "last_name": "Bates",
+      "full_name": "Jessie Bates",
+      "position": "DB",
+      "team": "ATL",
+      "age": 29,
+      "years_exp": 8,
+      "college": "Wake Forest",
+      "fantasy_positions": [
+        "DB"
+      ],
+      "depth_chart_position": "SS",
+      "status": "Active"
+    },
+    "10444": {
+      "first_name": "Cedric",
+      "last_name": "Tillman",
+      "full_name": "Cedric Tillman",
+      "position": "WR",
+      "team": "CLE",
+      "age": 26,
+      "years_exp": 3,
+      "college": "Tennessee",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "11618": {
+      "first_name": "Jalen",
+      "last_name": "McMillan",
+      "full_name": "Jalen McMillan",
+      "position": "WR",
+      "team": "TB",
+      "age": 24,
+      "years_exp": 2,
+      "college": "Washington",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "1945": {
+      "first_name": "Chris",
+      "last_name": "Boswell",
+      "full_name": "Chris Boswell",
+      "position": "K",
+      "team": "PIT",
+      "age": 35,
+      "years_exp": 12,
+      "college": "Rice",
+      "fantasy_positions": [
+        "K"
+      ],
+      "depth_chart_position": "K",
+      "status": "Active"
+    },
+    "8210": {
+      "first_name": "Chig",
+      "last_name": "Okonkwo",
+      "full_name": "Chig Okonkwo",
+      "position": "TE",
+      "team": "WAS",
+      "age": 26,
+      "years_exp": 4,
+      "college": "Maryland",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "11729": {
+      "first_name": "Sione",
+      "last_name": "Vaki",
+      "full_name": "Sione Vaki",
+      "position": "RB",
+      "team": "DET",
+      "age": 24,
+      "years_exp": 2,
+      "college": "Utah",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "11630": {
+      "first_name": "Roman",
+      "last_name": "Wilson",
+      "full_name": "Roman Wilson",
+      "position": "WR",
+      "team": "PIT",
+      "age": 24,
+      "years_exp": 2,
+      "college": "Michigan",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "8138": {
+      "first_name": "James",
+      "last_name": "Cook",
+      "full_name": "James Cook",
+      "position": "RB",
+      "team": "BUF",
+      "age": 26,
+      "years_exp": 4,
+      "college": "Georgia",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "11646": {
+      "first_name": "Jalen",
+      "last_name": "Coker",
+      "full_name": "Jalen Coker",
+      "position": "WR",
+      "team": "CAR",
+      "age": 24,
+      "years_exp": 2,
+      "college": "Holy Cross",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "2028": {
+      "first_name": "Derek",
+      "last_name": "Carr",
+      "full_name": "Derek Carr",
+      "position": "QB",
+      "age": 34,
+      "years_exp": 11,
+      "college": "Fresno State",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "status": "Active"
+    },
+    "12484": {
+      "first_name": "Jayden",
+      "last_name": "Higgins",
+      "full_name": "Jayden Higgins",
+      "position": "WR",
+      "team": "HOU",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Iowa State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "5967": {
+      "first_name": "Tony",
+      "last_name": "Pollard",
+      "full_name": "Tony Pollard",
+      "position": "RB",
+      "team": "TEN",
+      "age": 29,
+      "years_exp": 7,
+      "college": "Memphis",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "6945": {
+      "first_name": "Antonio",
+      "last_name": "Gibson",
+      "full_name": "Antonio Gibson",
+      "position": "RB",
+      "age": 27,
+      "years_exp": 6,
+      "college": "Memphis",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "status": "Active"
+    },
+    "11792": {
+      "first_name": "Will",
+      "last_name": "Reichard",
+      "full_name": "Will Reichard",
+      "position": "K",
+      "team": "MIN",
+      "age": 25,
+      "years_exp": 2,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "K"
+      ],
+      "depth_chart_position": "K",
+      "status": "Active"
+    },
+    "5846": {
+      "first_name": "DK",
+      "last_name": "Metcalf",
+      "full_name": "DK Metcalf",
+      "position": "WR",
+      "team": "PIT",
+      "age": 28,
+      "years_exp": 7,
+      "college": "Ole Miss",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "7765": {
+      "first_name": "Jonathon",
+      "last_name": "Cooper",
+      "full_name": "Jonathon Cooper",
+      "position": "DL",
+      "team": "DEN",
+      "age": 28,
+      "years_exp": 5,
+      "college": "Ohio State",
+      "fantasy_positions": [
+        "DL",
+        "LB"
+      ],
+      "depth_chart_position": "LOLB",
+      "status": "Active"
+    },
+    "11566": {
+      "first_name": "Jayden",
+      "last_name": "Daniels",
+      "full_name": "Jayden Daniels",
+      "position": "QB",
+      "team": "WAS",
+      "age": 25,
+      "years_exp": 2,
+      "college": "LSU",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "7547": {
+      "first_name": "Amon-Ra",
+      "last_name": "St. Brown",
+      "full_name": "Amon-Ra St. Brown",
+      "position": "WR",
+      "team": "DET",
+      "age": 26,
+      "years_exp": 5,
+      "college": "USC",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "5843": {
+      "first_name": "Devin",
+      "last_name": "Bush",
+      "full_name": "Devin Bush",
+      "position": "LB",
+      "team": "CHI",
+      "age": 27,
+      "years_exp": 7,
+      "college": "Michigan",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "MLB",
+      "status": "Active"
+    },
+    "11589": {
+      "first_name": "Trey",
+      "last_name": "Benson",
+      "full_name": "Trey Benson",
+      "position": "RB",
+      "team": "ARI",
+      "age": 23,
+      "years_exp": 2,
+      "college": "Florida State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12544": {
+      "first_name": "LeQuint",
+      "last_name": "Allen",
+      "full_name": "LeQuint Allen",
+      "position": "RB",
+      "team": "JAX",
+      "age": 21,
+      "years_exp": 1,
+      "college": "Syracuse",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12512": {
+      "first_name": "Quinshon",
+      "last_name": "Judkins",
+      "full_name": "Quinshon Judkins",
+      "position": "RB",
+      "team": "CLE",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Ohio State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "10980": {
+      "first_name": "SirVocea",
+      "last_name": "Dennis",
+      "full_name": "SirVocea Dennis",
+      "position": "LB",
+      "team": "TB",
+      "age": 26,
+      "years_exp": 3,
+      "college": "Pittsburgh",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "RILB",
+      "status": "Active"
+    },
+    "12567": {
+      "first_name": "Malaki",
+      "last_name": "Starks",
+      "full_name": "Malaki Starks",
+      "position": "DB",
+      "team": "BAL",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Georgia",
+      "fantasy_positions": [
+        "DB"
+      ],
+      "depth_chart_position": "SS",
+      "status": "Active"
+    },
+    "11575": {
+      "first_name": "Ray",
+      "last_name": "Davis",
+      "full_name": "Ray Davis",
+      "position": "RB",
+      "team": "BUF",
+      "age": 26,
+      "years_exp": 2,
+      "college": "Kentucky",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "5862": {
+      "first_name": "Brian",
+      "last_name": "Burns",
+      "full_name": "Brian Burns",
+      "position": "DE",
+      "team": "NYG",
+      "age": 28,
+      "years_exp": 7,
+      "college": "Florida State",
+      "fantasy_positions": [
+        "DL"
+      ],
+      "depth_chart_position": "LOLB",
+      "status": "Active"
+    },
+    "11583": {
+      "first_name": "Jonathon",
+      "last_name": "Brooks",
+      "full_name": "Jonathon Brooks",
+      "position": "RB",
+      "team": "CAR",
+      "age": 22,
+      "years_exp": 2,
+      "college": "Texas",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12713": {
+      "first_name": "Andy",
+      "last_name": "Borregales",
+      "full_name": "Andy Borregales",
+      "position": "K",
+      "team": "NE",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Miami (FL)",
+      "fantasy_positions": [
+        "K"
+      ],
+      "depth_chart_position": "K",
+      "status": "Active"
+    },
+    "10232": {
+      "first_name": "Michael",
+      "last_name": "Wilson",
+      "full_name": "Michael Wilson",
+      "position": "WR",
+      "team": "ARI",
+      "age": 26,
+      "years_exp": 3,
+      "college": "Stanford",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "10229": {
+      "first_name": "Rashee",
+      "last_name": "Rice",
+      "full_name": "Rashee Rice",
+      "position": "WR",
+      "team": "KC",
+      "age": 26,
+      "years_exp": 3,
+      "college": "SMU",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "7564": {
+      "first_name": "Ja'Marr",
+      "last_name": "Chase",
+      "full_name": "Ja'Marr Chase",
+      "position": "WR",
+      "team": "CIN",
+      "age": 26,
+      "years_exp": 5,
+      "college": "LSU",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "4892": {
+      "first_name": "Baker",
+      "last_name": "Mayfield",
+      "full_name": "Baker Mayfield",
+      "position": "QB",
+      "team": "TB",
+      "age": 31,
+      "years_exp": 8,
+      "college": "Oklahoma",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "11687": {
+      "first_name": "Edgerrin",
+      "last_name": "Cooper",
+      "full_name": "Edgerrin Cooper",
+      "position": "LB",
+      "team": "GB",
+      "age": 24,
+      "years_exp": 2,
+      "college": "Texas A&M",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "ROLB",
+      "status": "Active"
+    },
+    "4993": {
+      "first_name": "Mike",
+      "last_name": "Gesicki",
+      "full_name": "Mike Gesicki",
+      "position": "TE",
+      "team": "CIN",
+      "age": 30,
+      "years_exp": 8,
+      "college": "Penn State",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "12472": {
+      "first_name": "Raheim",
+      "last_name": "Sanders",
+      "full_name": "Raheim Sanders",
+      "position": "RB",
+      "team": "CLE",
+      "age": 23,
+      "years_exp": 1,
+      "college": "South Carolina",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "11619": {
+      "first_name": "Ja'Lynn",
+      "last_name": "Polk",
+      "full_name": "Ja'Lynn Polk",
+      "position": "WR",
+      "team": "NO",
+      "age": 24,
+      "years_exp": 2,
+      "college": "Washington",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "11562": {
+      "first_name": "Spencer",
+      "last_name": "Rattler",
+      "full_name": "Spencer Rattler",
+      "position": "QB",
+      "team": "NO",
+      "age": 25,
+      "years_exp": 2,
+      "college": "South Carolina",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "6789": {
+      "first_name": "Henry",
+      "last_name": "Ruggs",
+      "full_name": "Henry Ruggs",
+      "position": "WR",
+      "age": 22,
+      "years_exp": 2,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "status": "Active"
+    },
+    "3214": {
+      "first_name": "Hunter",
+      "last_name": "Henry",
+      "full_name": "Hunter Henry",
+      "position": "TE",
+      "team": "NE",
+      "age": 31,
+      "years_exp": 10,
+      "college": "Arkansas",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "12634": {
+      "first_name": "Jordan",
+      "last_name": "Watkins",
+      "full_name": "Jordan Watkins",
+      "position": "WR",
+      "team": "SF",
+      "age": 24,
+      "years_exp": 1,
+      "college": "Ole Miss",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "4018": {
+      "first_name": "Joe",
+      "last_name": "Mixon",
+      "full_name": "Joe Mixon",
+      "position": "RB",
+      "age": 29,
+      "years_exp": 9,
+      "college": "Oklahoma",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "status": "Active"
+    },
+    "12568": {
+      "first_name": "Jalon",
+      "last_name": "Walker",
+      "full_name": "Jalon Walker",
+      "position": "DL",
+      "team": "ATL",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Georgia",
+      "fantasy_positions": [
+        "DL",
+        "LB"
+      ],
+      "depth_chart_position": "ROLB",
+      "status": "Active"
+    },
+    "8180": {
+      "first_name": "Jalen",
+      "last_name": "Nailor",
+      "full_name": "Jalen Nailor",
+      "position": "WR",
+      "team": "LV",
+      "age": 27,
+      "years_exp": 4,
+      "college": "Michigan State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "10218": {
+      "first_name": "Xavier",
+      "last_name": "Hutchinson",
+      "full_name": "Xavier Hutchinson",
+      "position": "WR",
+      "team": "HOU",
+      "age": 25,
+      "years_exp": 3,
+      "college": "Iowa State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "8230": {
+      "first_name": "Ty",
+      "last_name": "Chandler",
+      "full_name": "Ty Chandler",
+      "position": "RB",
+      "team": "NO",
+      "age": 27,
+      "years_exp": 4,
+      "college": "North Carolina",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "8117": {
+      "first_name": "Jalen",
+      "last_name": "Tolbert",
+      "full_name": "Jalen Tolbert",
+      "position": "WR",
+      "team": "MIA",
+      "age": 27,
+      "years_exp": 4,
+      "college": "South Alabama",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "4950": {
+      "first_name": "Christian",
+      "last_name": "Kirk",
+      "full_name": "Christian Kirk",
+      "position": "WR",
+      "team": "SF",
+      "age": 29,
+      "years_exp": 8,
+      "college": "Texas A&M",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "11560": {
+      "first_name": "Caleb",
+      "last_name": "Williams",
+      "full_name": "Caleb Williams",
+      "position": "QB",
+      "team": "CHI",
+      "age": 24,
+      "years_exp": 2,
+      "college": "USC",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "8130": {
+      "first_name": "Trey",
+      "last_name": "McBride",
+      "full_name": "Trey McBride",
+      "position": "TE",
+      "team": "ARI",
+      "age": 26,
+      "years_exp": 4,
+      "college": "Colorado State",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "9501": {
+      "first_name": "DeMario",
+      "last_name": "Douglas",
+      "full_name": "DeMario Douglas",
+      "position": "WR",
+      "team": "NE",
+      "age": 25,
+      "years_exp": 3,
+      "college": "Liberty",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "8136": {
+      "first_name": "Rachaad",
+      "last_name": "White",
+      "full_name": "Rachaad White",
+      "position": "RB",
+      "team": "WAS",
+      "age": 27,
+      "years_exp": 4,
+      "college": "Arizona State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "1466": {
+      "first_name": "Travis",
+      "last_name": "Kelce",
+      "full_name": "Travis Kelce",
+      "position": "TE",
+      "team": "KC",
+      "age": 36,
+      "years_exp": 13,
+      "college": "Cincinnati",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "11570": {
+      "first_name": "Rasheen",
+      "last_name": "Ali",
+      "full_name": "Rasheen Ali",
+      "position": "RB",
+      "team": "BAL",
+      "age": 25,
+      "years_exp": 2,
+      "college": "Marshall",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "11834": {
+      "first_name": "Devaughn",
+      "last_name": "Vele",
+      "full_name": "Devaughn Vele",
+      "position": "WR",
+      "team": "NO",
+      "age": 28,
+      "years_exp": 2,
+      "college": "Utah",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "4137": {
+      "first_name": "James",
+      "last_name": "Conner",
+      "full_name": "James Conner",
+      "position": "RB",
+      "team": "ARI",
+      "age": 30,
+      "years_exp": 9,
+      "college": "Pittsburgh",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "10222": {
+      "first_name": "Jayden",
+      "last_name": "Reed",
+      "full_name": "Jayden Reed",
+      "position": "WR",
+      "team": "GB",
+      "age": 26,
+      "years_exp": 3,
+      "college": "Michigan State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "6786": {
+      "first_name": "CeeDee",
+      "last_name": "Lamb",
+      "full_name": "CeeDee Lamb",
+      "position": "WR",
+      "team": "DAL",
+      "age": 27,
+      "years_exp": 6,
+      "college": "Oklahoma",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "12738": {
+      "first_name": "Phil",
+      "last_name": "Mafah",
+      "full_name": "Phil Mafah",
+      "position": "RB",
+      "team": "DAL",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Clemson",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "1837": {
+      "first_name": "Jimmy",
+      "last_name": "Garoppolo",
+      "full_name": "Jimmy Garoppolo",
+      "position": "QB",
+      "age": 34,
+      "years_exp": 12,
+      "college": "Eastern Illinois",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "status": "Active"
+    },
+    "11370": {
+      "first_name": "Chris",
+      "last_name": "Brooks",
+      "full_name": "Chris Brooks",
+      "position": "RB",
+      "team": "GB",
+      "age": 26,
+      "years_exp": 3,
+      "college": "BYU",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "3321": {
+      "first_name": "Tyreek",
+      "last_name": "Hill",
+      "full_name": "Tyreek Hill",
+      "position": "WR",
+      "age": 31,
+      "years_exp": 10,
+      "college": "West Alabama",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "status": "Active"
+    },
+    "9488": {
+      "first_name": "Jaxon",
+      "last_name": "Smith-Njigba",
+      "full_name": "Jaxon Smith-Njigba",
+      "position": "WR",
+      "team": "SEA",
+      "age": 24,
+      "years_exp": 3,
+      "college": "Ohio State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "9997": {
+      "first_name": "Zay",
+      "last_name": "Flowers",
+      "full_name": "Zay Flowers",
+      "position": "WR",
+      "team": "BAL",
+      "age": 25,
+      "years_exp": 3,
+      "college": "Boston College",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "5991": {
+      "first_name": "Maxx",
+      "last_name": "Crosby",
+      "full_name": "Maxx Crosby",
+      "position": "DE",
+      "team": "LV",
+      "age": 28,
+      "years_exp": 7,
+      "college": "Eastern Michigan",
+      "fantasy_positions": [
+        "DL"
+      ],
+      "depth_chart_position": "LOLB",
+      "status": "Active"
+    },
+    "12486": {
+      "first_name": "Dillon",
+      "last_name": "Gabriel",
+      "full_name": "Dillon Gabriel",
+      "position": "QB",
+      "team": "CLE",
+      "age": 25,
+      "years_exp": 1,
+      "college": "Oregon",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "9229": {
+      "first_name": "Anthony",
+      "last_name": "Richardson",
+      "full_name": "Anthony Richardson",
+      "position": "QB",
+      "team": "IND",
+      "age": 23,
+      "years_exp": 3,
+      "college": "Florida",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "4943": {
+      "first_name": "Sam",
+      "last_name": "Darnold",
+      "full_name": "Sam Darnold",
+      "position": "QB",
+      "team": "SEA",
+      "age": 28,
+      "years_exp": 8,
+      "college": "USC",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "12492": {
+      "first_name": "Pat",
+      "last_name": "Bryant",
+      "full_name": "Pat Bryant",
+      "position": "WR",
+      "team": "DEN",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Illinois",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "12523": {
+      "first_name": "Jimmy",
+      "last_name": "Horn",
+      "full_name": "Jimmy Horn",
+      "position": "WR",
+      "team": "CAR",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Colorado",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "11539": {
+      "first_name": "Jake",
+      "last_name": "Bates",
+      "full_name": "Jake Bates",
+      "position": "K",
+      "team": "DET",
+      "age": 27,
+      "years_exp": 3,
+      "college": "Arkansas",
+      "fantasy_positions": [
+        "K"
+      ],
+      "depth_chart_position": "K",
+      "status": "Active"
+    },
+    "11577": {
+      "first_name": "Will",
+      "last_name": "Shipley",
+      "full_name": "Will Shipley",
+      "position": "RB",
+      "team": "PHI",
+      "age": 23,
+      "years_exp": 2,
+      "college": "Clemson",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "7002": {
+      "first_name": "Juwan",
+      "last_name": "Johnson",
+      "full_name": "Juwan Johnson",
+      "position": "TE",
+      "team": "NO",
+      "age": 29,
+      "years_exp": 6,
+      "college": "Oregon",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "12497": {
+      "first_name": "Tory",
+      "last_name": "Horton",
+      "full_name": "Tory Horton",
+      "position": "WR",
+      "team": "SEA",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Colorado State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "13079": {
+      "first_name": "Jahdae",
+      "last_name": "Walker",
+      "full_name": "Jahdae Walker",
+      "position": "WR",
+      "team": "CHI",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Texas A&M",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "9494": {
+      "first_name": "Marvin",
+      "last_name": "Mims",
+      "full_name": "Marvin Mims",
+      "position": "WR",
+      "team": "DEN",
+      "age": 24,
+      "years_exp": 3,
+      "college": "Oklahoma",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "12505": {
+      "first_name": "Jalen",
+      "last_name": "Royals",
+      "full_name": "Jalen Royals",
+      "position": "WR",
+      "team": "KC",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Utah State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "7588": {
+      "first_name": "Javonte",
+      "last_name": "Williams",
+      "full_name": "Javonte Williams",
+      "position": "RB",
+      "team": "DAL",
+      "age": 26,
+      "years_exp": 5,
+      "college": "North Carolina",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "9220": {
+      "first_name": "Evan",
+      "last_name": "Hull",
+      "full_name": "Evan Hull",
+      "position": "RB",
+      "age": 25,
+      "years_exp": 3,
+      "college": "Northwestern",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "status": "Active"
+    },
+    "7090": {
+      "first_name": "Darnell",
+      "last_name": "Mooney",
+      "full_name": "Darnell Mooney",
+      "position": "WR",
+      "team": "NYG",
+      "age": 28,
+      "years_exp": 6,
+      "college": "Tulane",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "7648": {
+      "first_name": "Nick",
+      "last_name": "Bolton",
+      "full_name": "Nick Bolton",
+      "position": "LB",
+      "team": "KC",
+      "age": 26,
+      "years_exp": 5,
+      "college": "Missouri",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "MLB",
+      "status": "Active"
+    },
+    "11628": {
+      "first_name": "Marvin",
+      "last_name": "Harrison",
+      "full_name": "Marvin Harrison",
+      "position": "WR",
+      "team": "ARI",
+      "age": 23,
+      "years_exp": 2,
+      "college": "Ohio State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "7694": {
+      "first_name": "Tommy",
+      "last_name": "Tremble",
+      "full_name": "Tommy Tremble",
+      "position": "TE",
+      "team": "CAR",
+      "age": 25,
+      "years_exp": 5,
+      "college": "Notre Dame",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "8154": {
+      "first_name": "Brian",
+      "last_name": "Robinson",
+      "full_name": "Brian Robinson",
+      "position": "RB",
+      "team": "ATL",
+      "age": 27,
+      "years_exp": 4,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "5127": {
+      "first_name": "Kyle",
+      "last_name": "Allen",
+      "full_name": "Kyle Allen",
+      "position": "QB",
+      "team": "BUF",
+      "age": 30,
+      "years_exp": 8,
+      "college": "Houston",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "4144": {
+      "first_name": "Jonnu",
+      "last_name": "Smith",
+      "full_name": "Jonnu Smith",
+      "position": "TE",
+      "age": 30,
+      "years_exp": 9,
+      "college": "Florida International",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "status": "Active"
+    },
+    "11685": {
+      "first_name": "Kamari",
+      "last_name": "Lassiter",
+      "full_name": "Kamari Lassiter",
+      "position": "DB",
+      "team": "HOU",
+      "age": 23,
+      "years_exp": 2,
+      "college": "Georgia",
+      "fantasy_positions": [
+        "DB"
+      ],
+      "depth_chart_position": "RCB",
+      "status": "Active"
+    },
+    "12500": {
+      "first_name": "Quinn",
+      "last_name": "Ewers",
+      "full_name": "Quinn Ewers",
+      "position": "QB",
+      "team": "MIA",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Texas",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "6819": {
+      "first_name": "Michael",
+      "last_name": "Pittman",
+      "full_name": "Michael Pittman",
+      "position": "WR",
+      "team": "PIT",
+      "age": 28,
+      "years_exp": 6,
+      "college": "USC",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "8135": {
+      "first_name": "Treylon",
+      "last_name": "Burks",
+      "full_name": "Treylon Burks",
+      "position": "WR",
+      "team": "WAS",
+      "age": 26,
+      "years_exp": 4,
+      "college": "Arkansas",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "12578": {
+      "first_name": "Carson",
+      "last_name": "Schwesinger",
+      "full_name": "Carson Schwesinger",
+      "position": "LB",
+      "team": "CLE",
+      "age": 23,
+      "years_exp": 1,
+      "college": "UCLA",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "MLB",
+      "status": "Active"
+    },
+    "9484": {
+      "first_name": "Tucker",
+      "last_name": "Kraft",
+      "full_name": "Tucker Kraft",
+      "position": "TE",
+      "team": "GB",
+      "age": 25,
+      "years_exp": 3,
+      "college": "South Dakota State",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "5022": {
+      "first_name": "Dallas",
+      "last_name": "Goedert",
+      "full_name": "Dallas Goedert",
+      "position": "TE",
+      "team": "PHI",
+      "age": 31,
+      "years_exp": 8,
+      "college": "South Dakota State",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "8131": {
+      "first_name": "Isaiah",
+      "last_name": "Likely",
+      "full_name": "Isaiah Likely",
+      "position": "TE",
+      "team": "NYG",
+      "age": 26,
+      "years_exp": 4,
+      "college": "Coastal Carolina",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "11586": {
+      "first_name": "Blake",
+      "last_name": "Corum",
+      "full_name": "Blake Corum",
+      "position": "RB",
+      "team": "LAR",
+      "age": 25,
+      "years_exp": 2,
+      "college": "Michigan",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "8698": {
+      "first_name": "Jake",
+      "last_name": "Tonges",
+      "full_name": "Jake Tonges",
+      "position": "TE",
+      "team": "SF",
+      "age": 26,
+      "years_exp": 4,
+      "college": "California",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "11533": {
+      "first_name": "Brandon",
+      "last_name": "Aubrey",
+      "full_name": "Brandon Aubrey",
+      "position": "K",
+      "team": "DAL",
+      "age": 31,
+      "years_exp": 3,
+      "college": "Notre Dame",
+      "fantasy_positions": [
+        "K"
+      ],
+      "depth_chart_position": "K",
+      "status": "Active"
+    },
+    "11579": {
+      "first_name": "Audric",
+      "last_name": "Estime",
+      "full_name": "Audric Estime",
+      "position": "RB",
+      "team": "NO",
+      "age": 22,
+      "years_exp": 2,
+      "college": "Notre Dame",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12641": {
+      "first_name": "Jaylin",
+      "last_name": "Lane",
+      "full_name": "Jaylin Lane",
+      "position": "WR",
+      "team": "WAS",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Virginia Tech",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "8132": {
+      "first_name": "Tyler",
+      "last_name": "Allgeier",
+      "full_name": "Tyler Allgeier",
+      "position": "RB",
+      "team": "ARI",
+      "age": 26,
+      "years_exp": 4,
+      "college": "BYU",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12048": {
+      "first_name": "George",
+      "last_name": "Holani",
+      "full_name": "George Holani",
+      "position": "RB",
+      "team": "SEA",
+      "age": 26,
+      "years_exp": 2,
+      "college": "Boise State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "2216": {
+      "first_name": "Mike",
+      "last_name": "Evans",
+      "full_name": "Mike Evans",
+      "position": "WR",
+      "team": "SF",
+      "age": 32,
+      "years_exp": 12,
+      "college": "Texas A&M",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "7523": {
+      "first_name": "Trevor",
+      "last_name": "Lawrence",
+      "full_name": "Trevor Lawrence",
+      "position": "QB",
+      "team": "JAX",
+      "age": 26,
+      "years_exp": 5,
+      "college": "Clemson",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "8148": {
+      "first_name": "Jameson",
+      "last_name": "Williams",
+      "full_name": "Jameson Williams",
+      "position": "WR",
+      "team": "DET",
+      "age": 25,
+      "years_exp": 4,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "7083": {
+      "first_name": "Tyler",
+      "last_name": "Huntley",
+      "full_name": "Tyler Huntley",
+      "position": "QB",
+      "team": "BAL",
+      "age": 28,
+      "years_exp": 6,
+      "college": "Utah",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "6826": {
+      "first_name": "Cole",
+      "last_name": "Kmet",
+      "full_name": "Cole Kmet",
+      "position": "TE",
+      "team": "CHI",
+      "age": 27,
+      "years_exp": 6,
+      "college": "Notre Dame",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "11603": {
+      "first_name": "AJ",
+      "last_name": "Barner",
+      "full_name": "AJ Barner",
+      "position": "TE",
+      "team": "SEA",
+      "age": 23,
+      "years_exp": 2,
+      "college": "Michigan",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "9502": {
+      "first_name": "Tank",
+      "last_name": "Dell",
+      "full_name": "Tank Dell",
+      "position": "WR",
+      "team": "HOU",
+      "age": 26,
+      "years_exp": 3,
+      "college": "Houston",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "12541": {
+      "first_name": "Dont'e",
+      "last_name": "Thornton",
+      "full_name": "Dont'e Thornton",
+      "position": "WR",
+      "team": "LV",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Tennessee",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "2393": {
+      "first_name": "Danielle",
+      "last_name": "Hunter",
+      "full_name": "Danielle Hunter",
+      "position": "DE",
+      "team": "HOU",
+      "age": 31,
+      "years_exp": 11,
+      "college": "LSU",
+      "fantasy_positions": [
+        "DL",
+        "LB"
+      ],
+      "depth_chart_position": "RDE",
+      "status": "Active"
+    },
+    "827": {
+      "first_name": "Tyrod",
+      "last_name": "Taylor",
+      "full_name": "Tyrod Taylor",
+      "position": "QB",
+      "age": 36,
+      "years_exp": 15,
+      "college": "Virginia Tech",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "status": "Active"
+    },
+    "3163": {
+      "first_name": "Jared",
+      "last_name": "Goff",
+      "full_name": "Jared Goff",
+      "position": "QB",
+      "team": "DET",
+      "age": 31,
+      "years_exp": 10,
+      "college": "California",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "8139": {
+      "first_name": "Zamir",
+      "last_name": "White",
+      "full_name": "Zamir White",
+      "position": "RB",
+      "age": 26,
+      "years_exp": 4,
+      "college": "Georgia",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "status": "Active"
+    },
+    "4070": {
+      "first_name": "T.J.",
+      "last_name": "Watt",
+      "full_name": "T.J. Watt",
+      "position": "LB",
+      "team": "PIT",
+      "age": 31,
+      "years_exp": 9,
+      "college": "Wisconsin",
+      "fantasy_positions": [
+        "DL",
+        "LB"
+      ],
+      "depth_chart_position": "LOLB",
+      "status": "Active"
+    },
+    "12517": {
+      "first_name": "Colston",
+      "last_name": "Loveland",
+      "full_name": "Colston Loveland",
+      "position": "TE",
+      "team": "CHI",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Michigan",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "7538": {
+      "first_name": "Zach",
+      "last_name": "Wilson",
+      "full_name": "Zach Wilson",
+      "position": "QB",
+      "team": "NO",
+      "age": 26,
+      "years_exp": 5,
+      "college": "BYU",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "8280": {
+      "first_name": "Nik",
+      "last_name": "Bonitto",
+      "full_name": "Nik Bonitto",
+      "position": "LB",
+      "team": "DEN",
+      "age": 26,
+      "years_exp": 4,
+      "college": "Oklahoma",
+      "fantasy_positions": [
+        "DL",
+        "LB"
+      ],
+      "depth_chart_position": "ROLB",
+      "status": "Active"
+    },
+    "12487": {
+      "first_name": "Terrance",
+      "last_name": "Ferguson",
+      "full_name": "Terrance Ferguson",
+      "position": "TE",
+      "team": "LAR",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Oregon",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "9509": {
+      "first_name": "Bijan",
+      "last_name": "Robinson",
+      "full_name": "Bijan Robinson",
+      "position": "RB",
+      "team": "ATL",
+      "age": 24,
+      "years_exp": 3,
+      "college": "Texas",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "6119": {
+      "first_name": "Devin",
+      "last_name": "White",
+      "full_name": "Devin White",
+      "position": "LB",
+      "age": 28,
+      "years_exp": 7,
+      "college": "LSU",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "status": "Active"
+    },
+    "4034": {
+      "first_name": "Christian",
+      "last_name": "McCaffrey",
+      "full_name": "Christian McCaffrey",
+      "position": "RB",
+      "team": "SF",
+      "age": 29,
+      "years_exp": 9,
+      "college": "Stanford",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "5859": {
+      "first_name": "A.J.",
+      "last_name": "Brown",
+      "full_name": "A.J. Brown",
+      "position": "WR",
+      "team": "PHI",
+      "age": 28,
+      "years_exp": 7,
+      "college": "Ole Miss",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "8339": {
+      "first_name": "Kyle",
+      "last_name": "Hamilton",
+      "full_name": "Kyle Hamilton",
+      "position": "DB",
+      "team": "BAL",
+      "age": 25,
+      "years_exp": 4,
+      "college": "Notre Dame",
+      "fantasy_positions": [
+        "DB"
+      ],
+      "depth_chart_position": "NB",
+      "status": "Active"
+    },
+    "11559": {
+      "first_name": "Michael",
+      "last_name": "Penix",
+      "full_name": "Michael Penix",
+      "position": "QB",
+      "team": "ATL",
+      "age": 25,
+      "years_exp": 2,
+      "college": "Washington",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "1233": {
+      "first_name": "Bobby",
+      "last_name": "Wagner",
+      "full_name": "Bobby Wagner",
+      "position": "LB",
+      "age": 35,
+      "years_exp": 14,
+      "college": "Utah State",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "status": "Active"
+    },
+    "12489": {
+      "first_name": "RJ",
+      "last_name": "Harvey",
+      "full_name": "RJ Harvey",
+      "position": "RB",
+      "team": "DEN",
+      "age": 25,
+      "years_exp": 1,
+      "college": "UCF",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12485": {
+      "first_name": "Tez",
+      "last_name": "Johnson",
+      "full_name": "Tez Johnson",
+      "position": "WR",
+      "team": "TB",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Oregon",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "3294": {
+      "first_name": "Dak",
+      "last_name": "Prescott",
+      "full_name": "Dak Prescott",
+      "position": "QB",
+      "team": "DAL",
+      "age": 32,
+      "years_exp": 10,
+      "college": "Mississippi State",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "11600": {
+      "first_name": "Ja'Tavion",
+      "last_name": "Sanders",
+      "full_name": "Ja'Tavion Sanders",
+      "position": "TE",
+      "team": "CAR",
+      "age": 23,
+      "years_exp": 2,
+      "college": "Texas",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "5876": {
+      "first_name": "Julian",
+      "last_name": "Love",
+      "full_name": "Julian Love",
+      "position": "DB",
+      "team": "SEA",
+      "age": 28,
+      "years_exp": 7,
+      "college": "Notre Dame",
+      "fantasy_positions": [
+        "DB"
+      ],
+      "depth_chart_position": "SS",
+      "status": "Active"
+    },
+    "8143": {
+      "first_name": "Jerome",
+      "last_name": "Ford",
+      "full_name": "Jerome Ford",
+      "position": "RB",
+      "team": "WAS",
+      "age": 26,
+      "years_exp": 4,
+      "college": "Cincinnati",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "11638": {
+      "first_name": "Ricky",
+      "last_name": "Pearsall",
+      "full_name": "Ricky Pearsall",
+      "position": "WR",
+      "team": "SF",
+      "age": 25,
+      "years_exp": 2,
+      "college": "Florida",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "4454": {
+      "first_name": "Kendrick",
+      "last_name": "Bourne",
+      "full_name": "Kendrick Bourne",
+      "position": "WR",
+      "team": "ARI",
+      "age": 30,
+      "years_exp": 9,
+      "college": "Eastern Washington",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "11557": {
+      "first_name": "Joe",
+      "last_name": "Milton",
+      "full_name": "Joe Milton",
+      "position": "QB",
+      "team": "DAL",
+      "age": 26,
+      "years_exp": 2,
+      "college": "Tennessee",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "9492": {
+      "first_name": "Trey",
+      "last_name": "Palmer",
+      "full_name": "Trey Palmer",
+      "position": "WR",
+      "team": "NO",
+      "age": 25,
+      "years_exp": 3,
+      "college": "Nebraska",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "11815": {
+      "first_name": "Cornelius",
+      "last_name": "Johnson",
+      "full_name": "Cornelius Johnson",
+      "position": "WR",
+      "team": "BAL",
+      "age": 25,
+      "years_exp": 2,
+      "college": "Michigan",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "12711": {
+      "first_name": "Tyler",
+      "last_name": "Loop",
+      "full_name": "Tyler Loop",
+      "position": "K",
+      "team": "BAL",
+      "age": 24,
+      "years_exp": 1,
+      "college": "Arizona",
+      "fantasy_positions": [
+        "K"
+      ],
+      "depth_chart_position": "K",
+      "status": "Active"
+    },
+    "11627": {
+      "first_name": "Troy",
+      "last_name": "Franklin",
+      "full_name": "Troy Franklin",
+      "position": "WR",
+      "team": "DEN",
+      "age": 23,
+      "years_exp": 2,
+      "college": "Oregon",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "6801": {
+      "first_name": "Tee",
+      "last_name": "Higgins",
+      "full_name": "Tee Higgins",
+      "position": "WR",
+      "team": "CIN",
+      "age": 27,
+      "years_exp": 6,
+      "college": "Clemson",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "5872": {
+      "first_name": "Deebo",
+      "last_name": "Samuel",
+      "full_name": "Deebo Samuel",
+      "position": "WR",
+      "age": 30,
+      "years_exp": 7,
+      "college": "South Carolina",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "status": "Active"
+    },
+    "7591": {
+      "first_name": "Justin",
+      "last_name": "Fields",
+      "full_name": "Justin Fields",
+      "position": "QB",
+      "team": "KC",
+      "age": 27,
+      "years_exp": 5,
+      "college": "Ohio State",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "7525": {
+      "first_name": "DeVonta",
+      "last_name": "Smith",
+      "full_name": "DeVonta Smith",
+      "position": "WR",
+      "team": "PHI",
+      "age": 27,
+      "years_exp": 5,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "11786": {
+      "first_name": "Cam",
+      "last_name": "Little",
+      "full_name": "Cam Little",
+      "position": "K",
+      "team": "JAX",
+      "age": 22,
+      "years_exp": 2,
+      "college": "Arkansas",
+      "fantasy_positions": [
+        "K"
+      ],
+      "depth_chart_position": "K",
+      "status": "Active"
+    },
+    "5332": {
+      "first_name": "Foyesade",
+      "last_name": "Oluokun",
+      "full_name": "Foyesade Oluokun",
+      "position": "LB",
+      "team": "JAX",
+      "age": 30,
+      "years_exp": 8,
+      "college": "Yale",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "LOLB",
+      "status": "Active"
+    },
+    "12498": {
+      "first_name": "Mason",
+      "last_name": "Taylor",
+      "full_name": "Mason Taylor",
+      "position": "TE",
+      "team": "NYJ",
+      "age": 21,
+      "years_exp": 1,
+      "college": "LSU",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "12518": {
+      "first_name": "Tyler",
+      "last_name": "Warren",
+      "full_name": "Tyler Warren",
+      "position": "TE",
+      "team": "IND",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Penn State",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "8146": {
+      "first_name": "Garrett",
+      "last_name": "Wilson",
+      "full_name": "Garrett Wilson",
+      "position": "WR",
+      "team": "NYJ",
+      "age": 25,
+      "years_exp": 4,
+      "college": "Ohio State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "8205": {
+      "first_name": "Isiah",
+      "last_name": "Pacheco",
+      "full_name": "Isiah Pacheco",
+      "position": "RB",
+      "team": "DET",
+      "age": 27,
+      "years_exp": 4,
+      "college": "Rutgers",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "4046": {
+      "first_name": "Patrick",
+      "last_name": "Mahomes",
+      "full_name": "Patrick Mahomes",
+      "position": "QB",
+      "team": "KC",
+      "age": 30,
+      "years_exp": 9,
+      "college": "Texas Tech",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "5947": {
+      "first_name": "Jakobi",
+      "last_name": "Meyers",
+      "full_name": "Jakobi Meyers",
+      "position": "WR",
+      "team": "JAX",
+      "age": 29,
+      "years_exp": 7,
+      "college": "North Carolina State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "7585": {
+      "first_name": "Davis",
+      "last_name": "Mills",
+      "full_name": "Davis Mills",
+      "position": "QB",
+      "team": "HOU",
+      "age": 27,
+      "years_exp": 5,
+      "college": "Stanford",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "96": {
+      "first_name": "Aaron",
+      "last_name": "Rodgers",
+      "full_name": "Aaron Rodgers",
+      "position": "QB",
+      "age": 42,
+      "years_exp": 21,
+      "college": "California",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "status": "Active"
+    },
+    "11604": {
+      "first_name": "Brock",
+      "last_name": "Bowers",
+      "full_name": "Brock Bowers",
+      "position": "TE",
+      "team": "LV",
+      "age": 23,
+      "years_exp": 2,
+      "college": "Georgia",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "4960": {
+      "first_name": "Roquan",
+      "last_name": "Smith",
+      "full_name": "Roquan Smith",
+      "position": "LB",
+      "team": "BAL",
+      "age": 29,
+      "years_exp": 8,
+      "college": "Georgia",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "RILB",
+      "status": "Active"
+    },
+    "6794": {
+      "first_name": "Justin",
+      "last_name": "Jefferson",
+      "full_name": "Justin Jefferson",
+      "position": "WR",
+      "team": "MIN",
+      "age": 26,
+      "years_exp": 6,
+      "college": "LSU",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "8126": {
+      "first_name": "Wan'Dale",
+      "last_name": "Robinson",
+      "full_name": "Wan'Dale Robinson",
+      "position": "WR",
+      "team": "TEN",
+      "age": 25,
+      "years_exp": 4,
+      "college": "Kentucky",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "1166": {
+      "first_name": "Kirk",
+      "last_name": "Cousins",
+      "full_name": "Kirk Cousins",
+      "position": "QB",
+      "team": "LV",
+      "age": 37,
+      "years_exp": 14,
+      "college": "Michigan State",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "11596": {
+      "first_name": "Ben",
+      "last_name": "Sinnott",
+      "full_name": "Ben Sinnott",
+      "position": "TE",
+      "team": "WAS",
+      "age": 23,
+      "years_exp": 2,
+      "college": "Kansas State",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "8183": {
+      "first_name": "Brock",
+      "last_name": "Purdy",
+      "full_name": "Brock Purdy",
+      "position": "QB",
+      "team": "SF",
+      "age": 26,
+      "years_exp": 4,
+      "college": "Iowa State",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "6949": {
+      "first_name": "Jordyn",
+      "last_name": "Brooks",
+      "full_name": "Jordyn Brooks",
+      "position": "LB",
+      "team": "MIA",
+      "age": 28,
+      "years_exp": 6,
+      "college": "Texas Tech",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "LILB",
+      "status": "Active"
+    },
+    "9481": {
+      "first_name": "Luke",
+      "last_name": "Musgrave",
+      "full_name": "Luke Musgrave",
+      "position": "TE",
+      "team": "GB",
+      "age": 25,
+      "years_exp": 3,
+      "college": "Oregon State",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "9487": {
+      "first_name": "Parker",
+      "last_name": "Washington",
+      "full_name": "Parker Washington",
+      "position": "WR",
+      "team": "JAX",
+      "age": 24,
+      "years_exp": 3,
+      "college": "Penn State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "11678": {
+      "first_name": "Cooper",
+      "last_name": "DeJean",
+      "full_name": "Cooper DeJean",
+      "position": "DB",
+      "team": "PHI",
+      "age": 23,
+      "years_exp": 2,
+      "college": "Iowa",
+      "fantasy_positions": [
+        "DB"
+      ],
+      "depth_chart_position": "NB",
+      "status": "Active"
+    },
+    "3271": {
+      "first_name": "Tyler",
+      "last_name": "Higbee",
+      "full_name": "Tyler Higbee",
+      "position": "TE",
+      "team": "LAR",
+      "age": 33,
+      "years_exp": 10,
+      "college": "Western Kentucky",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "6183": {
+      "first_name": "Andrew",
+      "last_name": "Van Ginkel",
+      "full_name": "Andrew Van Ginkel",
+      "position": "LB",
+      "team": "MIN",
+      "age": 30,
+      "years_exp": 7,
+      "college": "Wisconsin",
+      "fantasy_positions": [
+        "DL",
+        "LB"
+      ],
+      "depth_chart_position": "ROLB",
+      "status": "Active"
+    },
+    "10213": {
+      "first_name": "Tre",
+      "last_name": "Tucker",
+      "full_name": "Tre Tucker",
+      "position": "WR",
+      "team": "LV",
+      "age": 25,
+      "years_exp": 3,
+      "college": "Cincinnati",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "12495": {
+      "first_name": "Ollie",
+      "last_name": "Gordon",
+      "full_name": "Ollie Gordon",
+      "position": "RB",
+      "team": "MIA",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Oklahoma State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "8121": {
+      "first_name": "Romeo",
+      "last_name": "Doubs",
+      "full_name": "Romeo Doubs",
+      "position": "WR",
+      "team": "NE",
+      "age": 26,
+      "years_exp": 4,
+      "college": "Nevada",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "12690": {
+      "first_name": "Tommy",
+      "last_name": "Mellott",
+      "full_name": "Tommy Mellott",
+      "position": "WR",
+      "age": 24,
+      "years_exp": 1,
+      "college": "Montana State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "status": "Active"
+    },
+    "6797": {
+      "first_name": "Justin",
+      "last_name": "Herbert",
+      "full_name": "Justin Herbert",
+      "position": "QB",
+      "team": "LAC",
+      "age": 28,
+      "years_exp": 6,
+      "college": "Oregon",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "12499": {
+      "first_name": "Elic",
+      "last_name": "Ayomanor",
+      "full_name": "Elic Ayomanor",
+      "position": "WR",
+      "team": "TEN",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Stanford",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "7839": {
+      "first_name": "Evan",
+      "last_name": "McPherson",
+      "full_name": "Evan McPherson",
+      "position": "K",
+      "team": "CIN",
+      "age": 26,
+      "years_exp": 5,
+      "college": "Florida",
+      "fantasy_positions": [
+        "K"
+      ],
+      "depth_chart_position": "K",
+      "status": "Active"
+    },
+    "6806": {
+      "first_name": "J.K.",
+      "last_name": "Dobbins",
+      "full_name": "J.K. Dobbins",
+      "position": "RB",
+      "team": "DEN",
+      "age": 27,
+      "years_exp": 6,
+      "college": "Ohio State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "9493": {
+      "first_name": "Puka",
+      "last_name": "Nacua",
+      "full_name": "Puka Nacua",
+      "position": "WR",
+      "team": "LAR",
+      "age": 24,
+      "years_exp": 3,
+      "college": "BYU",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "12412": {
+      "first_name": "Terrell",
+      "last_name": "Jennings",
+      "full_name": "Terrell Jennings",
+      "position": "RB",
+      "team": "NE",
+      "age": 25,
+      "years_exp": 2,
+      "college": "Florida A&M",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "8676": {
+      "first_name": "Rashid",
+      "last_name": "Shaheed",
+      "full_name": "Rashid Shaheed",
+      "position": "WR",
+      "team": "SEA",
+      "age": 27,
+      "years_exp": 4,
+      "college": "Weber State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "11676": {
+      "first_name": "Mike",
+      "last_name": "Sainristil",
+      "full_name": "Mike Sainristil",
+      "position": "DB",
+      "team": "WAS",
+      "age": 25,
+      "years_exp": 2,
+      "college": "Michigan",
+      "fantasy_positions": [
+        "DB"
+      ],
+      "depth_chart_position": "LCB",
+      "status": "Active"
+    },
+    "9230": {
+      "first_name": "Tanner",
+      "last_name": "McKee",
+      "full_name": "Tanner McKee",
+      "position": "QB",
+      "team": "PHI",
+      "age": 26,
+      "years_exp": 3,
+      "college": "Stanford",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "12536": {
+      "first_name": "Jaylin",
+      "last_name": "Noel",
+      "full_name": "Jaylin Noel",
+      "position": "WR",
+      "team": "HOU",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Iowa State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "17": {
+      "first_name": "Matt",
+      "last_name": "Prater",
+      "full_name": "Matt Prater",
+      "position": "K",
+      "age": 41,
+      "years_exp": 20,
+      "college": "UCF",
+      "fantasy_positions": [
+        "K"
+      ],
+      "status": "Active"
+    },
+    "12507": {
+      "first_name": "Omarion",
+      "last_name": "Hampton",
+      "full_name": "Omarion Hampton",
+      "position": "RB",
+      "team": "LAC",
+      "age": 23,
+      "years_exp": 1,
+      "college": "North Carolina",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12514": {
+      "first_name": "Emeka",
+      "last_name": "Egbuka",
+      "full_name": "Emeka Egbuka",
+      "position": "WR",
+      "team": "TB",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Ohio State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "9508": {
+      "first_name": "Tyjae",
+      "last_name": "Spears",
+      "full_name": "Tyjae Spears",
+      "position": "RB",
+      "team": "TEN",
+      "age": 24,
+      "years_exp": 3,
+      "college": "Tulane",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12529": {
+      "first_name": "TreVeyon",
+      "last_name": "Henderson",
+      "full_name": "TreVeyon Henderson",
+      "position": "RB",
+      "team": "NE",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Ohio State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "10880": {
+      "first_name": "Jack",
+      "last_name": "Campbell",
+      "full_name": "Jack Campbell",
+      "position": "LB",
+      "team": "DET",
+      "age": 25,
+      "years_exp": 3,
+      "college": "Iowa",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "MLB",
+      "status": "Active"
+    },
+    "12501": {
+      "first_name": "Matthew",
+      "last_name": "Golden",
+      "full_name": "Matthew Golden",
+      "position": "WR",
+      "team": "GB",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Texas",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "12535": {
+      "first_name": "Isaac",
+      "last_name": "TeSlaa",
+      "full_name": "Isaac TeSlaa",
+      "position": "WR",
+      "team": "DET",
+      "age": 24,
+      "years_exp": 1,
+      "college": "Arkansas",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "12496": {
+      "first_name": "Tai",
+      "last_name": "Felton",
+      "full_name": "Tai Felton",
+      "position": "WR",
+      "team": "MIN",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Maryland",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "5409": {
+      "first_name": "Tanner",
+      "last_name": "Hudson",
+      "full_name": "Tanner Hudson",
+      "position": "TE",
+      "team": "CIN",
+      "age": 31,
+      "years_exp": 8,
+      "college": "Southern Arkansas",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "6803": {
+      "first_name": "Brandon",
+      "last_name": "Aiyuk",
+      "full_name": "Brandon Aiyuk",
+      "position": "WR",
+      "team": "SF",
+      "age": 28,
+      "years_exp": 6,
+      "college": "Arizona State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "12510": {
+      "first_name": "Jalen",
+      "last_name": "Milroe",
+      "full_name": "Jalen Milroe",
+      "position": "QB",
+      "team": "SEA",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "5848": {
+      "first_name": "Marquise",
+      "last_name": "Brown",
+      "full_name": "Marquise Brown",
+      "position": "WR",
+      "team": "PHI",
+      "age": 28,
+      "years_exp": 7,
+      "college": "Oklahoma",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "4984": {
+      "first_name": "Josh",
+      "last_name": "Allen",
+      "full_name": "Josh Allen",
+      "position": "QB",
+      "team": "BUF",
+      "age": 29,
+      "years_exp": 8,
+      "college": "Wyoming",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "12566": {
+      "first_name": "Jihaad",
+      "last_name": "Campbell",
+      "full_name": "Jihaad Campbell",
+      "position": "LB",
+      "team": "PHI",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "RILB",
+      "status": "Active"
+    },
+    "8155": {
+      "first_name": "Breece",
+      "last_name": "Hall",
+      "full_name": "Breece Hall",
+      "position": "RB",
+      "team": "NYJ",
+      "age": 24,
+      "years_exp": 4,
+      "college": "Iowa State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "9754": {
+      "first_name": "Quentin",
+      "last_name": "Johnston",
+      "full_name": "Quentin Johnston",
+      "position": "WR",
+      "team": "LAC",
+      "age": 24,
+      "years_exp": 3,
+      "college": "TCU",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "3451": {
+      "first_name": "Ka'imi",
+      "last_name": "Fairbairn",
+      "full_name": "Ka'imi Fairbairn",
+      "position": "K",
+      "team": "HOU",
+      "age": 32,
+      "years_exp": 10,
+      "college": "UCLA",
+      "fantasy_positions": [
+        "K"
+      ],
+      "depth_chart_position": "K",
+      "status": "Active"
+    },
+    "6125": {
+      "first_name": "Jeffery",
+      "last_name": "Simmons",
+      "full_name": "Jeffery Simmons",
+      "position": "DT",
+      "team": "TEN",
+      "age": 28,
+      "years_exp": 7,
+      "college": "Mississippi State",
+      "fantasy_positions": [
+        "DL"
+      ],
+      "depth_chart_position": "RDE",
+      "status": "Active"
+    },
+    "11576": {
+      "first_name": "Braelon",
+      "last_name": "Allen",
+      "full_name": "Braelon Allen",
+      "position": "RB",
+      "team": "NYJ",
+      "age": 22,
+      "years_exp": 2,
+      "college": "Wisconsin",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "7049": {
+      "first_name": "Jauan",
+      "last_name": "Jennings",
+      "full_name": "Jauan Jennings",
+      "position": "WR",
+      "age": 28,
+      "years_exp": 6,
+      "college": "Tennessee",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "status": "Active"
+    },
+    "12504": {
+      "first_name": "Kaleb",
+      "last_name": "Johnson",
+      "full_name": "Kaleb Johnson",
+      "position": "RB",
+      "team": "PIT",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Iowa",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12467": {
+      "first_name": "Jordan",
+      "last_name": "James",
+      "full_name": "Jordan James",
+      "position": "RB",
+      "team": "SF",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Oregon",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "11643": {
+      "first_name": "Jaylen",
+      "last_name": "Wright",
+      "full_name": "Jaylen Wright",
+      "position": "RB",
+      "team": "MIA",
+      "age": 23,
+      "years_exp": 2,
+      "college": "Tennessee",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "7136": {
+      "first_name": "Kam",
+      "last_name": "Curl",
+      "full_name": "Kam Curl",
+      "position": "DB",
+      "team": "LAR",
+      "age": 27,
+      "years_exp": 6,
+      "college": "Arkansas",
+      "fantasy_positions": [
+        "DB"
+      ],
+      "depth_chart_position": "SS",
+      "status": "Active"
+    },
+    "11640": {
+      "first_name": "Jermaine",
+      "last_name": "Burton",
+      "full_name": "Jermaine Burton",
+      "position": "WR",
+      "age": 24,
+      "years_exp": 1,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "status": "Active"
+    },
+    "5012": {
+      "first_name": "Mark",
+      "last_name": "Andrews",
+      "full_name": "Mark Andrews",
+      "position": "TE",
+      "team": "BAL",
+      "age": 30,
+      "years_exp": 8,
+      "college": "Oklahoma",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "10917": {
+      "first_name": "Byron",
+      "last_name": "Young",
+      "full_name": "Byron Young",
+      "position": "LB",
+      "team": "LAR",
+      "age": 28,
+      "years_exp": 3,
+      "college": "Tennessee",
+      "fantasy_positions": [
+        "DL",
+        "LB"
+      ],
+      "depth_chart_position": "LOLB",
+      "status": "Active"
+    },
+    "9757": {
+      "first_name": "Kendre",
+      "last_name": "Miller",
+      "full_name": "Kendre Miller",
+      "position": "RB",
+      "team": "NO",
+      "age": 23,
+      "years_exp": 3,
+      "college": "TCU",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "11742": {
+      "first_name": "Cedric",
+      "last_name": "Gray",
+      "full_name": "Cedric Gray",
+      "position": "LB",
+      "team": "TEN",
+      "age": 23,
+      "years_exp": 2,
+      "college": "North Carolina",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "LILB",
+      "status": "Active"
+    },
+    "9228": {
+      "first_name": "Bryce",
+      "last_name": "Young",
+      "full_name": "Bryce Young",
+      "position": "QB",
+      "team": "CAR",
+      "age": 24,
+      "years_exp": 3,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "8142": {
+      "first_name": "Alec",
+      "last_name": "Pierce",
+      "full_name": "Alec Pierce",
+      "position": "WR",
+      "team": "IND",
+      "age": 25,
+      "years_exp": 4,
+      "college": "Cincinnati",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "12527": {
+      "first_name": "Ashton",
+      "last_name": "Jeanty",
+      "full_name": "Ashton Jeanty",
+      "position": "RB",
+      "team": "LV",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Boise State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12481": {
+      "first_name": "Cam",
+      "last_name": "Skattebo",
+      "full_name": "Cam Skattebo",
+      "position": "RB",
+      "team": "NYG",
+      "age": 24,
+      "years_exp": 1,
+      "college": "Arizona State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12775": {
+      "first_name": "Max",
+      "last_name": "Brosmer",
+      "full_name": "Max Brosmer",
+      "position": "QB",
+      "team": "MIN",
+      "age": 25,
+      "years_exp": 1,
+      "college": "Minnesota",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "6804": {
+      "first_name": "Jordan",
+      "last_name": "Love",
+      "full_name": "Jordan Love",
+      "position": "QB",
+      "team": "GB",
+      "age": 27,
+      "years_exp": 6,
+      "college": "Utah State",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "12533": {
+      "first_name": "Jacory",
+      "last_name": "Croskey-Merritt",
+      "full_name": "Jacory Croskey-Merritt",
+      "position": "RB",
+      "team": "WAS",
+      "age": 25,
+      "years_exp": 1,
+      "college": "Arizona",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "5041": {
+      "first_name": "Fred",
+      "last_name": "Warner",
+      "full_name": "Fred Warner",
+      "position": "LB",
+      "team": "SF",
+      "age": 29,
+      "years_exp": 8,
+      "college": "BYU",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "MLB",
+      "status": "Active"
+    },
+    "6869": {
+      "first_name": "Adam",
+      "last_name": "Trautman",
+      "full_name": "Adam Trautman",
+      "position": "TE",
+      "team": "DEN",
+      "age": 29,
+      "years_exp": 6,
+      "college": "Dayton",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "12597": {
+      "first_name": "Nick",
+      "last_name": "Emmanwori",
+      "full_name": "Nick Emmanwori",
+      "position": "DB",
+      "team": "SEA",
+      "age": 22,
+      "years_exp": 1,
+      "college": "South Carolina",
+      "fantasy_positions": [
+        "DB"
+      ],
+      "depth_chart_position": "NB",
+      "status": "Active"
+    },
+    "12897": {
+      "first_name": "Nathan",
+      "last_name": "Carter",
+      "full_name": "Nathan Carter",
+      "position": "RB",
+      "team": "ATL",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Michigan State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "7543": {
+      "first_name": "Travis",
+      "last_name": "Etienne",
+      "full_name": "Travis Etienne",
+      "position": "RB",
+      "team": "NO",
+      "age": 27,
+      "years_exp": 5,
+      "college": "Clemson",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "6039": {
+      "first_name": "Ty",
+      "last_name": "Johnson",
+      "full_name": "Ty Johnson",
+      "position": "RB",
+      "team": "BUF",
+      "age": 28,
+      "years_exp": 7,
+      "college": "Maryland",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "10216": {
+      "first_name": "Kenny",
+      "last_name": "McIntosh",
+      "full_name": "Kenny McIntosh",
+      "position": "RB",
+      "team": "SEA",
+      "age": 26,
+      "years_exp": 3,
+      "college": "Georgia",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12574": {
+      "first_name": "Abdul",
+      "last_name": "Carter",
+      "full_name": "Abdul Carter",
+      "position": "DL",
+      "team": "NYG",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Penn State",
+      "fantasy_positions": [
+        "DL",
+        "LB"
+      ],
+      "depth_chart_position": "ROLB",
+      "status": "Active"
+    },
+    "2307": {
+      "first_name": "Marcus",
+      "last_name": "Mariota",
+      "full_name": "Marcus Mariota",
+      "position": "QB",
+      "team": "WAS",
+      "age": 32,
+      "years_exp": 11,
+      "college": "Oregon",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "2306": {
+      "first_name": "Jameis",
+      "last_name": "Winston",
+      "full_name": "Jameis Winston",
+      "position": "QB",
+      "team": "NYG",
+      "age": 32,
+      "years_exp": 11,
+      "college": "Florida State",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "4037": {
+      "first_name": "Chris",
+      "last_name": "Godwin",
+      "full_name": "Chris Godwin",
+      "position": "WR",
+      "team": "TB",
+      "age": 30,
+      "years_exp": 9,
+      "college": "Penn State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "10949": {
+      "first_name": "Chamarri",
+      "last_name": "Conner",
+      "full_name": "Chamarri Conner",
+      "position": "DB",
+      "team": "KC",
+      "age": 25,
+      "years_exp": 3,
+      "college": "Virginia Tech",
+      "fantasy_positions": [
+        "DB"
+      ],
+      "depth_chart_position": "SS",
+      "status": "Active"
+    },
+    "9756": {
+      "first_name": "Jordan",
+      "last_name": "Addison",
+      "full_name": "Jordan Addison",
+      "position": "WR",
+      "team": "MIN",
+      "age": 24,
+      "years_exp": 3,
+      "college": "USC",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "5001": {
+      "first_name": "Dalton",
+      "last_name": "Schultz",
+      "full_name": "Dalton Schultz",
+      "position": "TE",
+      "team": "HOU",
+      "age": 29,
+      "years_exp": 8,
+      "college": "Stanford",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "8289": {
+      "first_name": "Aidan",
+      "last_name": "Hutchinson",
+      "full_name": "Aidan Hutchinson",
+      "position": "DL",
+      "team": "DET",
+      "age": 25,
+      "years_exp": 4,
+      "college": "Michigan",
+      "fantasy_positions": [
+        "DL"
+      ],
+      "depth_chart_position": "LDE",
+      "status": "Active"
+    },
+    "4881": {
+      "first_name": "Lamar",
+      "last_name": "Jackson",
+      "full_name": "Lamar Jackson",
+      "position": "QB",
+      "team": "BAL",
+      "age": 29,
+      "years_exp": 8,
+      "college": "Louisville",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "12699": {
+      "first_name": "LaJohntay",
+      "last_name": "Wester",
+      "full_name": "LaJohntay Wester",
+      "position": "WR",
+      "team": "BAL",
+      "age": 24,
+      "years_exp": 1,
+      "college": "Colorado",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "9999": {
+      "first_name": "Will",
+      "last_name": "Levis",
+      "full_name": "Will Levis",
+      "position": "QB",
+      "team": "TEN",
+      "age": 26,
+      "years_exp": 3,
+      "college": "Kentucky",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "11623": {
+      "first_name": "Jordan",
+      "last_name": "Whittington",
+      "full_name": "Jordan Whittington",
+      "position": "WR",
+      "team": "LAR",
+      "age": 25,
+      "years_exp": 2,
+      "college": "Texas",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "4177": {
+      "first_name": "Mack",
+      "last_name": "Hollins",
+      "full_name": "Mack Hollins",
+      "position": "WR",
+      "team": "NE",
+      "age": 32,
+      "years_exp": 9,
+      "college": "North Carolina",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "8111": {
+      "first_name": "Cade",
+      "last_name": "Otton",
+      "full_name": "Cade Otton",
+      "position": "TE",
+      "team": "TB",
+      "age": 27,
+      "years_exp": 4,
+      "college": "Washington",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "11665": {
+      "first_name": "Jared",
+      "last_name": "Verse",
+      "full_name": "Jared Verse",
+      "position": "DL",
+      "team": "LAR",
+      "age": 25,
+      "years_exp": 2,
+      "college": "Florida State",
+      "fantasy_positions": [
+        "DL"
+      ],
+      "depth_chart_position": "ROLB",
+      "status": "Active"
+    },
+    "11783": {
+      "first_name": "Ryan",
+      "last_name": "Flournoy",
+      "full_name": "Ryan Flournoy",
+      "position": "WR",
+      "team": "DAL",
+      "age": 26,
+      "years_exp": 2,
+      "college": "Southeast Missouri State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "8125": {
+      "first_name": "Calvin",
+      "last_name": "Austin",
+      "full_name": "Calvin Austin",
+      "position": "WR",
+      "team": "NYG",
+      "age": 27,
+      "years_exp": 4,
+      "college": "Memphis",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "11564": {
+      "first_name": "Drake",
+      "last_name": "Maye",
+      "full_name": "Drake Maye",
+      "position": "QB",
+      "team": "NE",
+      "age": 23,
+      "years_exp": 2,
+      "college": "North Carolina",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "4098": {
+      "first_name": "Kareem",
+      "last_name": "Hunt",
+      "full_name": "Kareem Hunt",
+      "position": "RB",
+      "age": 30,
+      "years_exp": 9,
+      "college": "Toledo",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "status": "Active"
+    },
+    "5844": {
+      "first_name": "T.J.",
+      "last_name": "Hockenson",
+      "full_name": "T.J. Hockenson",
+      "position": "TE",
+      "team": "MIN",
+      "age": 28,
+      "years_exp": 7,
+      "college": "Iowa",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "9224": {
+      "first_name": "Chase",
+      "last_name": "Brown",
+      "full_name": "Chase Brown",
+      "position": "RB",
+      "team": "CIN",
+      "age": 26,
+      "years_exp": 3,
+      "college": "Illinois",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "6865": {
+      "first_name": "Colby",
+      "last_name": "Parkinson",
+      "full_name": "Colby Parkinson",
+      "position": "TE",
+      "team": "LAR",
+      "age": 27,
+      "years_exp": 6,
+      "college": "Stanford",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "8392": {
+      "first_name": "Nick",
+      "last_name": "Cross",
+      "full_name": "Nick Cross",
+      "position": "DB",
+      "team": "WAS",
+      "age": 24,
+      "years_exp": 4,
+      "college": "Maryland",
+      "fantasy_positions": [
+        "DB"
+      ],
+      "depth_chart_position": "FS",
+      "status": "Active"
+    },
+    "12015": {
+      "first_name": "Harrison",
+      "last_name": "Mevis",
+      "full_name": "Harrison Mevis",
+      "position": "K",
+      "team": "LAR",
+      "age": 24,
+      "years_exp": 2,
+      "college": "Missouri",
+      "fantasy_positions": [
+        "K"
+      ],
+      "depth_chart_position": "K",
+      "status": "Active"
+    },
+    "12688": {
+      "first_name": "Cam",
+      "last_name": "Miller",
+      "full_name": "Cam Miller",
+      "position": "QB",
+      "team": "MIA",
+      "age": 24,
+      "years_exp": 1,
+      "college": "North Dakota State",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "12508": {
+      "first_name": "Jaxson",
+      "last_name": "Dart",
+      "full_name": "Jaxson Dart",
+      "position": "QB",
+      "team": "NYG",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Ole Miss",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "4035": {
+      "first_name": "Alvin",
+      "last_name": "Kamara",
+      "full_name": "Alvin Kamara",
+      "position": "RB",
+      "team": "NO",
+      "age": 30,
+      "years_exp": 9,
+      "college": "Tennessee",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "5816": {
+      "first_name": "Nick",
+      "last_name": "Bosa",
+      "full_name": "Nick Bosa",
+      "position": "DE",
+      "team": "SF",
+      "age": 28,
+      "years_exp": 7,
+      "college": "Ohio State",
+      "fantasy_positions": [
+        "DL"
+      ],
+      "depth_chart_position": "LDE",
+      "status": "Active"
+    },
+    "8228": {
+      "first_name": "Jaylen",
+      "last_name": "Warren",
+      "full_name": "Jaylen Warren",
+      "position": "RB",
+      "team": "PIT",
+      "age": 27,
+      "years_exp": 4,
+      "college": "Oklahoma State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "1234": {
+      "first_name": "Russell",
+      "last_name": "Wilson",
+      "full_name": "Russell Wilson",
+      "position": "QB",
+      "age": 37,
+      "years_exp": 14,
+      "college": "Wisconsin",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "status": "Active"
+    },
+    "7607": {
+      "first_name": "Michael",
+      "last_name": "Carter",
+      "full_name": "Michael Carter",
+      "position": "RB",
+      "team": "TEN",
+      "age": 26,
+      "years_exp": 5,
+      "college": "North Carolina",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "7527": {
+      "first_name": "Mac",
+      "last_name": "Jones",
+      "full_name": "Mac Jones",
+      "position": "QB",
+      "team": "SF",
+      "age": 27,
+      "years_exp": 5,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "9500": {
+      "first_name": "Josh",
+      "last_name": "Downs",
+      "full_name": "Josh Downs",
+      "position": "WR",
+      "team": "IND",
+      "age": 24,
+      "years_exp": 3,
+      "college": "North Carolina",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "10236": {
+      "first_name": "Dalton",
+      "last_name": "Kincaid",
+      "full_name": "Dalton Kincaid",
+      "position": "TE",
+      "team": "BUF",
+      "age": 26,
+      "years_exp": 3,
+      "college": "Utah",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "12511": {
+      "first_name": "Will",
+      "last_name": "Howard",
+      "full_name": "Will Howard",
+      "position": "QB",
+      "team": "PIT",
+      "age": 24,
+      "years_exp": 1,
+      "college": "Ohio State",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "12542": {
+      "first_name": "Efton",
+      "last_name": "Chism",
+      "full_name": "Efton Chism",
+      "position": "WR",
+      "team": "NE",
+      "age": 24,
+      "years_exp": 1,
+      "college": "Eastern Washington",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "6904": {
+      "first_name": "Jalen",
+      "last_name": "Hurts",
+      "full_name": "Jalen Hurts",
+      "position": "QB",
+      "team": "PHI",
+      "age": 27,
+      "years_exp": 6,
+      "college": "Oklahoma",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "12530": {
+      "first_name": "Travis",
+      "last_name": "Hunter",
+      "full_name": "Travis Hunter",
+      "position": "WR",
+      "team": "JAX",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Colorado",
+      "fantasy_positions": [
+        "DB",
+        "WR"
+      ],
+      "depth_chart_position": "RCB",
+      "status": "Active"
+    },
+    "10226": {
+      "first_name": "Andrei",
+      "last_name": "Iosivas",
+      "full_name": "Andrei Iosivas",
+      "position": "WR",
+      "team": "CIN",
+      "age": 26,
+      "years_exp": 3,
+      "college": "Princeton",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "7600": {
+      "first_name": "Pat",
+      "last_name": "Freiermuth",
+      "full_name": "Pat Freiermuth",
+      "position": "TE",
+      "team": "PIT",
+      "age": 27,
+      "years_exp": 5,
+      "college": "Penn State",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "11597": {
+      "first_name": "Theo",
+      "last_name": "Johnson",
+      "full_name": "Theo Johnson",
+      "position": "TE",
+      "team": "NYG",
+      "age": 25,
+      "years_exp": 2,
+      "college": "Penn State",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "12457": {
+      "first_name": "Jaydon",
+      "last_name": "Blue",
+      "full_name": "Jaydon Blue",
+      "position": "RB",
+      "team": "DAL",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Texas",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "5960": {
+      "first_name": "T.J.",
+      "last_name": "Edwards",
+      "full_name": "T.J. Edwards",
+      "position": "LB",
+      "team": "CHI",
+      "age": 29,
+      "years_exp": 7,
+      "college": "Wisconsin",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "LOLB",
+      "status": "Active"
+    },
+    "4147": {
+      "first_name": "Samaje",
+      "last_name": "Perine",
+      "full_name": "Samaje Perine",
+      "position": "RB",
+      "team": "CIN",
+      "age": 30,
+      "years_exp": 9,
+      "college": "Oklahoma",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "9506": {
+      "first_name": "Sean",
+      "last_name": "Tucker",
+      "full_name": "Sean Tucker",
+      "position": "RB",
+      "team": "TB",
+      "age": 24,
+      "years_exp": 3,
+      "college": "Syracuse",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "8330": {
+      "first_name": "Quentin",
+      "last_name": "Lake",
+      "full_name": "Quentin Lake",
+      "position": "DB",
+      "team": "LAR",
+      "age": 27,
+      "years_exp": 4,
+      "college": "UCLA",
+      "fantasy_positions": [
+        "DB"
+      ],
+      "depth_chart_position": "NB",
+      "status": "Active"
+    },
+    "9225": {
+      "first_name": "Tank",
+      "last_name": "Bigsby",
+      "full_name": "Tank Bigsby",
+      "position": "RB",
+      "team": "PHI",
+      "age": 23,
+      "years_exp": 3,
+      "college": "Auburn",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "8151": {
+      "first_name": "Kenneth",
+      "last_name": "Walker",
+      "full_name": "Kenneth Walker",
+      "position": "RB",
+      "team": "KC",
+      "age": 25,
+      "years_exp": 4,
+      "college": "Michigan State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "9479": {
+      "first_name": "Darnell",
+      "last_name": "Washington",
+      "full_name": "Darnell Washington",
+      "position": "TE",
+      "team": "PIT",
+      "age": 24,
+      "years_exp": 3,
+      "college": "Georgia",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "11624": {
+      "first_name": "Xavier",
+      "last_name": "Worthy",
+      "full_name": "Xavier Worthy",
+      "position": "WR",
+      "team": "KC",
+      "age": 23,
+      "years_exp": 2,
+      "college": "Texas",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "1479": {
+      "first_name": "Keenan",
+      "last_name": "Allen",
+      "full_name": "Keenan Allen",
+      "position": "WR",
+      "age": 33,
+      "years_exp": 13,
+      "college": "California",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "status": "Active"
+    },
+    "2747": {
+      "first_name": "Jason",
+      "last_name": "Myers",
+      "full_name": "Jason Myers",
+      "position": "K",
+      "team": "SEA",
+      "age": 34,
+      "years_exp": 11,
+      "college": "Marist",
+      "fantasy_positions": [
+        "K"
+      ],
+      "depth_chart_position": "K",
+      "status": "Active"
+    },
+    "3257": {
+      "first_name": "Jacoby",
+      "last_name": "Brissett",
+      "full_name": "Jacoby Brissett",
+      "position": "QB",
+      "team": "ARI",
+      "age": 33,
+      "years_exp": 10,
+      "college": "North Carolina State",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "5045": {
+      "first_name": "Courtland",
+      "last_name": "Sutton",
+      "full_name": "Courtland Sutton",
+      "position": "WR",
+      "team": "DEN",
+      "age": 30,
+      "years_exp": 8,
+      "college": "SMU",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "8122": {
+      "first_name": "Zonovan",
+      "last_name": "Knight",
+      "full_name": "Zonovan Knight",
+      "position": "RB",
+      "team": "ARI",
+      "age": 25,
+      "years_exp": 4,
+      "college": "North Carolina State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12718": {
+      "first_name": "Konata",
+      "last_name": "Mumpfield",
+      "full_name": "Konata Mumpfield",
+      "position": "WR",
+      "team": "LAR",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Pittsburgh",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "11569": {
+      "first_name": "Jarquez",
+      "last_name": "Hunter",
+      "full_name": "Jarquez Hunter",
+      "position": "RB",
+      "team": "LAR",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Auburn",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "7611": {
+      "first_name": "Rhamondre",
+      "last_name": "Stevenson",
+      "full_name": "Rhamondre Stevenson",
+      "position": "RB",
+      "team": "NE",
+      "age": 28,
+      "years_exp": 5,
+      "college": "Oklahoma",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "10859": {
+      "first_name": "Sam",
+      "last_name": "LaPorta",
+      "full_name": "Sam LaPorta",
+      "position": "TE",
+      "team": "DET",
+      "age": 25,
+      "years_exp": 3,
+      "college": "Iowa",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "12521": {
+      "first_name": "Elijah",
+      "last_name": "Arroyo",
+      "full_name": "Elijah Arroyo",
+      "position": "TE",
+      "team": "SEA",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Miami (FL)",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "4219": {
+      "first_name": "Jeremy",
+      "last_name": "McNichols",
+      "full_name": "Jeremy McNichols",
+      "position": "RB",
+      "team": "WAS",
+      "age": 30,
+      "years_exp": 9,
+      "college": "Boise State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "7841": {
+      "first_name": "Jamien",
+      "last_name": "Sherwood",
+      "full_name": "Jamien Sherwood",
+      "position": "LB",
+      "team": "NYJ",
+      "age": 26,
+      "years_exp": 5,
+      "college": "Auburn",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "LOLB",
+      "status": "Active"
+    },
+    "7587": {
+      "first_name": "Dyami",
+      "last_name": "Brown",
+      "full_name": "Dyami Brown",
+      "position": "WR",
+      "team": "WAS",
+      "age": 26,
+      "years_exp": 5,
+      "college": "North Carolina",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "12493": {
+      "first_name": "Oronde",
+      "last_name": "Gadsden",
+      "full_name": "Oronde Gadsden",
+      "position": "TE",
+      "team": "LAC",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Syracuse",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "8137": {
+      "first_name": "George",
+      "last_name": "Pickens",
+      "full_name": "George Pickens",
+      "position": "WR",
+      "team": "DAL",
+      "age": 25,
+      "years_exp": 4,
+      "college": "Georgia",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "9486": {
+      "first_name": "Dontayvion",
+      "last_name": "Wicks",
+      "full_name": "Dontayvion Wicks",
+      "position": "WR",
+      "team": "PHI",
+      "age": 24,
+      "years_exp": 3,
+      "college": "Virginia",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "6815": {
+      "first_name": "Zack",
+      "last_name": "Baun",
+      "full_name": "Zack Baun",
+      "position": "LB",
+      "team": "PHI",
+      "age": 29,
+      "years_exp": 6,
+      "college": "Wisconsin",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "LILB",
+      "status": "Active"
+    },
+    "12476": {
+      "first_name": "Devin",
+      "last_name": "Neal",
+      "full_name": "Devin Neal",
+      "position": "RB",
+      "team": "NO",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Kansas",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12474": {
+      "first_name": "Woody",
+      "last_name": "Marks",
+      "full_name": "Woody Marks",
+      "position": "RB",
+      "team": "HOU",
+      "age": 25,
+      "years_exp": 1,
+      "college": "USC",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "10905": {
+      "first_name": "Brian",
+      "last_name": "Branch",
+      "full_name": "Brian Branch",
+      "position": "DB",
+      "team": "DET",
+      "age": 24,
+      "years_exp": 3,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "DB"
+      ],
+      "depth_chart_position": "SS",
+      "status": "Active"
+    },
+    "1339": {
+      "first_name": "Zach",
+      "last_name": "Ertz",
+      "full_name": "Zach Ertz",
+      "position": "TE",
+      "age": 35,
+      "years_exp": 13,
+      "college": "Stanford",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "status": "Active"
+    },
+    "19": {
+      "first_name": "Joe",
+      "last_name": "Flacco",
+      "full_name": "Joe Flacco",
+      "position": "QB",
+      "team": "CIN",
+      "age": 41,
+      "years_exp": 18,
+      "college": "Delaware",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "11616": {
+      "first_name": "Jacob",
+      "last_name": "Cowing",
+      "full_name": "Jacob Cowing",
+      "position": "WR",
+      "team": "SF",
+      "age": 25,
+      "years_exp": 2,
+      "college": "Arizona",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "9758": {
+      "first_name": "C.J.",
+      "last_name": "Stroud",
+      "full_name": "C.J. Stroud",
+      "position": "QB",
+      "team": "HOU",
+      "age": 24,
+      "years_exp": 3,
+      "college": "Ohio State",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "8259": {
+      "first_name": "Cameron",
+      "last_name": "Dicker",
+      "full_name": "Cameron Dicker",
+      "position": "K",
+      "team": "LAC",
+      "age": 25,
+      "years_exp": 4,
+      "college": "Texas",
+      "fantasy_positions": [
+        "K"
+      ],
+      "depth_chart_position": "K",
+      "status": "Active"
+    },
+    "6271": {
+      "first_name": "Olamide",
+      "last_name": "Zaccheaus",
+      "full_name": "Olamide Zaccheaus",
+      "position": "WR",
+      "team": "ATL",
+      "age": 28,
+      "years_exp": 7,
+      "college": "Virginia",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "4983": {
+      "first_name": "DJ",
+      "last_name": "Moore",
+      "full_name": "DJ Moore",
+      "position": "WR",
+      "team": "BUF",
+      "age": 29,
+      "years_exp": 8,
+      "college": "Maryland",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "12543": {
+      "first_name": "Tahj",
+      "last_name": "Brooks",
+      "full_name": "Tahj Brooks",
+      "position": "RB",
+      "team": "CIN",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Texas Tech",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "11620": {
+      "first_name": "Rome",
+      "last_name": "Odunze",
+      "full_name": "Rome Odunze",
+      "position": "WR",
+      "team": "CHI",
+      "age": 23,
+      "years_exp": 2,
+      "college": "Washington",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "12602": {
+      "first_name": "Mykel",
+      "last_name": "Williams",
+      "full_name": "Mykel Williams",
+      "position": "DL",
+      "team": "SF",
+      "age": 21,
+      "years_exp": 1,
+      "college": "Georgia",
+      "fantasy_positions": [
+        "DL"
+      ],
+      "depth_chart_position": "RDE",
+      "status": "Active"
+    },
+    "5030": {
+      "first_name": "Harold",
+      "last_name": "Landry",
+      "full_name": "Harold Landry",
+      "position": "LB",
+      "team": "NE",
+      "age": 29,
+      "years_exp": 8,
+      "college": "Boston College",
+      "fantasy_positions": [
+        "DL",
+        "LB"
+      ],
+      "depth_chart_position": "ROLB",
+      "status": "Active"
+    },
+    "9482": {
+      "first_name": "Michael",
+      "last_name": "Mayer",
+      "full_name": "Michael Mayer",
+      "position": "TE",
+      "team": "LV",
+      "age": 24,
+      "years_exp": 3,
+      "college": "Notre Dame",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "12531": {
+      "first_name": "Trevor",
+      "last_name": "Etienne",
+      "full_name": "Trevor Etienne",
+      "position": "RB",
+      "team": "CAR",
+      "age": 21,
+      "years_exp": 1,
+      "college": "Georgia",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12519": {
+      "first_name": "Luther",
+      "last_name": "Burden",
+      "full_name": "Luther Burden",
+      "position": "WR",
+      "team": "CHI",
+      "age": 22,
+      "years_exp": 1,
+      "college": "Missouri",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "5849": {
+      "first_name": "Kyler",
+      "last_name": "Murray",
+      "full_name": "Kyler Murray",
+      "position": "QB",
+      "team": "MIN",
+      "age": 28,
+      "years_exp": 7,
+      "college": "Oklahoma",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "12490": {
+      "first_name": "Bhayshul",
+      "last_name": "Tuten",
+      "full_name": "Bhayshul Tuten",
+      "position": "RB",
+      "team": "JAX",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Virginia Tech",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12509": {
+      "first_name": "Tre'",
+      "last_name": "Harris",
+      "full_name": "Tre' Harris",
+      "position": "WR",
+      "team": "LAC",
+      "age": 24,
+      "years_exp": 1,
+      "college": "Ole Miss",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "11650": {
+      "first_name": "Luke",
+      "last_name": "McCaffrey",
+      "full_name": "Luke McCaffrey",
+      "position": "WR",
+      "team": "WAS",
+      "age": 25,
+      "years_exp": 2,
+      "college": "Rice",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "12534": {
+      "first_name": "Kyle",
+      "last_name": "Monangai",
+      "full_name": "Kyle Monangai",
+      "position": "RB",
+      "team": "CHI",
+      "age": 23,
+      "years_exp": 1,
+      "college": "Rutgers",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "7640": {
+      "first_name": "Micah",
+      "last_name": "Parsons",
+      "full_name": "Micah Parsons",
+      "position": "LB",
+      "team": "GB",
+      "age": 26,
+      "years_exp": 5,
+      "college": "Penn State",
+      "fantasy_positions": [
+        "DL",
+        "LB"
+      ],
+      "depth_chart_position": "RDE",
+      "status": "Active"
+    },
+    "12482": {
+      "first_name": "Savion",
+      "last_name": "Williams",
+      "full_name": "Savion Williams",
+      "position": "WR",
+      "team": "GB",
+      "age": 24,
+      "years_exp": 1,
+      "college": "TCU",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "KR",
+      "status": "Active"
+    },
+    "8150": {
+      "first_name": "Kyren",
+      "last_name": "Williams",
+      "full_name": "Kyren Williams",
+      "position": "RB",
+      "team": "LAR",
+      "age": 25,
+      "years_exp": 4,
+      "college": "Notre Dame",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "8167": {
+      "first_name": "Christian",
+      "last_name": "Watson",
+      "full_name": "Christian Watson",
+      "position": "WR",
+      "team": "GB",
+      "age": 26,
+      "years_exp": 4,
+      "college": "North Dakota State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "3198": {
+      "first_name": "Derrick",
+      "last_name": "Henry",
+      "full_name": "Derrick Henry",
+      "position": "RB",
+      "team": "BAL",
+      "age": 32,
+      "years_exp": 10,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "5840": {
+      "first_name": "Josh",
+      "last_name": "Hines-Allen",
+      "full_name": "Josh Hines-Allen",
+      "position": "DE",
+      "team": "JAX",
+      "age": 28,
+      "years_exp": 7,
+      "college": "Kentucky",
+      "fantasy_positions": [
+        "DL",
+        "LB"
+      ],
+      "depth_chart_position": "RDE",
+      "status": "Active"
+    },
+    "9226": {
+      "first_name": "De'Von",
+      "last_name": "Achane",
+      "full_name": "De'Von Achane",
+      "position": "RB",
+      "team": "MIA",
+      "age": 24,
+      "years_exp": 3,
+      "college": "Texas A&M",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "2133": {
+      "first_name": "Davante",
+      "last_name": "Adams",
+      "full_name": "Davante Adams",
+      "position": "WR",
+      "team": "LAR",
+      "age": 33,
+      "years_exp": 12,
+      "college": "Fresno State",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    },
+    "12506": {
+      "first_name": "Harold",
+      "last_name": "Fannin",
+      "full_name": "Harold Fannin",
+      "position": "TE",
+      "team": "CLE",
+      "age": 21,
+      "years_exp": 1,
+      "college": "Bowling Green",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "6790": {
+      "first_name": "D'Andre",
+      "last_name": "Swift",
+      "full_name": "D'Andre Swift",
+      "position": "RB",
+      "team": "CHI",
+      "age": 27,
+      "years_exp": 6,
+      "college": "Georgia",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "4017": {
+      "first_name": "Deshaun",
+      "last_name": "Watson",
+      "full_name": "Deshaun Watson",
+      "position": "QB",
+      "team": "CLE",
+      "age": 30,
+      "years_exp": 9,
+      "college": "Clemson",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "7828": {
+      "first_name": "Noah",
+      "last_name": "Gray",
+      "full_name": "Noah Gray",
+      "position": "TE",
+      "team": "KC",
+      "age": 27,
+      "years_exp": 5,
+      "college": "Duke",
+      "fantasy_positions": [
+        "TE"
+      ],
+      "depth_chart_position": "TE",
+      "status": "Active"
+    },
+    "7571": {
+      "first_name": "Rashod",
+      "last_name": "Bateman",
+      "full_name": "Rashod Bateman",
+      "position": "WR",
+      "team": "BAL",
+      "age": 26,
+      "years_exp": 5,
+      "college": "Minnesota",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "4866": {
+      "first_name": "Saquon",
+      "last_name": "Barkley",
+      "full_name": "Saquon Barkley",
+      "position": "RB",
+      "team": "PHI",
+      "age": 29,
+      "years_exp": 8,
+      "college": "Penn State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "11563": {
+      "first_name": "Bo",
+      "last_name": "Nix",
+      "full_name": "Bo Nix",
+      "position": "QB",
+      "team": "DEN",
+      "age": 26,
+      "years_exp": 2,
+      "college": "Oregon",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "10927": {
+      "first_name": "Jordan",
+      "last_name": "Battle",
+      "full_name": "Jordan Battle",
+      "position": "DB",
+      "team": "CIN",
+      "age": 25,
+      "years_exp": 3,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "DB"
+      ],
+      "depth_chart_position": "SS",
+      "status": "Active"
+    },
+    "11571": {
+      "first_name": "Isaiah",
+      "last_name": "Davis",
+      "full_name": "Isaiah Davis",
+      "position": "RB",
+      "team": "NYJ",
+      "age": 24,
+      "years_exp": 2,
+      "college": "South Dakota State",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "9221": {
+      "first_name": "Jahmyr",
+      "last_name": "Gibbs",
+      "full_name": "Jahmyr Gibbs",
+      "position": "RB",
+      "team": "DET",
+      "age": 24,
+      "years_exp": 3,
+      "college": "Alabama",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "6813": {
+      "first_name": "Jonathan",
+      "last_name": "Taylor",
+      "full_name": "Jonathan Taylor",
+      "position": "RB",
+      "team": "IND",
+      "age": 27,
+      "years_exp": 6,
+      "college": "Wisconsin",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "12524": {
+      "first_name": "Shedeur",
+      "last_name": "Sanders",
+      "full_name": "Shedeur Sanders",
+      "position": "QB",
+      "team": "CLE",
+      "age": 24,
+      "years_exp": 1,
+      "college": "Colorado",
+      "fantasy_positions": [
+        "QB"
+      ],
+      "depth_chart_position": "QB",
+      "status": "Active"
+    },
+    "8659": {
+      "first_name": "Nate",
+      "last_name": "Landman",
+      "full_name": "Nate Landman",
+      "position": "LB",
+      "team": "LAR",
+      "age": 27,
+      "years_exp": 4,
+      "college": "Colorado",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "LILB",
+      "status": "Active"
+    },
+    "11299": {
+      "first_name": "Zavier",
+      "last_name": "Scott",
+      "full_name": "Zavier Scott",
+      "position": "RB",
+      "team": "MIN",
+      "age": 26,
+      "years_exp": 3,
+      "college": "Maine",
+      "fantasy_positions": [
+        "RB"
+      ],
+      "depth_chart_position": "RB",
+      "status": "Active"
+    },
+    "11635": {
+      "first_name": "Ladd",
+      "last_name": "McConkey",
+      "full_name": "Ladd McConkey",
+      "position": "WR",
+      "team": "LAC",
+      "age": 24,
+      "years_exp": 2,
+      "college": "Georgia",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "SWR",
+      "status": "Active"
+    },
+    "6149": {
+      "first_name": "Darius",
+      "last_name": "Slayton",
+      "full_name": "Darius Slayton",
+      "position": "WR",
+      "team": "NYG",
+      "age": 29,
+      "years_exp": 7,
+      "college": "Auburn",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "5346": {
+      "first_name": "Zaire",
+      "last_name": "Franklin",
+      "full_name": "Zaire Franklin",
+      "position": "LB",
+      "team": "GB",
+      "age": 29,
+      "years_exp": 8,
+      "college": "Syracuse",
+      "fantasy_positions": [
+        "LB"
+      ],
+      "depth_chart_position": "MLB",
+      "status": "Active"
+    },
+    "11625": {
+      "first_name": "Adonai",
+      "last_name": "Mitchell",
+      "full_name": "Adonai Mitchell",
+      "position": "WR",
+      "team": "NYJ",
+      "age": 23,
+      "years_exp": 2,
+      "college": "Texas",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "RWR",
+      "status": "Active"
+    },
+    "11631": {
+      "first_name": "Brian",
+      "last_name": "Thomas",
+      "full_name": "Brian Thomas",
+      "position": "WR",
+      "team": "JAX",
+      "age": 23,
+      "years_exp": 2,
+      "college": "LSU",
+      "fantasy_positions": [
+        "WR"
+      ],
+      "depth_chart_position": "LWR",
+      "status": "Active"
+    }
+  }
+}

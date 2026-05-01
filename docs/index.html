@@ -1,0 +1,2574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<title>The Class · 2026 Phoenix League Rookie Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Tokens — palettes. Default = midnight.
+   Body[data-palette=...] swaps.
+   ============================================================ */
+:root {
+  --bg:        #0a0e1a;
+  --bg-2:      #131829;
+  --bg-3:      #1a2138;
+  --paper:     #e8e4d6;
+  --paper-2:   #c5c0ad;
+  --ink:       #0a0e1a;
+  --neon:      #b8ff35;
+  --neon-deep: #8fcc1f;
+  --signal:    #ff5e3a;
+  --tape:      #ffce4d;
+  --muted:     #5a647a;
+  --line:      #1f2638;
+  --line-2:    #2a3251;
+}
+[data-palette="ember"] {
+  --bg: #0e0d0b; --bg-2: #1c1814; --bg-3: #2a2418;
+  --paper: #f0e2c8; --paper-2: #c9bd9c; --ink: #0e0d0b;
+  --neon: #ffb13a; --neon-deep: #c98615;
+  --signal: #e94530; --tape: #c8ff3e; --muted: #6a5e4a;
+  --line: #2a2418; --line-2: #3d3220;
+}
+[data-palette="newsprint"] {
+  /* Sportszine — sea green primary + crimson red alert + mustard tape */
+  --bg: #11100e; --bg-2: #1a1916; --bg-3: #25221d;
+  --paper: #f0e8d0; --paper-2: #c9bf9e; --ink: #11100e;
+  --neon: #4ab87a; --neon-deep: #2d8e63;
+  --signal: #d63c1e; --tape: #d4a015; --muted: #6e6655;
+  --line: #2a261f; --line-2: #3a352a;
+}
+[data-palette="storm"] {
+  --bg: #0c1428; --bg-2: #152346; --bg-3: #1d3060;
+  --paper: #e8eaf2; --paper-2: #b8bdcd; --ink: #0c1428;
+  --neon: #5cc8ff; --neon-deep: #2890c9;
+  --signal: #ffd13a; --tape: #ff8b3a; --muted: #4a5a7e;
+  --line: #1c2c4f; --line-2: #2a3f6c;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--paper);
+  font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+  font-feature-settings: "ss01", "tnum";
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  min-height: 100vh;
+  font-size: 14px;
+}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+input, select { font-family: inherit; }
+
+/* ============================================================
+   Type
+   ============================================================ */
+.mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 0.02em;
+}
+.display {
+  font-family: "Anton", "Bebas Neue", Impact, sans-serif;
+  letter-spacing: 0.005em;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+.cap {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--paper-2);
+}
+
+/* ============================================================
+   Texture (real CC-BY 3.0 raster textures, transparenttextures.com).
+   Strategy: only a faint global fiber base. Bigger textures live ON
+   specific elements with mask-image gradients so they fade in/out
+   instead of being slapped uniformly across the page.
+   See assets/CREDITS.md.
+   ============================================================ */
+
+/* Faint paper-fiber base — sits behind everything as a low-key hint */
+.tex-fiber {
+  position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("./assets/groovepaper.png");
+  mix-blend-mode: overlay;
+  opacity: 0.20;
+}
+/* Vignette + edge dust banding (the only fixed full-bleed overlay) */
+.vignette {
+  position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+  background:
+    radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.62) 100%),
+    linear-gradient(180deg, rgba(0,0,0,0.30) 0%, transparent 7%, transparent 93%, rgba(0,0,0,0.30) 100%);
+}
+[data-palette="newsprint"] .tex-fiber { opacity: 0.30; }
+[data-palette="midnight"]  .tex-fiber { opacity: 0.18; }
+
+/* ----------------------------------------------------------
+   Element-level texture treatments — applied via ::before
+   pseudo-elements with mask gradients so they fade organically.
+   ---------------------------------------------------------- */
+
+/* Hero: cranked to 11 — heavy dust + distress at edges, dramatic falloff */
+.hero { /* ::before/::after defined below for the heavy texture */ }
+.hero::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 70%;
+  background-image: url("./assets/dust.png");
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  opacity: 1.0;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.6) 40%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.6) 40%, transparent 100%);
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 65%;
+  background-image: url("./assets/inflicted.png");
+  background-repeat: repeat;
+  mix-blend-mode: multiply;
+  opacity: 0.92;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(0deg, #000 0%, rgba(0,0,0,0.7) 30%, transparent 100%);
+  mask-image: linear-gradient(0deg, #000 0%, rgba(0,0,0,0.7) 30%, transparent 100%);
+}
+
+/* Big bg word stays clean — sits above the texture layers */
+.hero-bg-word { z-index: 2; }
+.hero-marks   { z-index: 3; }
+.hero-grid    { z-index: 4; }
+
+/* Draft-block: heavy newsprint-clipping treatment.
+   Stack: bg-2 base → cream paper fiber → dust overlay → inflicted distress
+   (the latter two via the wrapper bg, while ::before/::after handle tape). */
+.draft-block {
+  background-image:
+    url("./assets/inflicted.png"),
+    url("./assets/dust.png"),
+    url("./assets/cream-paper.png"),
+    linear-gradient(var(--bg-2), var(--bg-2));
+  background-blend-mode: multiply, overlay, multiply, normal;
+  background-size: 240px 240px, 400px 300px, 158px 144px, auto;
+}
+.draft-block > * { position: relative; z-index: 2; }
+.draft-block::before, .draft-block::after { z-index: 3; }
+/* Frayed-edge feel via inset shadow */
+.draft-block { box-shadow:
+  -8px 8px 0 var(--ink),
+  -10px 10px 0 var(--neon-deep),
+  inset 0 0 40px rgba(0,0,0,0.6),
+  0 0 0 1px var(--line-2);
+}
+
+/* Section header: heavy dust patch behind it, fades out at edges */
+.section-head {
+  position: relative;
+}
+.section-head::before {
+  /* dust */
+  content: '';
+  position: absolute;
+  top: -10%; left: -60px; right: -60px; bottom: -20px;
+  background-image: url("./assets/dust.png");
+  background-size: 400px 300px;
+  mix-blend-mode: overlay;
+  opacity: 1.0;
+  pointer-events: none;
+  z-index: 0;
+  -webkit-mask-image: radial-gradient(ellipse at 25% 50%, #000 0%, rgba(0,0,0,0.6) 50%, transparent 85%);
+  mask-image: radial-gradient(ellipse at 25% 50%, #000 0%, rgba(0,0,0,0.6) 50%, transparent 85%);
+}
+.section-head::after {
+  /* distress on top of dust */
+  content: '';
+  position: absolute;
+  top: 0; left: -40px; right: -40px; bottom: -10px;
+  background-image: url("./assets/inflicted.png");
+  background-size: 280px 280px;
+  mix-blend-mode: multiply;
+  opacity: 0.65;
+  pointer-events: none;
+  z-index: 0;
+  -webkit-mask-image: radial-gradient(ellipse at 20% 60%, #000 0%, transparent 75%);
+  mask-image: radial-gradient(ellipse at 20% 60%, #000 0%, transparent 75%);
+}
+.section-head .left, .section-head .right { position: relative; z-index: 1; }
+
+/* Controls bar + board: faint paper-fiber */
+.controls {
+  background-image:
+    url("./assets/groovepaper.png"),
+    linear-gradient(var(--bg-2), var(--bg-2));
+  background-blend-mode: overlay;
+}
+.board-wrap {
+  background-image:
+    url("./assets/groovepaper.png"),
+    linear-gradient(var(--bg-2), var(--bg-2));
+  background-blend-mode: overlay;
+  background-size: 200px 200px, auto;
+  position: relative;
+}
+.board-wrap::before {
+  /* subtle distress ribbon along the top edge of the board */
+  content: '';
+  position: absolute; left: 0; right: 0; top: 0; height: 50px;
+  background-image: url("./assets/inflicted.png");
+  mix-blend-mode: multiply;
+  opacity: 0.40;
+  pointer-events: none;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, transparent 100%);
+}
+.board-wrap > * { position: relative; z-index: 1; }
+
+/* Picks bar: light fiber */
+.picks-bar {
+  background-image:
+    url("./assets/groovepaper.png"),
+    linear-gradient(var(--bg-2), var(--bg-2));
+  background-blend-mode: overlay;
+}
+
+/* Drawer sections: paper bg with edge distress */
+.drawer {
+  background-image:
+    url("./assets/groovepaper.png"),
+    linear-gradient(var(--bg), var(--bg));
+  background-blend-mode: overlay;
+}
+.drawer-section {
+  position: relative;
+}
+.drawer-section::after {
+  content: '';
+  position: absolute; left: 0; right: 0; bottom: 0; height: 30px;
+  background-image: url("./assets/inflicted.png");
+  mix-blend-mode: multiply;
+  opacity: 0.30;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(0deg, #000 0%, transparent 100%);
+  mask-image: linear-gradient(0deg, #000 0%, transparent 100%);
+}
+
+/* Footer: light dust */
+footer.site-foot {
+  background-image: url("./assets/dust.png");
+  background-blend-mode: overlay;
+  background-color: var(--bg);
+}
+
+/* ============================================================
+   Marker scribble underlines (SVG bg)
+   ============================================================ */
+.scribble, .scribble-red {
+  background-repeat: no-repeat;
+  background-size: 100% 0.55em;
+  background-position: 0 92%;
+  padding-bottom: 0.05em;
+}
+.scribble {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 8 C 30 2 50 12 80 6 S 140 2 198 9' stroke='%23b8ff35' stroke-width='3' fill='none' stroke-linecap='round'/></svg>");
+}
+.scribble-red {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 7 C 30 13 60 2 90 8 S 150 13 198 6' stroke='%23ff5e3a' stroke-width='3' fill='none' stroke-linecap='round'/></svg>");
+}
+[data-palette="ember"]     .scribble  { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 8 C 30 2 50 12 80 6 S 140 2 198 9' stroke='%23ffb13a' stroke-width='3.5' fill='none' stroke-linecap='round'/></svg>"); }
+[data-palette="newsprint"] .scribble  { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 8 C 30 2 50 12 80 6 S 140 2 198 9' stroke='%234ab87a' stroke-width='3.5' fill='none' stroke-linecap='round'/></svg>"); }
+[data-palette="storm"]     .scribble  { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 8 C 30 2 50 12 80 6 S 140 2 198 9' stroke='%235cc8ff' stroke-width='3.5' fill='none' stroke-linecap='round'/></svg>"); }
+[data-palette="ember"]     .scribble-red { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 7 C 30 13 60 2 90 8 S 150 13 198 6' stroke='%23e94530' stroke-width='3.5' fill='none' stroke-linecap='round'/></svg>"); }
+[data-palette="newsprint"] .scribble-red { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 7 C 30 13 60 2 90 8 S 150 13 198 6' stroke='%23d63c1e' stroke-width='3.5' fill='none' stroke-linecap='round'/></svg>"); }
+[data-palette="storm"]     .scribble-red { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 7 C 30 13 60 2 90 8 S 150 13 198 6' stroke='%23ffd13a' stroke-width='3.5' fill='none' stroke-linecap='round'/></svg>"); }
+
+/* ============================================================
+   Marquee
+   ============================================================ */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+.marquee::before {
+  /* heavy distress overlay — makes the bumper-sticker text look printed/worn */
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("./assets/inflicted.png");
+  background-size: 200px 200px;
+  mix-blend-mode: multiply;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 1;
+}
+.marquee::after {
+  /* fine dust */
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("./assets/dust.png");
+  background-size: 300px 220px;
+  mix-blend-mode: overlay;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 1;
+}
+.marquee-track { position: relative; z-index: 2; }
+.marquee.bone { background: var(--paper); color: var(--ink); }
+.marquee.neon { background: var(--neon); color: var(--ink); }
+.marquee-track {
+  display: inline-flex;
+  gap: 2.4rem;
+  padding: 6px 0;
+  animation: scroll 38s linear infinite;
+  will-change: transform;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.marquee-track.reverse { animation-direction: reverse; animation-duration: 52s; }
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+.marquee-item::before { content: "◆"; margin-right: 0.6em; opacity: 0.65; }
+
+/* ============================================================
+   Layout
+   ============================================================ */
+.container { max-width: 1480px; margin: 0 auto; padding: 0 28px; }
+.row-flex { display: flex; }
+
+/* ============================================================
+   Header
+   ============================================================ */
+header.brand {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+header.brand .inner {
+  display: flex; align-items: center; gap: 18px;
+}
+.lockup { display: flex; align-items: center; gap: 14px; }
+.lockup-square {
+  position: relative;
+  width: 44px; height: 44px;
+  background: var(--neon);
+  color: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 26px;
+  transform: rotate(-4deg);
+  box-shadow: 3px 3px 0 var(--signal);
+  flex-shrink: 0;
+  /* Stamped/inked feel — heavy distress over the green */
+  background-image:
+    url("./assets/inflicted.png"),
+    linear-gradient(var(--neon), var(--neon));
+  background-blend-mode: multiply;
+  background-size: 80px 80px, auto;
+  overflow: hidden;
+}
+.lockup-square::after {
+  /* dust overlay */
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("./assets/dust.png");
+  mix-blend-mode: overlay;
+  opacity: 0.9;
+  pointer-events: none;
+}
+.lockup-square > * { position: relative; z-index: 2; }
+.lockup-square { z-index: 0; }
+.lockup-word { line-height: 0.85; }
+.lockup-word .h1 {
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 26px;
+  text-transform: uppercase;
+}
+.lockup-word .h1 em { font-style: normal; color: var(--neon); }
+.lockup-word .sub {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  opacity: 0.6;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+.user-cluster {
+  margin-left: auto;
+  display: flex; align-items: center; gap: 14px;
+}
+.viewing-block {
+  display: flex; flex-direction: column; align-items: flex-end;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.viewing-block .label {
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+.viewing-block select {
+  background: var(--bg-2);
+  color: var(--paper);
+  border: 2px solid var(--paper);
+  padding: 7px 12px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  min-width: 260px;
+  text-align: right;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image:
+    url("./assets/inflicted.png"),
+    linear-gradient(var(--bg-2), var(--bg-2));
+  background-blend-mode: multiply;
+  background-size: 200px 200px, auto;
+  box-shadow: 2px 2px 0 var(--neon-deep);
+  transition: box-shadow .1s, transform .1s;
+}
+.viewing-block select:hover { box-shadow: 3px 3px 0 var(--neon); }
+.viewing-block select:focus {
+  outline: none;
+  border-color: var(--neon);
+  box-shadow: 2px 2px 0 var(--neon);
+}
+
+.stamp {
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 2.5px solid var(--signal); color: var(--signal);
+  padding: 4px 10px;
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 16px; letter-spacing: 0.05em; text-transform: uppercase;
+  transform: rotate(-6deg);
+  background: rgba(255,94,58,0.06);
+  white-space: nowrap;
+}
+.stamp.live { animation: pulse 1.4s ease-in-out infinite; }
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.5; }
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+  padding: 9px 14px;
+  border: 1.5px solid var(--paper);
+  background: transparent;
+  color: var(--paper);
+  transition: transform .08s, background .12s, color .12s, border-color .12s;
+  white-space: nowrap;
+}
+.btn:hover { background: var(--paper); color: var(--ink); }
+.btn:active { transform: translate(1px,1px); }
+.btn-neon { border-color: var(--neon); color: var(--neon); }
+.btn-neon:hover { background: var(--neon); color: var(--ink); }
+.btn-solid { background: var(--neon); color: var(--ink); border-color: var(--neon); }
+.btn-solid:hover { background: var(--paper); border-color: var(--paper); }
+.btn-ghost { border-color: var(--line-2); color: var(--paper-2); }
+.btn-ghost:hover { border-color: var(--paper); background: transparent; color: var(--paper); }
+.btn.sm { padding: 5px 9px; font-size: 9.5px; }
+.btn.xs { padding: 3px 7px; font-size: 9px; letter-spacing: 0.10em; }
+.btn[aria-pressed="true"] {
+  background: var(--neon); color: var(--ink); border-color: var(--neon);
+}
+.btn[aria-pressed="true"]:hover { background: var(--neon-deep); border-color: var(--neon-deep); }
+
+/* Palette switcher — labeled cluster with split-color dots */
+.palette-switcher {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 10px;
+  border: 1px solid var(--line-2);
+  border-radius: 0;
+}
+.palette-switcher .pal-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 8.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.palette-dots { display: flex; gap: 5px; }
+.palette-dot {
+  width: 18px; height: 18px;
+  border: 1.5px solid var(--paper-2);
+  cursor: pointer;
+  transition: transform .1s, border-color .12s, box-shadow .12s;
+  position: relative;
+}
+.palette-dot:hover { transform: scale(1.18); box-shadow: 0 0 0 2px var(--bg); }
+.palette-dot.active {
+  border-color: var(--paper);
+  border-width: 2px;
+  box-shadow: 0 0 0 1px var(--ink), 0 0 0 3px var(--neon);
+}
+.palette-dot[data-pal="midnight"]  { background: linear-gradient(135deg, #b8ff35 50%, #ff5e3a 50%); }
+.palette-dot[data-pal="ember"]     { background: linear-gradient(135deg, #ffb13a 50%, #e94530 50%); }
+.palette-dot[data-pal="newsprint"] { background: linear-gradient(135deg, #4ab87a 50%, #d63c1e 50%); }
+.palette-dot[data-pal="storm"]     { background: linear-gradient(135deg, #5cc8ff 50%, #ffd13a 50%); }
+
+/* ============================================================
+   Picks ticker bar
+   ============================================================ */
+.picks-bar {
+  background: var(--bg-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 10px 0;
+}
+.picks-bar .inner {
+  display: flex; align-items: center; gap: 14px;
+  flex-wrap: wrap;
+}
+.picks-bar .your-picks {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--neon);
+  font-weight: 700;
+}
+.pill {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px; letter-spacing: 0.10em;
+  padding: 4px 9px;
+  border: 1px solid currentColor;
+  text-transform: uppercase;
+  color: var(--paper);
+  font-weight: 500;
+}
+.pill-solid { background: var(--neon); color: var(--ink); border-color: var(--neon); }
+.pill-red   { background: var(--signal); color: var(--paper); border-color: var(--signal); }
+.pill-paper { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+.league-meta {
+  margin-left: auto;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.hero {
+  position: relative;
+  padding: 64px 0 64px;
+  overflow: hidden;
+  border-bottom: 2px solid var(--ink);
+}
+/* .hero::before / ::after are defined in the texture block (real raster
+   dust + distress with mask gradients) */
+.hero-bg-word {
+  position: absolute;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  font-family: "Anton", Impact, sans-serif;
+  font-size: clamp(140px, 26vw, 360px);
+  color: var(--paper);
+  opacity: 0.045;
+  white-space: nowrap;
+  pointer-events: none;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  z-index: 0;
+  font-weight: 400;
+}
+.hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 56px;
+  align-items: center;
+}
+.hero-left { display: flex; flex-direction: column; gap: 22px; }
+.issue-cap {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--neon);
+  font-weight: 500;
+}
+.hero-headline {
+  font-family: "Anton", Impact, sans-serif;
+  font-size: clamp(72px, 11vw, 140px);
+  line-height: 0.84;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+}
+.hero-headline .ln1 { color: var(--paper); }
+.hero-headline .ln2 { color: var(--paper); }
+.hero-headline .ln3 { color: var(--neon); display: inline-block; }
+.hero-copy {
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 540px;
+  color: var(--paper-2);
+}
+.hero-copy b { color: var(--paper); font-weight: 600; }
+.hero-cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 12px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line-2);
+}
+.stat-strip .stat-num {
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 44px;
+  line-height: 0.9;
+}
+.stat-strip .stat-num.neon { color: var(--neon); }
+.stat-strip .stat-lab {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--paper-2);
+  margin-top: 8px;
+}
+
+.hero-right {
+  position: relative;
+  min-height: 480px;
+  display: flex; align-items: center; justify-content: center;
+}
+.draft-block {
+  position: relative;
+  background: var(--bg-2);
+  border: 2px solid var(--ink);
+  padding: 36px 40px 40px;
+  width: 100%;
+  max-width: 600px;
+  transform: rotate(1.2deg);
+  box-shadow:
+    -8px 8px 0 var(--ink),
+    -10px 10px 0 var(--neon-deep),
+    0 0 0 1px var(--line-2);
+  /* paper-fiber bg over the card */
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.022) 0 1px, transparent 1px 3px),
+    radial-gradient(rgba(0,0,0,0.18) 0.7px, transparent 0.8px);
+  background-size: auto, 4px 4px;
+}
+.draft-block::before {
+  content: '';
+  position: absolute;
+  top: -14px; right: 50px;
+  width: 130px; height: 28px;
+  background: var(--tape);
+  background-image: repeating-linear-gradient(135deg, rgba(0,0,0,0.07) 0 2px, transparent 2px 7px);
+  transform: rotate(-3deg);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.3);
+}
+.draft-block::after {
+  content: '';
+  position: absolute;
+  bottom: -12px; left: 56px;
+  width: 110px; height: 24px;
+  background: var(--tape);
+  background-image: repeating-linear-gradient(135deg, rgba(0,0,0,0.07) 0 2px, transparent 2px 7px);
+  transform: rotate(2.4deg);
+  opacity: 0.88;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.3);
+}
+.draft-block .db-cap {
+  color: var(--neon);
+  font-size: 12px;
+  letter-spacing: 0.26em;
+}
+.draft-block .db-title {
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 64px;
+  line-height: 0.9;
+  margin: 10px 0 22px;
+  text-transform: uppercase;
+}
+.draft-block .db-title em {
+  font-style: normal;
+  color: var(--neon);
+}
+.draft-block .db-rows { display: flex; flex-direction: column; gap: 0; }
+.draft-row {
+  display: grid;
+  grid-template-columns: 78px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 0;
+  border-top: 1px solid var(--line-2);
+}
+.draft-row:first-child { border-top: 2px solid var(--neon); }
+.draft-row .pick-num {
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 38px;
+  color: var(--neon);
+  line-height: 1;
+  letter-spacing: 0.005em;
+}
+.draft-row .pick-meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--paper);
+  font-weight: 500;
+  line-height: 1.4;
+}
+.draft-row .pick-overall {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--paper-2);
+  white-space: nowrap;
+}
+
+/* Replace the floating curve scribbles with cohesive grunge marks */
+.hero-marks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+/* halftone strip top-right */
+.hero-marks .strip-tr {
+  position: absolute;
+  top: 8%; right: -2%;
+  width: 170px; height: 64px;
+  background-image: radial-gradient(var(--signal) 1.4px, transparent 1.6px);
+  background-size: 8px 8px;
+  opacity: 0.55;
+  transform: rotate(-8deg);
+  mask-image: linear-gradient(120deg, black 0%, transparent 95%);
+  -webkit-mask-image: linear-gradient(120deg, black 0%, transparent 95%);
+}
+/* solid tape-strip bottom-left */
+.hero-marks .strip-bl {
+  position: absolute;
+  bottom: 8%; left: -1%;
+  width: 220px; height: 12px;
+  background: var(--neon);
+  opacity: 0.85;
+  transform: rotate(-3.5deg);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.3);
+  background-image: repeating-linear-gradient(90deg, rgba(0,0,0,0.10) 0 3px, transparent 3px 8px);
+}
+/* marker-circle bottom-right around stat strip */
+.hero-marks .circle-br {
+  position: absolute;
+  bottom: 4%; right: 6%;
+  width: 90px; height: 90px;
+  border: 3px solid var(--neon);
+  border-radius: 50% 48% 52% 50% / 48% 52% 48% 52%;
+  opacity: 0.5;
+  transform: rotate(-12deg);
+}
+/* tiny marker x marks scattered */
+.hero-marks .x-marks {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'><g stroke='%23d63c1e' stroke-width='2.5' stroke-linecap='round'><path d='M120 88 L 132 100 M132 88 L 120 100'/><path d='M680 320 L 692 332 M692 320 L 680 332'/><path d='M380 520 L 390 530 M390 520 L 380 530'/></g></svg>");
+  background-size: 800px 600px;
+  opacity: 0.55;
+}
+
+/* ============================================================
+   Big Board section
+   ============================================================ */
+.section-head {
+  padding-top: 56px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: end;
+  margin-bottom: 22px;
+}
+.section-head .left { }
+.section-head .sec-cap {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--neon);
+  margin-bottom: 8px;
+}
+.section-head .sec-title {
+  font-family: "Anton", Impact, sans-serif;
+  font-size: clamp(56px, 8vw, 92px);
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+.section-head .right .helper {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--paper-2);
+  text-align: right;
+  max-width: 220px;
+  line-height: 1.6;
+}
+
+/* Controls bar */
+.controls {
+  background: var(--bg-2);
+  border: 1px solid var(--line-2);
+  padding: 12px 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 0;
+}
+.controls .group { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.controls .group-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--paper-2);
+  margin-right: 4px;
+}
+.controls .sep {
+  width: 1px;
+  align-self: stretch;
+  background: var(--line-2);
+  margin: 0 4px;
+}
+.controls .spacer { flex: 1; }
+.controls .search {
+  background: transparent;
+  border: 1px solid var(--line-2);
+  color: var(--paper);
+  padding: 6px 10px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  min-width: 220px;
+}
+.controls .search::placeholder { color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; font-size: 10px; }
+.controls .search:focus { outline: none; border-color: var(--neon); }
+
+.toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--paper-2);
+  cursor: pointer;
+  padding: 5px 8px;
+  border: 1px solid transparent;
+  user-select: none;
+}
+.toggle input { accent-color: var(--neon); }
+.toggle:hover { color: var(--paper); }
+
+/* Table */
+.board-wrap {
+  background: var(--bg-2);
+  border: 1px solid var(--line-2);
+  border-top: none;
+  overflow-x: auto;
+}
+table.board {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+  font-family: "Space Grotesk", sans-serif;
+  min-width: 1500px;
+}
+table.board thead th {
+  position: sticky; top: 0;
+  background: var(--ink);
+  color: var(--paper-2);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 8px 5px;
+  text-align: left;
+  border-bottom: 2px solid var(--neon);
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  z-index: 5;
+}
+table.board thead th.sortable:hover { color: var(--paper); }
+table.board thead th.sorted { color: var(--neon); }
+table.board thead th.sorted::after {
+  content: attr(data-arrow);
+  margin-left: 4px;
+  font-size: 8px;
+}
+table.board th.num, table.board td.num { text-align: right; font-variant-numeric: tabular-nums; }
+table.board th.center, table.board td.center { text-align: center; }
+table.board td {
+  padding: 7px 5px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+table.board tbody tr {
+  transition: background .08s;
+  cursor: pointer;
+}
+table.board tbody tr:hover { background: rgba(184,255,53,0.05); }
+[data-palette="storm"]     table.board tbody tr:hover { background: rgba(92,200,255,0.05); }
+[data-palette="ember"]     table.board tbody tr:hover { background: rgba(255,177,58,0.05); }
+[data-palette="newsprint"] table.board tbody tr:hover { background: rgba(214,60,30,0.04); }
+table.board tbody tr.target { box-shadow: inset 4px 0 0 var(--tape); }
+table.board tbody tr.drafted { opacity: 0.32; }
+table.board tbody tr.bumped-up    td .rank-cell { color: var(--neon); }
+table.board tbody tr.bumped-down  td .rank-cell { color: var(--signal); }
+
+/* Rank cell */
+.rank-cell {
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 18px;
+  line-height: 1;
+}
+.rank-delta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-top: 1px;
+  font-weight: 700;
+}
+.rank-delta.up   { color: var(--neon); }
+.rank-delta.down { color: var(--signal); }
+
+/* Tier badge */
+.tier-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px;
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 13px;
+  background: var(--bg-3);
+  color: var(--paper);
+  border: 1px solid var(--line-2);
+}
+.tier-badge.t1 { background: var(--neon); color: var(--ink); border-color: var(--neon); }
+.tier-badge.t2 { background: var(--neon-deep); color: var(--ink); border-color: var(--neon-deep); }
+.tier-badge.t3 { background: var(--tape); color: var(--ink); border-color: var(--tape); }
+.tier-badge.t4 { background: var(--bg-3); color: var(--paper); }
+.tier-badge.t5 { background: var(--bg-3); color: var(--paper-2); }
+.tier-badge.t6 { background: var(--bg-3); color: var(--muted); }
+.tier-badge.t7 { background: var(--bg-2); color: var(--muted); border-style: dashed; }
+
+/* Position chip */
+.pos-chip {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 12px;
+  padding: 3px 6px;
+  min-width: 30px;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+.pos-QB    { background: #ffd23f; color: #0a0a08; }
+.pos-RB    { background: #ff5e3a; color: #fff; }
+.pos-WR    { background: var(--neon); color: var(--ink); }
+.pos-TE    { background: #6cb2ff; color: #0a0a08; }
+.pos-K     { background: #c0c0c0; color: #0a0a08; }
+.pos-DL,
+.pos-EDGE  { background: #b9a4ff; color: #0a0a08; }
+.pos-LB    { background: #a4d8ff; color: #0a0a08; }
+.pos-CB,
+.pos-DB,
+.pos-S     { background: #d3a4ff; color: #0a0a08; }
+
+/* Player cell */
+.player-cell .name {
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+}
+.player-cell .school {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* Per-source rank cell — colored by best/worst inside this player's set */
+.src-rank.best  { color: var(--neon); font-weight: 700; }
+.src-rank.worst { color: var(--signal); font-weight: 700; }
+
+/* Per-source rank columns — narrow, dense, color-coded best/worst */
+table.board th.src-col {
+  min-width: 32px;
+  max-width: 40px;
+  padding: 7px 3px;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+table.board td.src-cell {
+  padding: 6px 3px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--paper-2);
+  text-align: center;
+  min-width: 32px;
+}
+table.board td.src-cell.best  { color: var(--neon);   font-weight: 700; }
+table.board td.src-cell.worst { color: var(--signal); font-weight: 700; }
+table.board td.src-cell.missing { color: var(--muted); }
+
+/* Drafted toggle (manual + Sleeper-locked) */
+.off-toggle {
+  width: 22px; height: 22px;
+  border: 1.5px solid var(--line-2);
+  background: var(--bg-3);
+  color: var(--paper-2);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: all .1s;
+}
+.off-toggle:hover { border-color: var(--signal); color: var(--signal); }
+.off-toggle.on {
+  background: var(--signal);
+  border-color: var(--signal);
+  color: var(--paper);
+}
+.off-toggle.locked {
+  background: var(--bg-2);
+  border-color: var(--line-2);
+  color: var(--muted);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+.off-toggle.locked:hover { border-color: var(--line-2); color: var(--muted); }
+
+/* Bump control */
+.bump-cell {
+  display: inline-flex; align-items: center; gap: 1px;
+  background: var(--bg-3);
+  border: 1px solid var(--line-2);
+}
+.bump-btn {
+  background: transparent;
+  border: none;
+  color: var(--paper-2);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 2px 6px;
+  cursor: pointer;
+  line-height: 1;
+}
+.bump-btn:hover { color: var(--neon); background: rgba(184,255,53,0.08); }
+.bump-btn:active { transform: translate(0, 1px); }
+.bump-val {
+  min-width: 22px;
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 0 2px;
+  color: var(--paper-2);
+}
+.bump-val.up   { color: var(--neon); }
+.bump-val.down { color: var(--signal); }
+
+/* Detail row */
+tr.detail-row td {
+  background: var(--bg-3) !important;
+  padding: 14px 18px;
+  white-space: normal;
+  border-bottom: 2px solid var(--line-2) !important;
+}
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.src-tile {
+  background: var(--bg-2);
+  border: 1px solid var(--line-2);
+  padding: 8px 10px;
+}
+.src-tile .src-key {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--paper-2);
+}
+.src-tile .src-rk {
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 24px;
+  line-height: 1;
+  margin-top: 4px;
+}
+.src-tile.missing .src-rk { color: var(--muted); }
+.src-tile.best  .src-rk { color: var(--neon); }
+.src-tile.worst .src-rk { color: var(--signal); }
+.src-tile .src-w {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.10em;
+  color: var(--muted);
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+.note-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid var(--line-2);
+  background: var(--bg-2);
+  color: var(--paper-2);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-right: 4px;
+  margin-top: 4px;
+}
+.note-tag.alert {
+  color: var(--tape);
+  border-color: var(--tape);
+}
+.detail-meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--paper-2);
+  margin-bottom: 10px;
+}
+.detail-meta b { color: var(--paper); font-weight: 700; }
+.detail-meta .gold { color: var(--tape); font-weight: 700; }
+
+/* ============================================================
+   Roster drawer
+   ============================================================ */
+.drawer-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.78);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+.drawer-backdrop.show { opacity: 1; pointer-events: auto; }
+.drawer {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: min(720px, 92vw);
+  background: var(--bg);
+  border-left: 1px solid var(--neon);
+  z-index: 101;
+  transform: translateX(100%);
+  transition: transform .35s cubic-bezier(.16,1,.3,1);
+  overflow-y: auto;
+  display: flex; flex-direction: column;
+}
+.drawer.show { transform: translateX(0); }
+.drawer .drawer-marquee {
+  border-top: none;
+  border-bottom: 2px solid var(--ink);
+  background: var(--neon);
+  color: var(--ink);
+  position: sticky; top: 0; z-index: 6;
+}
+.drawer .drawer-marquee .marquee-track { padding: 7px 0; font-weight: 700; }
+.drawer .drawer-close {
+  position: absolute;
+  top: 12px; right: 14px;
+  z-index: 7;
+}
+.drawer-section {
+  padding: 28px 32px;
+  border-bottom: 1px solid var(--line);
+}
+.drawer-section:last-child { border-bottom: none; }
+.franchise-name {
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 56px;
+  line-height: 0.9;
+  text-transform: uppercase;
+  margin: 8px 0;
+}
+.franchise-meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--paper-2);
+  line-height: 1.7;
+}
+
+/* Need heatmap */
+.need-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px;
+  margin-top: 18px;
+}
+.need-cell {
+  background: var(--bg-2);
+  border: 1px solid var(--line-2);
+  padding: 12px;
+  text-align: left;
+}
+.need-cell .top-row {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 6px;
+}
+.need-cell .need-num {
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 32px;
+  line-height: 0.9;
+  color: var(--paper);
+}
+.need-cell .need-num.high { color: var(--signal); }
+.need-cell .need-num.med  { color: var(--tape); }
+.need-cell .need-num.low  { color: var(--neon); }
+.need-cell .need-cap {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--paper-2);
+  margin-top: 4px;
+}
+
+/* Top targets */
+.targets-list { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+.target-card {
+  display: grid;
+  grid-template-columns: 32px auto 1fr auto auto;
+  gap: 12px;
+  align-items: center;
+  background: var(--bg-2);
+  border: 1px solid var(--line-2);
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background .1s, border-color .1s;
+}
+.target-card:hover { background: var(--bg-3); border-color: var(--neon); }
+.target-card .rk {
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 20px;
+  color: var(--neon);
+  line-height: 1;
+}
+.target-card .info .name {
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.target-card .info .meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--paper-2);
+  margin-top: 2px;
+}
+.target-card .fit-num-big {
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 28px;
+  color: var(--neon);
+  line-height: 1;
+}
+.target-card .fit-cap {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--paper-2);
+}
+
+/* Roster depth chart */
+.depth-section { margin-top: 20px; }
+.depth-section + .depth-section { margin-top: 14px; }
+.depth-head {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 8px;
+}
+.depth-head .label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--paper-2);
+}
+.depth-head .line {
+  flex: 1; height: 1px; background: var(--line-2);
+}
+.depth-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 6px;
+}
+.depth-card {
+  background: var(--bg-2);
+  border: 1px solid var(--line-2);
+  border-left: 3px solid var(--line-2);
+  padding: 8px 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+  align-items: center;
+}
+.depth-card.young { border-left-color: var(--neon); }
+.depth-card.aging { border-left-color: var(--signal); }
+.depth-card .pname {
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.depth-card .pmeta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--paper-2);
+  margin-top: 3px;
+}
+.depth-card .age {
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 18px;
+  color: var(--paper);
+}
+.depth-card.young .age { color: var(--neon); }
+.depth-card.aging .age { color: var(--signal); }
+
+/* ============================================================
+   Footer
+   ============================================================ */
+footer.site-foot {
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+  margin-top: 56px;
+  text-align: center;
+}
+.foot-mark {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--paper-2);
+}
+
+.error-banner {
+  background: rgba(255,94,58,0.10);
+  border: 2px solid var(--signal);
+  color: var(--signal);
+  padding: 18px 22px;
+  margin: 36px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.error-banner code { background: rgba(0,0,0,0.4); padding: 2px 6px; }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 1100px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-right { min-height: 0; }
+  .draft-block { transform: rotate(0); max-width: 540px; margin: 0 auto; }
+  .section-head { grid-template-columns: 1fr; }
+  .section-head .right .helper { text-align: left; max-width: none; }
+}
+@media (max-width: 700px) {
+  .container { padding: 0 16px; }
+  header.brand .inner { flex-wrap: wrap; gap: 12px; }
+  .user-cluster { width: 100%; justify-content: space-between; }
+  .viewing-block select { min-width: 160px; }
+  .hero { padding: 36px 0; }
+  .hero-headline { font-size: 56px; }
+  .stat-strip { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .section-head { padding-top: 36px; }
+  .section-head .sec-title { font-size: 44px; }
+  .controls { flex-direction: column; align-items: stretch; }
+  .controls .group { justify-content: flex-start; }
+  .controls .sep, .controls .spacer { display: none; }
+  .controls .search { min-width: 0; width: 100%; }
+  .stamp { font-size: 12px; padding: 3px 8px; }
+  .lockup-square { width: 38px; height: 38px; font-size: 22px; }
+  .drawer-section { padding: 22px 18px; }
+  .franchise-name { font-size: 42px; }
+}
+</style>
+</head>
+<body data-palette="newsprint">
+
+<div class="tex-fiber"></div>
+<div class="vignette"></div>
+
+<!-- ===== Top neon marquee ===== -->
+<div class="marquee neon" aria-hidden="true">
+  <div class="marquee-track" id="marquee-top">
+    <!-- populated by JS so it's data-driven -->
+  </div>
+</div>
+
+<!-- ===== Header ===== -->
+<header class="brand">
+  <div class="inner container">
+    <div class="lockup">
+      <div class="lockup-square">26</div>
+      <div class="lockup-word">
+        <div class="h1">The <em>Class</em></div>
+        <div class="sub">Phoenix Dynasty / 2026 Rookie Board</div>
+      </div>
+    </div>
+    <div id="draft-stamp" style="margin-left: 12px;"></div>
+    <div class="user-cluster">
+      <div class="palette-switcher">
+        <span class="pal-label">Palette</span>
+        <div class="palette-dots">
+          <div class="palette-dot" data-pal="newsprint" title="Newsprint — green + crimson"></div>
+          <div class="palette-dot" data-pal="midnight"  title="Midnight — navy + lime"></div>
+          <div class="palette-dot" data-pal="ember"     title="Ember — gold + red"></div>
+          <div class="palette-dot" data-pal="storm"     title="Storm — cyan + yellow"></div>
+        </div>
+      </div>
+      <div class="viewing-block">
+        <span class="label">Viewing</span>
+        <select id="user-select"></select>
+      </div>
+      <button class="btn btn-neon" id="open-roster">My Roster →</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Picks ticker ===== -->
+<div class="picks-bar">
+  <div class="inner container">
+    <span class="your-picks">Your picks →</span>
+    <div id="pick-pills" style="display:flex; gap:6px; flex-wrap:wrap;"></div>
+    <span class="league-meta" id="league-meta">…</span>
+  </div>
+</div>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="hero-bg-word">Rookies</div>
+
+  <div class="hero-marks" aria-hidden="true">
+    <div class="strip-tr"></div>
+    <div class="strip-bl"></div>
+    <div class="circle-br"></div>
+    <div class="x-marks"></div>
+  </div>
+
+  <div class="container hero-grid">
+    <div class="hero-left">
+      <div class="issue-cap" id="issue-cap">VOL.26 / ISSUE 01 — APR.30.2026</div>
+      <h1 class="hero-headline">
+        <span class="ln1">The</span><br>
+        <span class="ln2 scribble">Rookie</span><br>
+        <span class="ln3 scribble-red">Issue.</span>
+      </h1>
+      <p class="hero-copy">
+        The 2026 dynasty rookie pool, blended from <b id="hc-srcs">11</b> ranking sources.
+        Bumps and roster context are personal — pick yourself in the dropdown above to recompute fit
+        against your own depth chart. Rankings stay global unless you nudge them.
+      </p>
+      <div class="hero-cta-row">
+        <a href="#board" class="btn btn-solid">Jump to Big Board ↓</a>
+        <button class="btn btn-neon" id="cta-roster">View My Roster</button>
+      </div>
+      <div class="stat-strip">
+        <div>
+          <div class="stat-num neon" id="stat-rookies">0</div>
+          <div class="stat-lab">Rookies</div>
+        </div>
+        <div>
+          <div class="stat-num" id="stat-sources">0</div>
+          <div class="stat-lab">Sources</div>
+        </div>
+        <div>
+          <div class="stat-num" id="stat-format">12T</div>
+          <div class="stat-lab">SF · TEP · IDP</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="draft-block">
+        <div class="cap db-cap" id="db-cap">Phoenix Linear · Slot —</div>
+        <h3 class="db-title">Your <em>draft</em>.</h3>
+        <div class="db-rows" id="hero-pick-rows"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Bottom paper marquee ===== -->
+<div class="marquee bone" aria-hidden="true">
+  <div class="marquee-track reverse" id="marquee-bottom"></div>
+</div>
+
+<!-- ===== Big Board ===== -->
+<section class="container" id="board">
+  <div class="section-head">
+    <div class="left">
+      <div class="sec-cap">Section 02 / Sixty Deep</div>
+      <h2 class="sec-title">The Big Board<span style="color: var(--signal);">.</span></h2>
+    </div>
+    <div class="right">
+      <div class="helper">
+        Click a row to expand · Use ± to bump rank up or down · Saved per browser
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="group">
+      <span class="group-label">Pos</span>
+      <button class="btn xs" data-pos="ALL" aria-pressed="true">All</button>
+      <button class="btn xs" data-pos="QB">QB</button>
+      <button class="btn xs" data-pos="RB">RB</button>
+      <button class="btn xs" data-pos="WR">WR</button>
+      <button class="btn xs" data-pos="TE">TE</button>
+      <button class="btn xs" data-pos="IDP">IDP</button>
+    </div>
+    <div class="sep"></div>
+    <div class="group">
+      <span class="group-label">Sort</span>
+      <button class="btn xs" data-sort="my_rk" aria-pressed="true">My Rank</button>
+      <button class="btn xs" data-sort="consensus">Consensus</button>
+      <button class="btn xs" data-sort="src:ktc">KTC</button>
+      <button class="btn xs" data-sort="src:fc">FC</button>
+      <button class="btn xs" data-sort="spread">Spread</button>
+    </div>
+    <div class="sep"></div>
+    <div class="group">
+      <label class="toggle"><input type="checkbox" id="hide-drafted"> Hide drafted</label>
+    </div>
+    <div class="spacer"></div>
+    <input class="search" id="search" placeholder="Search name / school" />
+    <button class="btn btn-ghost xs" id="reset-bumps" title="Clear all rank bumps">Reset bumps</button>
+    <button class="btn btn-ghost xs" id="reset-drafted" title="Clear all manual drafted marks">Reset drafted</button>
+  </div>
+
+  <div class="board-wrap">
+    <table class="board" id="board-table">
+      <thead><tr id="board-head"></tr></thead>
+      <tbody id="board-body"></tbody>
+    </table>
+  </div>
+
+  <div class="cap" id="board-foot" style="margin-top:14px; text-align:right;">…</div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="site-foot">
+  <div class="container foot-mark">
+    ◆ The Class / 2026 ◆ Phoenix League ◆ Made for the draft room ◆
+  </div>
+</footer>
+
+<!-- ===== Roster drawer ===== -->
+<div class="drawer-backdrop" id="drawer-backdrop"></div>
+<aside class="drawer" id="roster-drawer" aria-hidden="true">
+  <div class="marquee drawer-marquee" aria-hidden="true">
+    <div class="marquee-track" id="marquee-drawer"></div>
+  </div>
+  <button class="btn drawer-close" id="drawer-close">Close ✕</button>
+
+  <div class="drawer-section">
+    <div class="cap" style="color: var(--neon);">Your Franchise</div>
+    <h2 class="franchise-name" id="dr-team-name">…</h2>
+    <div class="franchise-meta" id="dr-team-meta"></div>
+  </div>
+
+  <div class="drawer-section">
+    <div class="cap">Position Need</div>
+    <div class="need-grid" id="need-grid"></div>
+  </div>
+
+  <div class="drawer-section">
+    <div class="cap">Top Targets <span class="scribble" style="padding: 0 4px;">For You.</span></div>
+    <div class="targets-list" id="targets-list"></div>
+  </div>
+
+  <div class="drawer-section">
+    <div class="cap">Depth Chart</div>
+    <div id="depth-chart"></div>
+  </div>
+</aside>
+
+<script>
+// ============================================================
+// State
+// ============================================================
+const STATE = {
+  data: null,
+  league: null,
+  selectedUserId: null,
+  filterPos: 'ALL',
+  search: '',
+  hideDrafted: false,
+  sortKey: 'my_rk',
+  sortAsc: true,
+  expandedPid: null,
+  bumps: loadJSON('phoenix_bumps_v1', {}),
+  drafted: loadJSON('phoenix_drafted_v1', {}),
+  palette: localStorage.getItem('phoenix_palette') || 'newsprint',
+};
+
+const PALETTES = ['midnight', 'ember', 'newsprint', 'storm'];
+const IDP_POS = new Set(['DL', 'EDGE', 'LB', 'DB', 'CB', 'S']);
+// Fantasy-slot bucket targets for the Phoenix League's IDP slots: DL/LB/DB
+const POS_TARGET = { QB: 3, RB: 5, WR: 6, TE: 3, DL: 2, LB: 2, DB: 2, K: 1 };
+const POS_GROUPS = ['QB', 'RB', 'WR', 'TE', 'DL', 'LB', 'DB', 'K'];
+// Rookie pos -> fantasy bucket for need lookup (rookies arrive as EDGE/DE/CB/S)
+function bucketRookiePos(pos) {
+  if (pos === 'EDGE' || pos === 'DE' || pos === 'DT' || pos === 'NT' || pos === 'DL') return 'DL';
+  if (pos === 'CB' || pos === 'S' || pos === 'FS' || pos === 'SS' || pos === 'DB') return 'DB';
+  return pos;
+}
+
+// Static columns. Per-source columns get appended in init() from data.sources
+// so the table stays in sync with sources/sources.json.
+const COLUMNS_STATIC_LEFT = [
+  { key: 'off',     label: 'Off',    cls: 'center',     sortable: false },
+  { key: 'my_rk',   label: 'Rk',     cls: 'num center', sortable: true  },
+  { key: 'bump',    label: 'Bump',   cls: 'center',     sortable: false },
+  { key: 'tier',    label: 'Tier',   cls: 'center',     sortable: true  },
+  { key: 'name',    label: 'Player', cls: '',           sortable: true  },
+  { key: 'pos',     label: 'Pos',    cls: 'center',     sortable: true  },
+  { key: 'team',    label: 'Tm',     cls: 'center',     sortable: true  },
+  { key: 'rd',      label: 'NFL',    cls: 'center',     sortable: true  },
+];
+const COLUMNS_STATIC_RIGHT = [
+  { key: 'consensus', label: 'Avg',  cls: 'num',        sortable: true  },
+  { key: 'spread',    label: 'Sprd', cls: 'num',        sortable: true  },
+  { key: 'cap_rk',    label: 'Cap',  cls: 'num',        sortable: true  },
+];
+let COLUMNS = COLUMNS_STATIC_LEFT.slice(); // rebuilt in init()
+
+// ============================================================
+// LocalStorage helpers
+// ============================================================
+function loadJSON(key, fallback) {
+  try {
+    const s = localStorage.getItem(key);
+    return s ? JSON.parse(s) : fallback;
+  } catch { return fallback; }
+}
+function saveJSON(key, val) {
+  try { localStorage.setItem(key, JSON.stringify(val)); } catch {}
+}
+
+// ============================================================
+// Load
+// ============================================================
+async function load() {
+  document.body.dataset.palette = STATE.palette;
+  try {
+    // Cache-bust so a re-run of bootstrap_league.py / build_xlsx_v2.py
+    // always shows fresh data on next load (no stale-snapshot footguns).
+    const v = Date.now();
+    const [data, league] = await Promise.all([
+      fetch(`./data.json?_=${v}`, { cache: 'no-store' }).then(r => {
+        if (!r.ok) throw new Error(`data.json ${r.status} ${r.statusText}`);
+        return r.json();
+      }),
+      fetch(`./league.json?_=${v}`, { cache: 'no-store' }).then(r => {
+        if (!r.ok) throw new Error(`league.json ${r.status} ${r.statusText}`);
+        return r.json();
+      }),
+    ]);
+    STATE.data = data;
+    STATE.league = league;
+    init();
+  } catch (err) {
+    console.error(err);
+    document.body.innerHTML = `<div class="error-banner">
+      <b>Load failed.</b> ${err.message}<br/><br/>
+      This page expects <code>./data.json</code> (run <code>python build_xlsx_v2.py</code>) and
+      <code>./league.json</code> (run <code>python bootstrap_league.py</code>) sitting next to this HTML.
+      No fallback data is shown on purpose — fix the source and reload.
+    </div>`;
+  }
+}
+
+// ============================================================
+// Init — wire up DOM after data loads
+// ============================================================
+function init() {
+  // Hero stats
+  document.getElementById('stat-rookies').textContent = STATE.data.players.length;
+  document.getElementById('stat-sources').textContent = STATE.data.sources.length;
+  document.getElementById('hc-srcs').textContent = STATE.data.sources.length;
+  document.getElementById('league-meta').textContent =
+    `League: ${STATE.data.league.name.toUpperCase()} · 12 TM · SF · TEP · IDP · LINEAR`;
+
+  // User dropdown
+  const ownerToRid = {};
+  for (const r of STATE.league.rosters) {
+    if (r.owner_id) ownerToRid[r.owner_id] = r.roster_id;
+    for (const co of (r.co_owners || [])) ownerToRid[co] = r.roster_id;
+  }
+  const usersWithRoster = STATE.league.users
+    .filter(u => ownerToRid[u.user_id])
+    .sort((a, b) => {
+      if (a.user_id === STATE.league.owner_user_id) return -1;
+      if (b.user_id === STATE.league.owner_user_id) return 1;
+      return (a.team_name || a.display_name || '').localeCompare(b.team_name || b.display_name || '');
+    });
+  const sel = document.getElementById('user-select');
+  for (const u of usersWithRoster) {
+    const opt = document.createElement('option');
+    opt.value = u.user_id;
+    const team = (u.team_name || u.display_name || '?').toUpperCase();
+    const owner = u.display_name || '?';
+    opt.textContent = team === owner.toUpperCase() ? team : `${team} · @${owner}`;
+    if (u.user_id === STATE.league.owner_user_id) opt.textContent = '★ ' + opt.textContent;
+    sel.appendChild(opt);
+  }
+  // Saved selection if valid, else owner
+  const saved = localStorage.getItem('phoenix_user') || STATE.league.owner_user_id;
+  STATE.selectedUserId = usersWithRoster.find(u => u.user_id === saved)
+    ? saved : STATE.league.owner_user_id;
+  sel.value = STATE.selectedUserId;
+  sel.addEventListener('change', () => {
+    STATE.selectedUserId = sel.value;
+    localStorage.setItem('phoenix_user', sel.value);
+    STATE.expandedPid = null;
+    render();
+  });
+
+  // Marquees — top (neon, fast) and bottom (paper, reverse, slow). Tone: dynasty-FF
+  // gallows humor meets 2026 NFL Draft hot takes. Update freely.
+  const top = [
+    '◆ Mendoza 1.01 LV — bold strategy cotton',
+    '◆ Love 1.03 ARI — desert RB watch',
+    '◆ Sadiq 1.16 NYJ — TE premium secured',
+    '◆ Jets drafted an EDGE — breaking news from 2014',
+    '◆ Four R3 tight ends — who hurt us',
+    '◆ Cthompson1512 moved three picks — call the ATF',
+    '◆ Carnell Tate to Tennessee — manifesting Cam Ward stans',
+    '◆ Six Ohio State first-rounders — what else is new',
+    '◆ Sleeper still says pre-draft — hard agree',
+    '◆ Phoenix linear · slot 11 · trust the process',
+  ];
+  document.getElementById('marquee-top').innerHTML = repeat(top, 3).map(t =>
+    `<span class="marquee-item">${escapeHtml(t)}</span>`).join('');
+
+  const bot = [
+    '★ Mock draft season is our halloween',
+    '★ KTC updates rankings while you sleep',
+    '★ FantasyCalc says UDFA RBs will feed your family',
+    '★ Zero-RB is dead — analytics wept',
+    '★ TEP is not a suggestion',
+    '★ Half-point IDP is league policy and a war crime',
+    '★ Commissioner reads the trade chat once a year',
+    '★ He who picks last picks best',
+    '★ Bumps are saved per browser — don\'t share laptops',
+    '★ The class · 2026 · made for the draft room',
+  ];
+  document.getElementById('marquee-bottom').innerHTML = repeat(bot, 3).map(t =>
+    `<span class="marquee-item">${escapeHtml(t)}</span>`).join('');
+
+  // Compose final columns: static-left + per-source + static-right
+  const sourceCols = STATE.data.sources.map(s => ({
+    key: 'src:' + s.key,
+    srcKey: s.key,
+    label: s.key.toUpperCase().replace('_', ''),
+    cls: 'num src-col',
+    sortable: true,
+    title: `${s.label} · weight ${s.weight}`,
+  }));
+  COLUMNS = [...COLUMNS_STATIC_LEFT, ...sourceCols, ...COLUMNS_STATIC_RIGHT];
+
+  // Build sortable table head
+  const head = document.getElementById('board-head');
+  for (const col of COLUMNS) {
+    const th = document.createElement('th');
+    th.className = col.cls + (col.sortable ? ' sortable' : '');
+    th.textContent = col.label;
+    th.dataset.key = col.key;
+    if (col.title) th.title = col.title;
+    if (col.sortable) {
+      th.addEventListener('click', () => {
+        if (STATE.sortKey === col.key) STATE.sortAsc = !STATE.sortAsc;
+        else { STATE.sortKey = col.key; STATE.sortAsc = true; }
+        render();
+      });
+    }
+    head.appendChild(th);
+  }
+
+  // Filter chips
+  document.querySelectorAll('button[data-pos]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('button[data-pos]').forEach(b => b.setAttribute('aria-pressed', 'false'));
+      btn.setAttribute('aria-pressed', 'true');
+      STATE.filterPos = btn.dataset.pos;
+      render();
+    });
+  });
+  // Sort chips (mirror header)
+  document.querySelectorAll('button[data-sort]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('button[data-sort]').forEach(b => b.setAttribute('aria-pressed', 'false'));
+      btn.setAttribute('aria-pressed', 'true');
+      STATE.sortKey = btn.dataset.sort;
+      STATE.sortAsc = true;
+      render();
+    });
+  });
+
+  // Toggles
+  document.getElementById('search').addEventListener('input', e => {
+    STATE.search = e.target.value.trim().toLowerCase();
+    render();
+  });
+  document.getElementById('hide-drafted').addEventListener('change', e => {
+    STATE.hideDrafted = e.target.checked;
+    render();
+  });
+  document.getElementById('reset-bumps').addEventListener('click', () => {
+    if (Object.keys(STATE.bumps).length === 0) return;
+    if (!confirm('Clear all rank bumps?')) return;
+    STATE.bumps = {};
+    saveJSON('phoenix_bumps_v1', STATE.bumps);
+    render();
+  });
+  document.getElementById('reset-drafted').addEventListener('click', () => {
+    if (Object.keys(STATE.drafted).length === 0) return;
+    if (!confirm('Clear all manual drafted marks? (Live Sleeper picks will still apply.)')) return;
+    STATE.drafted = {};
+    saveJSON('phoenix_drafted_v1', STATE.drafted);
+    render();
+  });
+
+  // Drawer
+  const drawer = document.getElementById('roster-drawer');
+  const backdrop = document.getElementById('drawer-backdrop');
+  const openDrawer = () => {
+    drawer.classList.add('show');
+    backdrop.classList.add('show');
+    drawer.setAttribute('aria-hidden', 'false');
+  };
+  const closeDrawer = () => {
+    drawer.classList.remove('show');
+    backdrop.classList.remove('show');
+    drawer.setAttribute('aria-hidden', 'true');
+  };
+  document.getElementById('open-roster').addEventListener('click', openDrawer);
+  document.getElementById('cta-roster').addEventListener('click', openDrawer);
+  document.getElementById('drawer-close').addEventListener('click', closeDrawer);
+  backdrop.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && drawer.classList.contains('show')) closeDrawer();
+  });
+
+  // Palette switcher
+  document.querySelectorAll('.palette-dot').forEach(dot => {
+    dot.addEventListener('click', () => {
+      const pal = dot.dataset.pal;
+      STATE.palette = pal;
+      document.body.dataset.palette = pal;
+      localStorage.setItem('phoenix_palette', pal);
+      document.querySelectorAll('.palette-dot').forEach(d =>
+        d.classList.toggle('active', d.dataset.pal === pal));
+    });
+  });
+  document.querySelectorAll('.palette-dot').forEach(d =>
+    d.classList.toggle('active', d.dataset.pal === STATE.palette));
+
+  // Issue caption with today's date
+  const today = new Date();
+  const monStr = today.toLocaleString('en-US', { month: 'short' }).toUpperCase();
+  const dStr = String(today.getDate()).padStart(2, '0');
+  const yStr = today.getFullYear();
+  document.getElementById('issue-cap').textContent =
+    `VOL.26 / ISSUE 01 — ${monStr}.${dStr}.${yStr}`;
+
+  render();
+}
+
+// ============================================================
+// Render
+// ============================================================
+function render() {
+  const stats = computeRosterStats(STATE.selectedUserId);
+  const need  = computeNeed(stats.buckets);
+  STATE._currentNeed = need;
+  STATE._currentStats = stats;
+
+  renderDraftStamp();
+  renderHeroPicks();
+  renderPickPills();
+  renderTable(need);
+  renderDrawer(stats, need);
+}
+
+// ============================================================
+// Draft stamp
+// ============================================================
+function renderDraftStamp() {
+  const status = STATE.league.draft.status;
+  const el = document.getElementById('draft-stamp');
+  if (status === 'in_progress') {
+    el.innerHTML = `<span class="stamp live">● Live · On the clock</span>`;
+  } else if (status === 'pre_draft') {
+    el.innerHTML = `<span class="stamp">Pre-Draft</span>`;
+  } else if (status === 'complete') {
+    el.innerHTML = `<span class="stamp">Draft complete</span>`;
+  } else {
+    el.innerHTML = `<span class="stamp">${escapeHtml(status || 'unknown')}</span>`;
+  }
+}
+
+// ============================================================
+// Hero pick rows + picks ticker
+// ============================================================
+function renderHeroPicks() {
+  const rid = ridForUser(STATE.selectedUserId);
+  const slotMap = STATE.league.draft?.slot_to_roster_id || {};
+  // Find this user's slot
+  const mySlot = Object.entries(slotMap).find(([_, r]) => r === rid)?.[0];
+  const draftType = STATE.league.draft?.type || 'linear';
+  document.getElementById('db-cap').textContent =
+    `Phoenix ${draftType[0].toUpperCase() + draftType.slice(1)} · Slot ${mySlot || '—'}`;
+
+  const picks = rid ? picksForRoster(rid) : [];
+  const rowsHtml = picks.map(p => `
+    <div class="draft-row">
+      <div class="pick-num">${p.label}</div>
+      <div class="pick-meta">${escapeHtml(p.origin)}</div>
+      <div class="pick-overall">Ovr ${p.overall}</div>
+    </div>
+  `).join('') || `<div class="cap">No picks tracked</div>`;
+  document.getElementById('hero-pick-rows').innerHTML = rowsHtml;
+}
+
+function renderPickPills() {
+  const rid = ridForUser(STATE.selectedUserId);
+  const picks = rid ? picksForRoster(rid) : [];
+  const html = picks.map(p =>
+    `<span class="pill pill-solid" title="${escapeHtml(p.origin)} · Ovr ${p.overall}">${p.label}</span>`
+  ).join('');
+  document.getElementById('pick-pills').innerHTML = html;
+}
+
+// ============================================================
+// Roster math — computes per-user
+// ============================================================
+function ridForUser(userId) {
+  for (const r of STATE.league.rosters) {
+    if (r.owner_id === userId) return r.roster_id;
+    if ((r.co_owners || []).includes(userId)) return r.roster_id;
+  }
+  return null;
+}
+
+// Compute the actual draft picks owned by a roster, accounting for trades.
+// Walks slot_to_roster_id × rounds, applies traded_picks overrides, returns
+// every (round, slot, overall, origin) tuple where the current owner == rid.
+function picksForRoster(rid) {
+  const draft = STATE.league.draft || {};
+  const settings = draft.settings || {};
+  const rounds = settings.rounds || 4;
+  const teams  = settings.teams  || 12;
+  const slotMap = draft.slot_to_roster_id || {};
+  const traded  = STATE.league.traded_picks || [];
+  const isLinear = (draft.type || 'linear') === 'linear';
+
+  // roster_id -> slot lookup (inverse of slot_to_roster_id)
+  const rosterToSlot = {};
+  for (const [slot, r] of Object.entries(slotMap)) rosterToSlot[r] = parseInt(slot, 10);
+
+  const out = [];
+  for (let rd = 1; rd <= rounds; rd++) {
+    for (let slot = 1; slot <= teams; slot++) {
+      const origRid = slotMap[String(slot)] ?? slot;
+      // Find latest traded_pick entry for this (round, original roster_id)
+      const trades = traded.filter(t => t.round === rd && t.roster_id === origRid);
+      const currentOwner = trades.length ? trades[trades.length - 1].owner_id : origRid;
+      if (currentOwner !== rid) continue;
+
+      // Overall pick number — linear: (rd-1)*teams + slot. Snake: alternate.
+      let overall;
+      if (isLinear) {
+        overall = (rd - 1) * teams + slot;
+      } else {
+        // snake: odd rounds run 1..teams, even rounds run teams..1
+        overall = (rd % 2 === 1)
+          ? (rd - 1) * teams + slot
+          : (rd - 1) * teams + (teams - slot + 1);
+      }
+
+      // Origin label — own pick, or who they got it from
+      let origin = 'Own';
+      if (origRid !== rid) {
+        const owner = ownerNameForRoster(origRid);
+        origin = owner ? `From ${owner}` : `From slot ${rosterToSlot[origRid] || '?'}`;
+      }
+
+      out.push({
+        round: rd,
+        slot,
+        overall,
+        origRid,
+        origin,
+        label: `${rd}.${String(slot).padStart(2, '0')}`,
+      });
+    }
+  }
+  out.sort((a, b) => a.overall - b.overall);
+  return out;
+}
+
+function ownerNameForRoster(rid) {
+  const r = STATE.league.rosters.find(r => r.roster_id === rid);
+  if (!r) return null;
+  const u = STATE.league.users.find(u => u.user_id === r.owner_id);
+  if (!u) return null;
+  return u.team_name || u.display_name;
+}
+
+// Sleeper returns position="DE","DT","NT","OLB","ILB","FS","SS","CB" etc.
+// Phoenix League's slots are DL/LB/DB. Prefer fantasy_positions (the list of
+// fantasy slots the player is eligible for) so DE/DT bucket as DL.
+function fantasyPos(p) {
+  const fps = p.fantasy_positions || [];
+  // pick the first IDP-bucket entry if present, else the player's raw position
+  for (const fp of fps) {
+    if (['DL', 'LB', 'DB'].includes(fp)) return fp;
+  }
+  if (fps.length) return fps[0];
+  return p.position || '?';
+}
+
+function computeRosterStats(userId) {
+  const rid = ridForUser(userId);
+  const roster = STATE.league.rosters.find(r => r.roster_id === rid) || { players: [] };
+  const buckets = {};
+  for (const pid of (roster.players || [])) {
+    const p = STATE.league.players[pid];
+    if (!p) continue;
+    const pos = fantasyPos(p);
+    if (!buckets[pos]) buckets[pos] = { count: 0, ages: [], young: 0, aging: 0, players: [] };
+    buckets[pos].count++;
+    if (typeof p.age === 'number') buckets[pos].ages.push(p.age);
+    if (p.age != null && p.age <= 23) buckets[pos].young++;
+    if (p.age != null && p.age >= 28) buckets[pos].aging++;
+    buckets[pos].players.push({ pid, fantasyPos: pos, ...p });
+  }
+  for (const k of Object.keys(buckets)) {
+    const ages = buckets[k].ages;
+    buckets[k].avgAge = ages.length ? ages.reduce((a,b) => a+b, 0) / ages.length : null;
+  }
+  return { roster, buckets };
+}
+
+function computeNeed(buckets) {
+  const need = {};
+  for (const pos of Object.keys(POS_TARGET)) {
+    const have = buckets[pos]?.count || 0;
+    const young = buckets[pos]?.young || 0;
+    const aging = buckets[pos]?.aging || 0;
+    let n = (POS_TARGET[pos] - have) / POS_TARGET[pos];
+    n += aging * 0.12;
+    n -= young * 0.10;
+    n = Math.max(0, Math.min(1, n));
+    if (IDP_POS.has(pos)) n *= 0.55;
+    if (pos === 'K')  n  = 0.05;
+    if (pos === 'QB') n *= 0.85;
+    need[pos] = n;
+  }
+  return need;
+}
+
+// ============================================================
+// Table
+// ============================================================
+function pidFor(p) { return p.sleeper_id || norm(p.name); }
+
+function renderTable(need) {
+  let rows = STATE.data.players.slice();
+
+  // Compute the selected user's "target ranks" — effective rank values that
+  // correspond to one of their actual draft picks (overall pick number).
+  const myRid = ridForUser(STATE.selectedUserId);
+  const myPicks = myRid ? picksForRoster(myRid) : [];
+  const targetRanks = new Map();   // overall_pick_number -> pick label
+  for (const pk of myPicks) targetRanks.set(pk.overall, pk);
+
+  // attach computed
+  for (const p of rows) {
+    p._pid = pidFor(p);
+    p._bump = STATE.bumps[p._pid] || 0;
+    p._effective_rk = p.my_rk - p._bump;        // bump up reduces rk
+    p._drafted = isDrafted(p);
+    const vals = Object.values(p.source_ranks || {});
+    p._consensus = vals.length ? Math.round(vals.reduce((a,b) => a+b, 0) / vals.length) : null;
+    p._targetPick = targetRanks.get(p._effective_rk) || null;
+  }
+
+  // filter
+  if (STATE.filterPos === 'IDP') rows = rows.filter(p => IDP_POS.has(p.pos));
+  else if (STATE.filterPos !== 'ALL') rows = rows.filter(p => p.pos === STATE.filterPos);
+
+  if (STATE.search) {
+    const q = STATE.search;
+    rows = rows.filter(p =>
+      (p.name || '').toLowerCase().includes(q) ||
+      (p.college || '').toLowerCase().includes(q) ||
+      (p.team || '').toLowerCase().includes(q)
+    );
+  }
+  if (STATE.hideDrafted) rows = rows.filter(p => !p._drafted);
+
+  // sort
+  const k = STATE.sortKey;
+  rows.sort((a, b) => {
+    let va = sortValue(a, k), vb = sortValue(b, k);
+    if (va == null && vb == null) return 0;
+    if (va == null) return 1;
+    if (vb == null) return -1;
+    if (va < vb) return STATE.sortAsc ? -1 : 1;
+    if (va > vb) return STATE.sortAsc ? 1 : -1;
+    return 0;
+  });
+
+  // sort indicator
+  document.querySelectorAll('#board-head th').forEach(th => {
+    if (th.dataset.key === k) {
+      th.classList.add('sorted');
+      th.dataset.arrow = STATE.sortAsc ? '▲' : '▼';
+    } else {
+      th.classList.remove('sorted');
+      th.dataset.arrow = '';
+    }
+  });
+
+  // Determine best/worst per source for each visible player
+  for (const p of rows) {
+    const entries = Object.entries(p.source_ranks || {}).filter(([_, v]) => v != null);
+    if (entries.length >= 2) {
+      const sorted = entries.slice().sort((a, b) => a[1] - b[1]);
+      p._bestSrc  = sorted[0][0];
+      p._worstSrc = sorted[sorted.length - 1][0];
+    }
+  }
+
+  // body
+  const tbody = document.getElementById('board-body');
+  tbody.innerHTML = '';
+  for (const p of rows) {
+    const tr = document.createElement('tr');
+    tr.dataset.pid = p._pid;
+    if (p._targetPick) tr.classList.add('target');
+    if (p._drafted) tr.classList.add('drafted');
+    if (p._bump > 0) tr.classList.add('bumped-up');
+    if (p._bump < 0) tr.classList.add('bumped-down');
+    tr.innerHTML = rowHtml(p);
+    tr.addEventListener('click', e => {
+      // Don't expand if click was on a bump button
+      if (e.target.closest('.bump-cell')) return;
+      toggleExpand(p._pid);
+    });
+    tbody.appendChild(tr);
+
+    if (STATE.expandedPid === p._pid) {
+      const dr = document.createElement('tr');
+      dr.className = 'detail-row';
+      const td = document.createElement('td');
+      td.colSpan = COLUMNS.length;
+      td.innerHTML = detailHtml(p);
+      dr.appendChild(td);
+      tbody.appendChild(dr);
+    }
+  }
+
+  // Bind bump buttons
+  tbody.querySelectorAll('.bump-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const pid = btn.dataset.pid;
+      const dir = parseInt(btn.dataset.dir, 10);
+      const cur = STATE.bumps[pid] || 0;
+      const next = Math.max(-30, Math.min(30, cur + dir));
+      if (next === 0) delete STATE.bumps[pid];
+      else STATE.bumps[pid] = next;
+      saveJSON('phoenix_bumps_v1', STATE.bumps);
+      render();
+    });
+  });
+  // Bind drafted toggles
+  tbody.querySelectorAll('.off-toggle:not([disabled])').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      toggleDrafted(btn.dataset.pid);
+    });
+  });
+
+  const nBumps   = Object.keys(STATE.bumps).length;
+  const nDrafted = Object.keys(STATE.drafted).length;
+  document.getElementById('board-foot').textContent =
+    `${rows.length} of ${STATE.data.players.length} rookies · ` +
+    `${nBumps} bump${nBumps === 1 ? '' : 's'} · ` +
+    `${nDrafted} manually drafted · ` +
+    `Click row for source breakdown · Click ✕ to mark off`;
+}
+
+function sortValue(p, k) {
+  if (k === 'name')      return p.name.toLowerCase();
+  if (k === 'pos')       return p.pos;
+  if (k === 'team')      return p.team || 'ZZZ';
+  if (k === 'rd')        return p.rd == null ? 999 : p.rd * 100 + (p.pk || 0);
+  if (k === 'consensus') return p._consensus;
+  if (k === 'my_rk')     return p._effective_rk;
+  if (k.startsWith('src:')) return p.source_ranks?.[k.slice(4)] ?? 99999;
+  return p[k];
+}
+
+function rowHtml(p) {
+  const tier = `<span class="tier-badge t${p.tier}">${p.tier}</span>`;
+  const slot = p._targetPick
+    ? `<span style="color:var(--tape); font-weight:700;" title="Your pick ${escapeHtml(p._targetPick.label)} · ${escapeHtml(p._targetPick.origin)}">●</span> `
+    : '';
+  const draftCell = p.rd
+    ? `R${p.rd}.${(p.pk || '').toString().padStart(2,'0')}`
+    : (p.source_ranks && Object.keys(p.source_ranks).length ? 'UDFA' : '–');
+  const bump = bumpHtml(p);
+  const bumpDelta = p._bump !== 0
+    ? `<div class="rank-delta ${p._bump > 0 ? 'up' : 'down'}">${p._bump > 0 ? '▲' : '▼'}${Math.abs(p._bump)}</div>`
+    : '';
+  const cons = p._consensus != null ? p._consensus : '–';
+  const spread = p.spread != null ? p.spread : '–';
+  const team = p.team || 'FA';
+  const isManual = !!STATE.drafted[p._pid];
+  const isSleep  = isSleeperDrafted(p);
+  const draftedTitle = isSleep
+    ? 'Picked in live Sleeper draft (locked)'
+    : (isManual ? 'Manually marked drafted — click to undo' : 'Click to mark drafted');
+  const draftedBtn = `
+    <button class="off-toggle ${isManual ? 'on' : ''} ${isSleep ? 'locked' : ''}"
+            data-pid="${p._pid}" title="${draftedTitle}" aria-label="Mark drafted"
+            ${isSleep ? 'disabled' : ''}>
+      ${isSleep || isManual ? '✕' : ''}
+    </button>
+  `;
+
+  // Dynamic source rank cells, in the order STATE.data.sources defines.
+  const srcCells = STATE.data.sources.map(s => {
+    const rk = p.source_ranks[s.key];
+    let cls = 'num src-cell';
+    if (rk == null) cls += ' missing';
+    else if (s.key === p._bestSrc)  cls += ' best';
+    else if (s.key === p._worstSrc) cls += ' worst';
+    return `<td class="${cls}">${rk == null ? '–' : rk}</td>`;
+  }).join('');
+
+  return `
+    <td class="center">${draftedBtn}</td>
+    <td class="num center"><div>${slot}<span class="rank-cell">${p._effective_rk}</span></div>${bumpDelta}</td>
+    <td class="center">${bump}</td>
+    <td class="center">${tier}</td>
+    <td class="player-cell">
+      <div class="name">${escapeHtml(p.name)}</div>
+      ${p.college ? `<div class="school">${escapeHtml(p.college)}</div>` : ''}
+    </td>
+    <td class="center"><span class="pos-chip pos-${p.pos}">${p.pos}</span></td>
+    <td class="center mono" style="font-size:11px;">${escapeHtml(team)}</td>
+    <td class="center mono" style="font-size:11px;">${draftCell}</td>
+    ${srcCells}
+    <td class="num mono">${cons}</td>
+    <td class="num mono">${spread}</td>
+    <td class="num mono">${p.cap_rk}</td>
+  `;
+}
+
+function bumpHtml(p) {
+  const v = p._bump;
+  const cls = v > 0 ? 'up' : v < 0 ? 'down' : '';
+  const display = v === 0 ? '·' : (v > 0 ? `+${v}` : `${v}`);
+  return `
+    <span class="bump-cell">
+      <button class="bump-btn" data-pid="${p._pid}" data-dir="1"  title="Bump up">▲</button>
+      <span class="bump-val ${cls}">${display}</span>
+      <button class="bump-btn" data-pid="${p._pid}" data-dir="-1" title="Bump down">▼</button>
+    </span>
+  `;
+}
+
+function detailHtml(p) {
+  const sources = STATE.data.sources;
+  const bestKey  = p._bestSrc;
+  const worstKey = p._worstSrc;
+  const tiles = sources.map(s => {
+    const rk = p.source_ranks[s.key];
+    let cls = 'src-tile';
+    if (rk == null) cls += ' missing';
+    if (s.key === bestKey)  cls += ' best';
+    if (s.key === worstKey) cls += ' worst';
+    const display = rk == null ? '–' : rk;
+    return `
+      <div class="${cls}" title="${escapeHtml(s.label)}">
+        <div class="src-key">${s.key.toUpperCase()}</div>
+        <div class="src-rk">${display}</div>
+        <div class="src-w">w ${s.weight}</div>
+      </div>
+    `;
+  }).join('');
+  const noteTags = (p.notes || []).map(n =>
+    `<span class="note-tag${(n.startsWith('KTC') || n.startsWith('high spread')) ? ' alert' : ''}">${escapeHtml(n)}</span>`
+  ).join('');
+  const extras = [
+    p.ktc_value != null ? `KTC value <b>${p.ktc_value}</b>` : null,
+    p.fc_value  != null ? `FC value <b>${p.fc_value}</b>`   : null,
+    p.age       != null ? `age <b>${p.age}</b>`             : null,
+    p.college   ? `college <b>${escapeHtml(p.college)}</b>` : null,
+    p.team      ? `nfl <b>${escapeHtml(p.team)}</b>`         : null,
+    p._targetPick ? `<span class="gold">your pick ${escapeHtml(p._targetPick.label)} · ${escapeHtml(p._targetPick.origin)}</span>` : null,
+    p._bump !== 0 ? `bump <b style="color:${p._bump > 0 ? 'var(--neon)' : 'var(--signal)'}">${p._bump > 0 ? '+' : ''}${p._bump}</b>` : null,
+  ].filter(Boolean).join(' · ');
+
+  return `
+    <div class="detail-meta">${extras}</div>
+    <div class="detail-grid">${tiles}</div>
+    <div>${noteTags}</div>
+  `;
+}
+
+function toggleExpand(pid) {
+  STATE.expandedPid = (STATE.expandedPid === pid) ? null : pid;
+  render();
+}
+
+// ============================================================
+// Drafted detection — combines live Sleeper picks with manual marks
+// ============================================================
+function isManualDrafted(player) {
+  return !!STATE.drafted[player._pid || pidFor(player)];
+}
+function isSleeperDrafted(player) {
+  const picks = STATE.league.draft_picks;
+  if (!picks || !picks.length) return false;
+  const target = norm(player.name);
+  return picks.some(dp => {
+    const m = dp.metadata || {};
+    return norm((m.first_name || '') + ' ' + (m.last_name || '')) === target;
+  });
+}
+function isDrafted(player) {
+  return isSleeperDrafted(player) || isManualDrafted(player);
+}
+function toggleDrafted(pid) {
+  if (STATE.drafted[pid]) delete STATE.drafted[pid];
+  else STATE.drafted[pid] = true;
+  saveJSON('phoenix_drafted_v1', STATE.drafted);
+  render();
+}
+
+// ============================================================
+// Drawer (roster panel)
+// ============================================================
+function renderDrawer(stats, need) {
+  const user = STATE.league.users.find(u => u.user_id === STATE.selectedUserId) || {};
+  const r = stats.roster || {};
+  const isOwner = STATE.selectedUserId === STATE.league.owner_user_id;
+  const teamName = (user.team_name || user.display_name || '?').toUpperCase();
+  document.getElementById('dr-team-name').innerHTML =
+    isOwner ? `<span class="scribble">${escapeHtml(teamName)}</span>` : escapeHtml(teamName);
+
+  const wlt = (r.wins != null) ? `${r.wins}-${r.losses || 0}${r.ties ? '-' + r.ties : ''}` : '—';
+  const fpts = (r.fpts != null) ? r.fpts.toFixed(1) : '—';
+  document.getElementById('dr-team-meta').innerHTML = `
+    @${escapeHtml(user.display_name || '?')} · ${wlt} · ${fpts} fpts ·
+    ${(r.players || []).length} players · Slot ${ridForUser(STATE.selectedUserId) || '—'}
+  `;
+
+  // Drawer marquee
+  document.getElementById('marquee-drawer').innerHTML = repeat(
+    [`${escapeHtml(teamName)}`, `@${escapeHtml(user.display_name || '?')}`,
+     `${wlt} record`, `${(r.players||[]).length} players`,
+     `Slot ${ridForUser(STATE.selectedUserId) || '—'}`], 6)
+    .map(t => `<span class="marquee-item">${t}</span>`).join('');
+
+  // Need heatmap
+  const grid = document.getElementById('need-grid');
+  grid.innerHTML = POS_GROUPS.map(pos => {
+    const have = stats.buckets[pos]?.count || 0;
+    const target = POS_TARGET[pos] || 0;
+    const n = need[pos] ?? 0;
+    const pct = Math.round(n * 100);
+    const cls = n >= 0.5 ? 'high' : n >= 0.25 ? 'med' : 'low';
+    const avgAge = stats.buckets[pos]?.avgAge;
+    const ageStr = avgAge ? `Avg age ${avgAge.toFixed(1)}` : 'No players';
+    return `
+      <div class="need-cell">
+        <div class="top-row">
+          <span class="pos-chip pos-${pos}">${pos}</span>
+          <span class="cap" style="color:var(--paper-2);">${have}/${target}</span>
+        </div>
+        <div class="need-num ${cls}">${pct}</div>
+        <div class="need-cap">${ageStr}</div>
+      </div>
+    `;
+  }).join('');
+
+  // Top targets — top 8 undrafted rookies at positions where this user has need.
+  // "Need" threshold > 0.20 keeps the list focused on real holes (not depth fills).
+  const targets = STATE.data.players.slice()
+    .map(p => { p._pid = pidFor(p); return p; })
+    .filter(p => !isDrafted(p))
+    .filter(p => (need[bucketRookiePos(p.pos)] ?? 0) > 0.20)
+    .sort((a,b) => (a.my_rk - (STATE.bumps[a._pid] || 0)) - (b.my_rk - (STATE.bumps[b._pid] || 0)))
+    .slice(0, 8);
+  document.getElementById('targets-list').innerHTML = targets.map((p, i) => {
+    const bucket = bucketRookiePos(p.pos);
+    const needPct = Math.round((need[bucket] ?? 0) * 100);
+    return `
+      <div class="target-card" data-pid="${p._pid}">
+        <div class="rk">${String(i + 1).padStart(2, '0')}</div>
+        <span class="pos-chip pos-${p.pos}">${p.pos}</span>
+        <div class="info">
+          <div class="name">${escapeHtml(p.name)}</div>
+          <div class="meta">My #${p.my_rk - (STATE.bumps[p._pid] || 0)} · ${escapeHtml(p.college || p.team || '')}</div>
+        </div>
+        <div class="fit-num-big">${needPct}</div>
+        <div class="fit-cap">${bucket} Need</div>
+      </div>
+    `;
+  }).join('') || `<div class="cap" style="color:var(--paper-2);">Roster looks set — no clear position needs</div>`;
+  // Click to scroll-to-row
+  document.querySelectorAll('.target-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const pid = card.dataset.pid;
+      STATE.expandedPid = pid;
+      // close drawer
+      document.getElementById('roster-drawer').classList.remove('show');
+      document.getElementById('drawer-backdrop').classList.remove('show');
+      render();
+      // scroll to row
+      setTimeout(() => {
+        const tr = document.querySelector(`tr[data-pid="${cssEscape(pid)}"]`);
+        if (tr) tr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+    });
+  });
+
+  // Depth chart — buckets are now fantasy slots (DL/LB/DB) post-bucket
+  const order = ['QB', 'RB', 'WR', 'TE', 'DL', 'LB', 'DB', 'K'];
+  const depthHtml = order.map(pos => {
+    const arr = (stats.buckets[pos]?.players || []).slice();
+    if (!arr.length) return '';
+    arr.sort((a, b) => (a.age || 99) - (b.age || 99));
+    const cards = arr.map(p => {
+      const ageCls = (typeof p.age === 'number' && p.age >= 28) ? 'aging'
+                   : (typeof p.age === 'number' && p.age <= 23) ? 'young' : '';
+      return `
+        <div class="depth-card ${ageCls}">
+          <div>
+            <div class="pname">${escapeHtml(p.full_name || (p.first_name + ' ' + p.last_name) || '?')}</div>
+            <div class="pmeta">${escapeHtml(p.team || 'FA')} · ${p.years_exp != null ? p.years_exp + 'y exp' : '—'}</div>
+          </div>
+          <div class="age">${p.age != null ? p.age : '–'}</div>
+        </div>
+      `;
+    }).join('');
+    return `
+      <div class="depth-section">
+        <div class="depth-head">
+          <span class="pos-chip pos-${pos}">${pos}</span>
+          <span class="label">${pos} Room (${arr.length})</span>
+          <span class="line"></span>
+        </div>
+        <div class="depth-grid">${cards}</div>
+      </div>
+    `;
+  }).join('');
+  document.getElementById('depth-chart').innerHTML = depthHtml || '<div class="cap">No players</div>';
+}
+
+// ============================================================
+// Utils
+// ============================================================
+function repeat(arr, n) {
+  const out = [];
+  for (let i = 0; i < n; i++) out.push(...arr);
+  return out;
+}
+function norm(s) {
+  return (s || '').toLowerCase()
+    .replace(/[^a-z0-9 ]/g, '')
+    .replace(/\b(jr|sr|ii|iii|iv)\b/g, '')
+    .replace(/\s+/g, ' ').trim();
+}
+function escapeHtml(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+function cssEscape(s) {
+  return String(s).replace(/[^a-zA-Z0-9_-]/g, c => `\\${c}`);
+}
+
+load();
+</script>
+</body>
+</html>

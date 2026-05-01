@@ -1,0 +1,67 @@
+{
+  "_doc": "Source registry. Weights are intentionally close to equal, mirroring FantasyPros ECR / DLF consensus practice (analyst rankings averaged). KTC + FC get a small market-signal premium because they're crowdsourced rather than single-analyst. IDP_Show is heavily deweighted because Phoenix League scores IDP at half points, AND their list mixes 2026 NFL Draft picks with 2026-college-stayer projections (2027 prospects).",
+  "ktc": {
+    "label": "KeepTradeCut SF rookie (TEP)",
+    "weight": 1.5,
+    "csv": "ktc.csv",
+    "_note": "Crowdsourced market. Slight premium."
+  },
+  "fc": {
+    "label": "FantasyCalc SF dynasty (no TEP)",
+    "weight": 1.2,
+    "csv": "fc.csv",
+    "_note": "Algorithmic market. Slight premium, smaller because no TEP."
+  },
+  "dn": {
+    "label": "DynastyNerds SF rookie (manual export)",
+    "weight": 1.0,
+    "csv": "dn.csv"
+  },
+  "cbs": {
+    "label": "CBS Sports SF Top 40 ranking",
+    "weight": 1.0,
+    "csv": "cbs.csv"
+  },
+  "cbs_mock": {
+    "label": "CBS Sports SF TEP rookie-only mock (8 expert)",
+    "weight": 1.0,
+    "csv": "cbs_mock.csv"
+  },
+  "ds": {
+    "label": "Draft Sharks SF rookie ranking",
+    "weight": 1.0,
+    "csv": "ds.csv"
+  },
+  "fp_mock": {
+    "label": "FantasyPros 12-team SF mock (3 round)",
+    "weight": 1.0,
+    "csv": "fp_mock.csv"
+  },
+  "fp_4r": {
+    "label": "FantasyPros SF mock (4 round)",
+    "weight": 1.0,
+    "csv": "fp_4r.csv"
+  },
+  "boone": {
+    "label": "Yahoo Justin Boone post-NFL-draft mock 3.0",
+    "weight": 1.0,
+    "csv": "boone.csv"
+  },
+  "pp": {
+    "label": "PlayerProfiler SF post-NFL-draft mock",
+    "weight": 1.0,
+    "csv": "pp.csv"
+  },
+  "idp_show": {
+    "label": "The IDP Show SF/TEP/IDP mock (low weight: half-pt IDP)",
+    "weight": 0.4,
+    "csv": "idp_show.csv",
+    "_note": "Heavily deweighted. Phoenix League IDP is half-points so IDP rookies aren't worth as much as offensive rookies. List also includes college stayers (2027 prospects) which aren't draftable now."
+  },
+  "sleeper_adp": {
+    "label": "Sleeper post-draft mock ADP (live, your league)",
+    "weight": 1.5,
+    "csv": "sleeper_adp.csv",
+    "_note": "Run sleeper_scraper.py once your league draft starts (May 4)."
+  }
+}

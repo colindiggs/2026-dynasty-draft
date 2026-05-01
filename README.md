@@ -1,0 +1,171 @@
+# Phoenix League Dynasty Board
+
+Custom rookie ranking board for **The Phoenix League** (Sleeper league `1335118685588701184`):
+12 team / Superflex / TEP (rec_te = 1.0) / IDP / linear draft.
+
+Two outputs:
+1. **xlsx** — `2026_board_data_driven.xlsx`, 4 tabs (My Picks / My Board / Roster / Sources). Drafting tool.
+2. **Static webpage** — `docs/index.html`, single-file dark-themed site, no build step. Shareable to leaguemates via GitHub Pages. Each member can pick themselves from a dropdown and see roster-fit-aware ranks.
+
+## Setup (once)
+
+```
+pip install requests openpyxl
+```
+
+That's it. No API keys needed; everything used here is public.
+
+## Workflow
+
+### 1. Refresh ranking sources
+
+Every few days (or before draft day), refresh whatever you can:
+
+```
+python fc_fetcher.py    # FantasyCalc rookies (free public API)
+```
+
+For sources without an API (KTC, DynastyNerds, CBS, FantasyPros, Yahoo, etc.),
+the CSVs in `sources/` are already populated from articles/manual exports.
+To refresh: re-run the fetch via web search or paste new data into the CSV
+(format: `player,pos,team,source_rank` minimum).
+
+### 2. Pull live Sleeper data (once draft starts)
+
+`sleeper_scraper.py` is preloaded with your league draft ID
+(`1335118685605498880`). Once your draft is `in_progress` or `complete`:
+
+```
+python sleeper_scraper.py
+```
+
+It writes `sources/sleeper_adp.csv`. Add other mock-draft Sleeper IDs to
+`DRAFT_IDS` at the top of the file to widen the sample.
+
+### 3. Rebuild the board
+
+```
+python build_xlsx_v2.py
+```
+
+Reads everything in `sources/` per `sources/sources.json`, blends, writes
+the xlsx. Top 25 prints to terminal so you can sanity-check.
+
+### 4. On draft day
+
+When you're on the clock, run:
+
+```
+python live_draft.py
+```
+
+This pulls live picks from your league draft, marks who's taken, and prints
+the top 30 players still available ranked by your My Board.
+
+### 5. Refresh the website (optional, anytime)
+
+```
+python build_xlsx_v2.py        # also writes docs/data.json
+python bootstrap_league.py     # writes docs/league.json (Sleeper rosters)
+```
+
+Then commit `docs/` and push — GitHub Pages re-serves on the next build.
+
+To preview locally:
+
+```
+cd docs && python -m http.server 8765
+# visit http://localhost:8765
+```
+
+The page expects both JSON files alongside `index.html`. If a fetch fails
+it shows a clear error banner — by design, no fallback fake data.
+
+## What's in `sources/`
+
+| Key       | Source                                   | Weight | Players |
+|-----------|------------------------------------------|--------|---------|
+| ktc       | KeepTradeCut SF rookie (TEP)             | 1.5    | 52      |
+| fc        | FantasyCalc SF dynasty (no TEP)          | 1.2    | 70      |
+| dn        | DynastyNerds SF rookie (manual export)   | 1.0    | 73      |
+| cbs       | CBS Sports SF Top 40                     | 1.0    | 24      |
+| cbs_mock  | CBS SF TEP rookie-only mock (8 expert)   | 1.0    | 100     |
+| ds        | Draft Sharks SF rookie ranking           | 1.0    | 40      |
+| fp_mock   | FantasyPros 12-team SF mock              | 1.0    | 36      |
+| fp_4r     | FantasyPros SF mock (4 round)            | 1.0    | 48      |
+| boone     | Yahoo Justin Boone post-NFL-draft mock   | 1.0    | 48      |
+| pp        | PlayerProfiler SF post-NFL-draft mock    | 1.0    | 24      |
+| idp_show  | The IDP Show SF/TEP/IDP mock             | **0.4** | 36      |
+| sleeper_adp | Sleeper live ADP (populated on draft day) | 1.5  | —       |
+
+**Weighting philosophy** (mirrors FantasyPros ECR / DLF consensus practice):
+analyst rankings get equal weight (1.0). Crowdsourced market signals (KTC, FC)
+get a small premium (1.5 / 1.2). IDP Show is heavily deweighted (0.4) because
+Phoenix League scores IDP at half points AND their list mixes 2026 NFL Draft
+picks with 2027 college-stayer projections.
+
+## How the blend works
+
+```
+final_rank = Σ (rank_i × weight_i) / Σ (weight_i)
+```
+
+For each source, if a player isn't ranked there we use a **missing-source
+penalty** = `len(source) + 5`. This stops players ranked only in 1 source
+from leapfrogging the consensus.
+
+Capital Score (NFL pick × round multiplier + position bump) is also folded
+in at weight 0.5 as an algorithmic baseline.
+
+## Roster Fit
+
+The Fit column on My Board scores each player vs your actual roster.
+IDP positions are intentionally NOT must-targets despite the roster gap —
+half-points scoring caps their real value.
+
+| Fit | Meaning      | Examples                              |
+|-----|--------------|---------------------------------------|
+| `**`  | Good fit   | Young WR (≤23), young RB              |
+| `*`   | Marginal   | Young TE, IDP positions (depth only)  |
+| (blank) | Neutral  | 22-24 vets at depth positions         |
+| `-`   | Skip       | QB (4 deep), aging WR                 |
+
+Edit `ROSTER_NEED` in `build_xlsx_v2.py` to retune.
+
+## Website (`docs/`)
+
+```
+docs/
+├── index.html       # single-file site, embedded CSS + vanilla JS
+├── data.json        # ranked players, regenerated by build_xlsx_v2.py
+└── league.json      # Sleeper league snapshot, regenerated by bootstrap_league.py
+```
+
+**Features**
+
+- Dropdown to switch between all 12 league members.
+- Roster panel — current Sleeper roster for the selected team, grouped by position, with age coloring (red 28+, teal ≤23).
+- Position-mix tiles colored by need — high (red border), medium (gold), low (teal).
+- Ranking table with sortable columns (Rk, Tier, Pos, KTC, FC, Cap, Spread, etc.), pos chips, search box, "Hide drafted" + "Targets only" toggles.
+- Roster-fit badge per player — recomputed live for the selected team using their current roster shape, age curve, and Phoenix League's half-pt IDP cap.
+- Click any row to see a per-source rank breakdown.
+- Tier distribution bar chart and position-pool scarcity (right rail).
+- Live draft banner that flips to red when the draft goes `in_progress`.
+
+**Constraints honored**
+
+- No backend, no build tooling, no framework. Plain HTML + JS.
+- API/fetch failures surface as a visible error banner — no fake-data fallback.
+- Same dark theme palette as `8x8-solver/docs/index.html` (bg `#0f0f1a`, panel `#1a1a2e`, accent `#e94560` / `#4ecdc4` / `#ffd93d`).
+
+## When stuff breaks
+
+- **API failure** (Sleeper, FantasyCalc): the script will print the error
+  and exit. Don't paper over — surface it. Could be rate limiting (wait a
+  few minutes) or schema change (open an issue).
+- **Player not appearing**: check spelling in the CSV. Names are normalized
+  (lowercase, no punctuation, suffixes stripped) before merging.
+- **Stale rankings**: refresh by re-fetching the article or running
+  `fc_fetcher.py`. Most articles update within 1-2 weeks of NFL Draft.
+- **Wrong team/pos**: source CSVs win first, then Sleeper player index
+  backfill. If both are wrong, edit the CSV directly.

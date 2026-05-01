@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.~lock.*
+~$*
+sources/_players_idx.json
+sources/sleeper_drafts_raw.json
+2026_board_data_driven.xlsx
+.DS_Store
+.vscode/
+.idea/
+
+# Local-only — Claude Code settings, design references
+.claude/
+design_handoff_dynasty_draft/
+HANDOFF_PROMPT.md
