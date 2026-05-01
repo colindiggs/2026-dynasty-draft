@@ -52,6 +52,38 @@
   --signal: #ffd13a; --tape: #ff8b3a; --muted: #4a5a7e;
   --line: #1c2c4f; --line-2: #2a3f6c;
 }
+[data-palette="bolt"] {
+  /* Chargers-coded — navy bg + golden-yellow primary + powder-blue accent */
+  --bg: #061a3a; --bg-2: #0c2752; --bg-3: #163a73;
+  --paper: #f0f4ff; --paper-2: #b6c4dc; --ink: #061a3a;
+  --neon: #ffd02e; --neon-deep: #c9a418;
+  --signal: #ff5e3a; --tape: #5cc8ff; --muted: #4a5a7e;
+  --line: #112849; --line-2: #1c3866;
+}
+[data-palette="carbon"] {
+  /* Cyberpunk terminal — charcoal + electric cyan + hot magenta */
+  --bg: #0a0a0e; --bg-2: #1a1a24; --bg-3: #232336;
+  --paper: #e8e8f0; --paper-2: #999aaf; --ink: #0a0a0e;
+  --neon: #00ffd6; --neon-deep: #00b89a;
+  --signal: #ff2e6c; --tape: #ffea00; --muted: #4a4a60;
+  --line: #20202c; --line-2: #2e2e40;
+}
+[data-palette="pulp"] {
+  /* Pulp-magazine — warm dark + parchment + mustard primary + blood red */
+  --bg: #1a0e09; --bg-2: #261612; --bg-3: #36211d;
+  --paper: #f5e5c8; --paper-2: #c8b298; --ink: #1a0e09;
+  --neon: #d8b04a; --neon-deep: #a88526;
+  --signal: #c1281a; --tape: #4a8e6a; --muted: #6a5440;
+  --line: #2a1a14; --line-2: #3a2820;
+}
+[data-palette="moss"] {
+  /* Autumn natural — pine bg + tangerine primary + forest secondary */
+  --bg: #0a1410; --bg-2: #142318; --bg-3: #1f3525;
+  --paper: #ede4d0; --paper-2: #b8b09e; --ink: #0a1410;
+  --neon: #ff8b3a; --neon-deep: #c96a18;
+  --signal: #5a8a52; --tape: #ffc870; --muted: #5a6a55;
+  --line: #1a2920; --line-2: #2a3e30;
+}
 
 /* ============================================================
    Base
@@ -96,60 +128,129 @@ input, select { font-family: inherit; }
 }
 
 /* ============================================================
-   Texture (real CC-BY 3.0 raster textures, transparenttextures.com).
-   Strategy: only a faint global fiber base. Bigger textures live ON
-   specific elements with mask-image gradients so they fade in/out
-   instead of being slapped uniformly across the page.
+   Texture stack. Real Resource Boy grunge JPGs (black w/ white
+   speckle/scratch) layered with `screen` blend so the black is
+   invisible and the white speckle reads as paint dust on top of
+   whatever's below. mask-image gradients let the grunge fade in
+   and out across the page instead of being slapped uniformly.
    See assets/CREDITS.md.
    ============================================================ */
 
-/* Faint paper-fiber base — sits behind everything as a low-key hint */
+/* Light-leak atmospheric color washes — fixed, beneath all textures.
+   Two opposing corners with masked radial fade so they glow inward and
+   don't compete with content. screen blend so they brighten/colorize
+   without darkening the page. */
+.tex-leak {
+  position: fixed; pointer-events: none; z-index: 0;
+  mix-blend-mode: screen;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.tex-leak.warm-tr {
+  top: -8%; right: -8%;
+  width: 78%; height: 72%;
+  background-image: url("./assets/leak-warm.jpg");
+  background-position: top right;
+  -webkit-mask-image: radial-gradient(ellipse at top right, #000 0%, rgba(0,0,0,0.55) 40%, transparent 80%);
+  mask-image: radial-gradient(ellipse at top right, #000 0%, rgba(0,0,0,0.55) 40%, transparent 80%);
+  opacity: 0.32;
+}
+.tex-leak.cool-bl {
+  bottom: -8%; left: -8%;
+  width: 78%; height: 72%;
+  background-image: url("./assets/leak-cool.jpg");
+  background-position: bottom left;
+  -webkit-mask-image: radial-gradient(ellipse at bottom left, #000 0%, rgba(0,0,0,0.55) 40%, transparent 80%);
+  mask-image: radial-gradient(ellipse at bottom left, #000 0%, rgba(0,0,0,0.55) 40%, transparent 80%);
+  opacity: 0.28;
+}
+/* Per-palette tuning so leaks don't fight the palette */
+[data-palette="newsprint"] .tex-leak { opacity: 0.22; }
+[data-palette="bolt"]      .tex-leak.warm-tr { opacity: 0.22; }
+[data-palette="bolt"]      .tex-leak.cool-bl { opacity: 0.40; }
+[data-palette="carbon"]    .tex-leak { opacity: 0.40; }
+[data-palette="storm"]     .tex-leak.cool-bl { opacity: 0.40; }
+[data-palette="moss"]      .tex-leak.warm-tr { opacity: 0.45; }
+
+/* Always-on subtle paper fiber under everything */
 .tex-fiber {
   position: fixed; inset: 0; pointer-events: none; z-index: 1;
   background-image: url("./assets/groovepaper.png");
   mix-blend-mode: overlay;
-  opacity: 0.20;
+  opacity: 0.18;
 }
-/* Vignette + edge dust banding (the only fixed full-bleed overlay) */
+/* Body-wide soft grunge wash — the white speckles/scratches show
+   faintly across the whole page so it never feels CSS-clean */
+.tex-grunge {
+  position: fixed; inset: 0; pointer-events: none; z-index: 2;
+  background-image: url("./assets/grunge-light.jpg");
+  background-size: 1500px 1500px;
+  background-position: center;
+  mix-blend-mode: screen;
+  opacity: 0.30;
+}
+/* Vignette */
 .vignette {
   position: fixed; inset: 0; pointer-events: none; z-index: 9999;
   background:
     radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.62) 100%),
     linear-gradient(180deg, rgba(0,0,0,0.30) 0%, transparent 7%, transparent 93%, rgba(0,0,0,0.30) 100%);
 }
-[data-palette="newsprint"] .tex-fiber { opacity: 0.30; }
-[data-palette="midnight"]  .tex-fiber { opacity: 0.18; }
+[data-palette="newsprint"] .tex-fiber  { opacity: 0.28; }
+[data-palette="newsprint"] .tex-grunge { opacity: 0.38; }
+[data-palette="midnight"]  .tex-fiber  { opacity: 0.16; }
+[data-palette="midnight"]  .tex-grunge { opacity: 0.32; }
+[data-palette="bolt"]      .tex-grunge { opacity: 0.38; }
+[data-palette="carbon"]    .tex-grunge { opacity: 0.45; }
+[data-palette="storm"]     .tex-grunge { opacity: 0.32; }
+
+/* Reusable grunge layer — drop this onto any element via a wrapping
+   <div class="grunge-layer ..."> and tune size/position/mask in a
+   modifier class. Defaults: heavy grunge JPG, screen blend. */
+.grunge-layer {
+  position: absolute;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: screen;
+  z-index: 1;
+}
 
 /* ----------------------------------------------------------
    Element-level texture treatments — applied via ::before
    pseudo-elements with mask gradients so they fade organically.
    ---------------------------------------------------------- */
 
-/* Hero: cranked to 11 — heavy dust + distress at edges, dramatic falloff */
-.hero { /* ::before/::after defined below for the heavy texture */ }
+/* Hero — heavy grunge concentrated at the top + bottom edges, fading in
+   toward the middle so the headline stays readable. Two layers of
+   different Resource Boy textures so it doesn't look mechanical. */
+.hero { /* ::before/::after handle the grunge layers */ }
 .hero::before {
   content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 70%;
-  background-image: url("./assets/dust.png");
-  background-repeat: repeat;
-  mix-blend-mode: overlay;
-  opacity: 1.0;
+  position: absolute; top: 0; left: 0; right: 0; height: 60%;
+  background-image: url("./assets/grunge-heavy.jpg");
+  background-size: cover;
+  background-position: top center;
+  mix-blend-mode: screen;
+  opacity: 0.85;
   pointer-events: none;
   z-index: 1;
-  -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.6) 40%, transparent 100%);
-  mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.6) 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.7) 40%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.7) 40%, transparent 100%);
 }
 .hero::after {
   content: '';
-  position: absolute; bottom: 0; left: 0; right: 0; height: 65%;
-  background-image: url("./assets/inflicted.png");
-  background-repeat: repeat;
-  mix-blend-mode: multiply;
-  opacity: 0.92;
+  position: absolute; bottom: 0; left: 0; right: 0; height: 55%;
+  background-image: url("./assets/grunge-mid.jpg");
+  background-size: cover;
+  background-position: bottom center;
+  mix-blend-mode: screen;
+  opacity: 0.78;
   pointer-events: none;
   z-index: 1;
-  -webkit-mask-image: linear-gradient(0deg, #000 0%, rgba(0,0,0,0.7) 30%, transparent 100%);
-  mask-image: linear-gradient(0deg, #000 0%, rgba(0,0,0,0.7) 30%, transparent 100%);
+  -webkit-mask-image: linear-gradient(0deg, #000 0%, rgba(0,0,0,0.6) 35%, transparent 100%);
+  mask-image: linear-gradient(0deg, #000 0%, rgba(0,0,0,0.6) 35%, transparent 100%);
 }
 
 /* Big bg word stays clean — sits above the texture layers */
@@ -157,17 +258,16 @@ input, select { font-family: inherit; }
 .hero-marks   { z-index: 3; }
 .hero-grid    { z-index: 4; }
 
-/* Draft-block: heavy newsprint-clipping treatment.
-   Stack: bg-2 base → cream paper fiber → dust overlay → inflicted distress
-   (the latter two via the wrapper bg, while ::before/::after handle tape). */
+/* Draft-block: torn newsprint clipping. Bg-2 base + Resource Boy grunge
+   speckle overlay (screen blend, so white speckles dust the surface). */
 .draft-block {
   background-image:
-    url("./assets/inflicted.png"),
-    url("./assets/dust.png"),
-    url("./assets/cream-paper.png"),
+    url("./assets/grunge-speckle.jpg"),
+    url("./assets/groovepaper.png"),
     linear-gradient(var(--bg-2), var(--bg-2));
-  background-blend-mode: multiply, overlay, multiply, normal;
-  background-size: 240px 240px, 400px 300px, 158px 144px, auto;
+  background-blend-mode: screen, overlay, normal;
+  background-size: 800px 800px, auto, auto;
+  background-position: center, 0 0, 0 0;
 }
 .draft-block > * { position: relative; z-index: 2; }
 .draft-block::before, .draft-block::after { z-index: 3; }
@@ -179,47 +279,63 @@ input, select { font-family: inherit; }
   0 0 0 1px var(--line-2);
 }
 
-/* Section header: heavy dust patch behind it, fades out at edges */
+/* Section header — wide horizontal grunge band fading right + a marker
+   scribble decoration trailing off the edge. */
 .section-head {
   position: relative;
 }
 .section-head::before {
-  /* dust */
   content: '';
   position: absolute;
-  top: -10%; left: -60px; right: -60px; bottom: -20px;
-  background-image: url("./assets/dust.png");
-  background-size: 400px 300px;
-  mix-blend-mode: overlay;
-  opacity: 1.0;
+  top: 0; left: -60px; right: -60px; bottom: -20px;
+  background-image: url("./assets/grunge-wide.jpg");
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: screen;
+  opacity: 0.55;
   pointer-events: none;
   z-index: 0;
-  -webkit-mask-image: radial-gradient(ellipse at 25% 50%, #000 0%, rgba(0,0,0,0.6) 50%, transparent 85%);
-  mask-image: radial-gradient(ellipse at 25% 50%, #000 0%, rgba(0,0,0,0.6) 50%, transparent 85%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30%, #000 65%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 30%, #000 65%, transparent 100%);
 }
-.section-head::after {
-  /* distress on top of dust */
-  content: '';
+.section-head .left, .section-head .right { position: relative; z-index: 2; }
+.sec-deco {
   position: absolute;
-  top: 0; left: -40px; right: -40px; bottom: -10px;
-  background-image: url("./assets/inflicted.png");
-  background-size: 280px 280px;
-  mix-blend-mode: multiply;
-  opacity: 0.65;
   pointer-events: none;
-  z-index: 0;
-  -webkit-mask-image: radial-gradient(ellipse at 20% 60%, #000 0%, transparent 75%);
-  mask-image: radial-gradient(ellipse at 20% 60%, #000 0%, transparent 75%);
+  z-index: 1;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
 }
-.section-head .left, .section-head .right { position: relative; z-index: 1; }
+.sec-deco-marker {
+  top: 14%; right: -50px;
+  width: 380px; height: 95px;
+  background: var(--tape);
+  -webkit-mask-image: url("./assets/scribble-marker.png");
+  mask-image: url("./assets/scribble-marker.png");
+  transform: rotate(-4deg);
+  opacity: 0.45;
+}
+.sec-deco-loops {
+  top: 60%; right: 10%;
+  width: 240px; height: 50px;
+  background: var(--neon);
+  -webkit-mask-image: url("./assets/scribble-loops.png");
+  mask-image: url("./assets/scribble-loops.png");
+  transform: rotate(3deg);
+  opacity: 0.50;
+}
 
-/* Controls bar + board: faint paper-fiber */
+/* Controls bar — faint grunge speckle */
 .controls {
   background-image:
-    url("./assets/groovepaper.png"),
+    url("./assets/grunge-light.jpg"),
     linear-gradient(var(--bg-2), var(--bg-2));
-  background-blend-mode: overlay;
+  background-blend-mode: screen, normal;
+  background-size: 1200px 1200px, auto;
 }
+/* Board wrap — paper bg + soft top-edge grunge band */
 .board-wrap {
   background-image:
     url("./assets/groovepaper.png"),
@@ -229,12 +345,12 @@ input, select { font-family: inherit; }
   position: relative;
 }
 .board-wrap::before {
-  /* subtle distress ribbon along the top edge of the board */
   content: '';
-  position: absolute; left: 0; right: 0; top: 0; height: 50px;
-  background-image: url("./assets/inflicted.png");
-  mix-blend-mode: multiply;
-  opacity: 0.40;
+  position: absolute; left: 0; right: 0; top: 0; height: 90px;
+  background-image: url("./assets/grunge-mid.jpg");
+  background-size: cover;
+  mix-blend-mode: screen;
+  opacity: 0.55;
   pointer-events: none;
   z-index: 0;
   -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 100%);
@@ -242,63 +358,86 @@ input, select { font-family: inherit; }
 }
 .board-wrap > * { position: relative; z-index: 1; }
 
-/* Picks bar: light fiber */
+/* Picks bar — grunge speckle dusting the strip */
 .picks-bar {
+  position: relative;
   background-image:
-    url("./assets/groovepaper.png"),
+    url("./assets/grunge-light.jpg"),
     linear-gradient(var(--bg-2), var(--bg-2));
-  background-blend-mode: overlay;
+  background-blend-mode: screen, normal;
+  background-size: 1500px 1500px, auto;
 }
+.picks-bar > * { position: relative; z-index: 2; }
 
-/* Drawer sections: paper bg with edge distress */
+/* Drawer sections — heavier grunge feel since drawer is a focal element */
 .drawer {
   background-image:
+    url("./assets/grunge-speckle.jpg"),
     url("./assets/groovepaper.png"),
     linear-gradient(var(--bg), var(--bg));
-  background-blend-mode: overlay;
+  background-blend-mode: screen, overlay, normal;
+  background-size: 1200px 1200px, auto, auto;
 }
 .drawer-section {
   position: relative;
 }
 .drawer-section::after {
+  /* soft grunge band fading down at the bottom of each section */
   content: '';
-  position: absolute; left: 0; right: 0; bottom: 0; height: 30px;
-  background-image: url("./assets/inflicted.png");
-  mix-blend-mode: multiply;
-  opacity: 0.30;
+  position: absolute; left: 0; right: 0; bottom: 0; height: 60px;
+  background-image: url("./assets/grunge-light.jpg");
+  background-size: cover;
+  mix-blend-mode: screen;
+  opacity: 0.50;
   pointer-events: none;
   -webkit-mask-image: linear-gradient(0deg, #000 0%, transparent 100%);
   mask-image: linear-gradient(0deg, #000 0%, transparent 100%);
 }
 
-/* Footer: light dust */
+/* Footer — grunge band */
 footer.site-foot {
-  background-image: url("./assets/dust.png");
-  background-blend-mode: overlay;
-  background-color: var(--bg);
+  position: relative;
+  background-image:
+    url("./assets/grunge-mid.jpg"),
+    linear-gradient(var(--bg), var(--bg));
+  background-blend-mode: screen, normal;
+  background-size: 1500px 1500px, auto;
 }
+footer.site-foot > * { position: relative; z-index: 2; }
 
 /* ============================================================
-   Marker scribble underlines (SVG bg)
+   Real hand-drawn marker scribble underlines (Resource Boy assets).
+   Used as mask-image so the color comes from the active palette.
    ============================================================ */
 .scribble, .scribble-red {
-  background-repeat: no-repeat;
-  background-size: 100% 0.55em;
-  background-position: 0 92%;
-  padding-bottom: 0.05em;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0.40em;
+  line-height: 1;
 }
-.scribble {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 8 C 30 2 50 12 80 6 S 140 2 198 9' stroke='%23b8ff35' stroke-width='3' fill='none' stroke-linecap='round'/></svg>");
+.scribble::after, .scribble-red::after {
+  content: '';
+  position: absolute;
+  left: -4%; right: -4%; bottom: -8%;
+  height: 0.55em;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-position: center;
+  mask-position: center;
+  pointer-events: none;
 }
-.scribble-red {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 7 C 30 13 60 2 90 8 S 150 13 198 6' stroke='%23ff5e3a' stroke-width='3' fill='none' stroke-linecap='round'/></svg>");
+.scribble::after {
+  background: var(--neon);
+  -webkit-mask-image: url("./assets/scribble-loops.png");
+  mask-image: url("./assets/scribble-loops.png");
 }
-[data-palette="ember"]     .scribble  { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 8 C 30 2 50 12 80 6 S 140 2 198 9' stroke='%23ffb13a' stroke-width='3.5' fill='none' stroke-linecap='round'/></svg>"); }
-[data-palette="newsprint"] .scribble  { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 8 C 30 2 50 12 80 6 S 140 2 198 9' stroke='%234ab87a' stroke-width='3.5' fill='none' stroke-linecap='round'/></svg>"); }
-[data-palette="storm"]     .scribble  { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 8 C 30 2 50 12 80 6 S 140 2 198 9' stroke='%235cc8ff' stroke-width='3.5' fill='none' stroke-linecap='round'/></svg>"); }
-[data-palette="ember"]     .scribble-red { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 7 C 30 13 60 2 90 8 S 150 13 198 6' stroke='%23e94530' stroke-width='3.5' fill='none' stroke-linecap='round'/></svg>"); }
-[data-palette="newsprint"] .scribble-red { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 7 C 30 13 60 2 90 8 S 150 13 198 6' stroke='%23d63c1e' stroke-width='3.5' fill='none' stroke-linecap='round'/></svg>"); }
-[data-palette="storm"]     .scribble-red { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 7 C 30 13 60 2 90 8 S 150 13 198 6' stroke='%23ffd13a' stroke-width='3.5' fill='none' stroke-linecap='round'/></svg>"); }
+.scribble-red::after {
+  background: var(--signal);
+  -webkit-mask-image: url("./assets/scribble-marker.png");
+  mask-image: url("./assets/scribble-marker.png");
+}
 
 /* ============================================================
    Marquee
@@ -311,13 +450,15 @@ footer.site-foot {
   border-bottom: 2px solid var(--ink);
 }
 .marquee::before {
-  /* heavy distress overlay — makes the bumper-sticker text look printed/worn */
+  /* heavy grunge overlay — makes the bumper-sticker text look printed/worn.
+     Resource Boy grunge JPG with screen blend dusts the marquee bg with
+     organic white speckle on the lime/paper color. */
   content: '';
   position: absolute; inset: 0;
-  background-image: url("./assets/inflicted.png");
-  background-size: 200px 200px;
+  background-image: url("./assets/grunge-mid.jpg");
+  background-size: 1200px 1200px;
   mix-blend-mode: multiply;
-  opacity: 0.85;
+  opacity: 0.45;
   pointer-events: none;
   z-index: 1;
 }
@@ -385,21 +526,21 @@ header.brand .inner {
   transform: rotate(-4deg);
   box-shadow: 3px 3px 0 var(--signal);
   flex-shrink: 0;
-  /* Stamped/inked feel — heavy distress over the green */
+  /* Stamped/inked feel — Resource Boy grunge speckle dusts the green */
   background-image:
-    url("./assets/inflicted.png"),
+    url("./assets/grunge-speckle.jpg"),
     linear-gradient(var(--neon), var(--neon));
   background-blend-mode: multiply;
-  background-size: 80px 80px, auto;
+  background-size: 240px 240px, auto;
   overflow: hidden;
 }
 .lockup-square::after {
-  /* dust overlay */
   content: '';
   position: absolute; inset: 0;
-  background-image: url("./assets/dust.png");
-  mix-blend-mode: overlay;
-  opacity: 0.9;
+  background-image: url("./assets/grunge-light.jpg");
+  background-size: 600px 600px;
+  mix-blend-mode: screen;
+  opacity: 0.55;
   pointer-events: none;
 }
 .lockup-square > * { position: relative; z-index: 2; }
@@ -421,44 +562,36 @@ header.brand .inner {
 }
 .user-cluster {
   margin-left: auto;
-  display: flex; align-items: center; gap: 14px;
+  display: flex; align-items: center; gap: 10px;
 }
-.viewing-block {
-  display: flex; flex-direction: column; align-items: flex-end;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 9px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-}
-.viewing-block .label {
-  color: var(--muted);
-  margin-bottom: 3px;
-}
-.viewing-block select {
+/* Single uniform selector — same height and visual treatment as palette
+   switcher and the MY ROSTER button */
+.team-select {
+  height: 36px;
   background: var(--bg-2);
   color: var(--paper);
   border: 2px solid var(--paper);
-  padding: 7px 12px;
+  padding: 0 14px;
   font-family: "JetBrains Mono", monospace;
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   cursor: pointer;
   min-width: 260px;
-  text-align: right;
+  text-align: left;
   appearance: none;
   -webkit-appearance: none;
   background-image:
-    url("./assets/inflicted.png"),
+    url("./assets/grunge-speckle.jpg"),
     linear-gradient(var(--bg-2), var(--bg-2));
-  background-blend-mode: multiply;
-  background-size: 200px 200px, auto;
+  background-blend-mode: screen;
+  background-size: 600px 600px, auto;
   box-shadow: 2px 2px 0 var(--neon-deep);
   transition: box-shadow .1s, transform .1s;
 }
-.viewing-block select:hover { box-shadow: 3px 3px 0 var(--neon); }
-.viewing-block select:focus {
+.team-select:hover { box-shadow: 3px 3px 0 var(--neon); }
+.team-select:focus {
   outline: none;
   border-color: var(--neon);
   box-shadow: 2px 2px 0 var(--neon);
@@ -490,12 +623,14 @@ header.brand .inner {
   letter-spacing: 0.14em;
   font-weight: 500;
   padding: 9px 14px;
-  border: 1.5px solid var(--paper);
+  border: 2px solid var(--paper);
   background: transparent;
   color: var(--paper);
   transition: transform .08s, background .12s, color .12s, border-color .12s;
   white-space: nowrap;
 }
+/* Header-row buttons match the 36px control height */
+header.brand .btn { height: 36px; padding: 0 14px; display: inline-flex; align-items: center; }
 .btn:hover { background: var(--paper); color: var(--ink); }
 .btn:active { transform: translate(1px,1px); }
 .btn-neon { border-color: var(--neon); color: var(--neon); }
@@ -511,23 +646,25 @@ header.brand .inner {
 }
 .btn[aria-pressed="true"]:hover { background: var(--neon-deep); border-color: var(--neon-deep); }
 
-/* Palette switcher — labeled cluster with split-color dots */
+/* Palette switcher — same 36px height as other header controls */
 .palette-switcher {
-  display: flex; align-items: center; gap: 8px;
-  padding: 6px 10px;
-  border: 1px solid var(--line-2);
+  display: flex; align-items: center; gap: 10px;
+  height: 36px;
+  padding: 0 12px;
+  border: 2px solid var(--line-2);
   border-radius: 0;
 }
 .palette-switcher .pal-label {
   font-family: "JetBrains Mono", monospace;
-  font-size: 8.5px;
+  font-size: 9px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
+  font-weight: 600;
 }
 .palette-dots { display: flex; gap: 5px; }
 .palette-dot {
-  width: 18px; height: 18px;
+  width: 16px; height: 16px;
   border: 1.5px solid var(--paper-2);
   cursor: pointer;
   transition: transform .1s, border-color .12s, box-shadow .12s;
@@ -543,6 +680,10 @@ header.brand .inner {
 .palette-dot[data-pal="ember"]     { background: linear-gradient(135deg, #ffb13a 50%, #e94530 50%); }
 .palette-dot[data-pal="newsprint"] { background: linear-gradient(135deg, #4ab87a 50%, #d63c1e 50%); }
 .palette-dot[data-pal="storm"]     { background: linear-gradient(135deg, #5cc8ff 50%, #ffd13a 50%); }
+.palette-dot[data-pal="bolt"]      { background: linear-gradient(135deg, #ffd02e 50%, #5cc8ff 50%); }
+.palette-dot[data-pal="carbon"]    { background: linear-gradient(135deg, #00ffd6 50%, #ff2e6c 50%); }
+.palette-dot[data-pal="pulp"]      { background: linear-gradient(135deg, #d8b04a 50%, #c1281a 50%); }
+.palette-dot[data-pal="moss"]      { background: linear-gradient(135deg, #ff8b3a 50%, #5a8a52 50%); }
 
 /* ============================================================
    Picks ticker bar
@@ -766,54 +907,106 @@ header.brand .inner {
   white-space: nowrap;
 }
 
-/* Replace the floating curve scribbles with cohesive grunge marks */
+/* Hand-drawn scribble decorations — real Resource Boy marker/loop PNGs
+   used as mask-image so each decoration takes the active palette color. */
 .hero-marks {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  z-index: 3;
+}
+.hero-marks .mark {
+  position: absolute;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  pointer-events: none;
+}
+/* Long horizontal cursive loops — top-right, tape (yellow) color */
+.hero-marks .mark-loops-tr {
+  top: 4%; right: -40px;
+  width: 460px; height: 90px;
+  background: var(--tape);
+  -webkit-mask-image: url("./assets/scribble-loops.png");
+  mask-image: url("./assets/scribble-loops.png");
+  transform: rotate(-4deg);
+  opacity: 0.78;
+}
+/* Bold zigzag — bottom-right, neon (primary) */
+.hero-marks .mark-zigzag-br {
+  bottom: 8%; right: 4%;
+  width: 320px; height: 220px;
+  background: var(--neon);
+  -webkit-mask-image: url("./assets/scribble-zigzag.png");
+  mask-image: url("./assets/scribble-zigzag.png");
+  transform: rotate(8deg);
+  opacity: 0.55;
+}
+/* Tangled vertical scribble — left edge, paper color (subtle) */
+.hero-marks .mark-tangle-l {
+  top: 10%; left: 1%;
+  width: 70px; height: 380px;
+  background: var(--paper);
+  -webkit-mask-image: url("./assets/scribble-tangle.png");
+  mask-image: url("./assets/scribble-tangle.png");
+  opacity: 0.20;
+}
+/* Bold marker N — bottom-left, signal color */
+.hero-marks .mark-boldn-bl {
+  bottom: 12%; left: 4%;
+  width: 200px; height: 160px;
+  background: var(--signal);
+  -webkit-mask-image: url("./assets/scribble-bold-n.png");
+  mask-image: url("./assets/scribble-bold-n.png");
+  transform: rotate(-10deg);
+  opacity: 0.55;
+}
+/* Wavy "to the big board" arrow — pointing down-right from the CTA. */
+.hero-marks .mark-arrow-down {
+  bottom: 6%; right: 22%;
+  width: 280px; height: 160px;
+  background: var(--neon);
+  -webkit-mask-image: url("./assets/arrow-wave-down.png");
+  mask-image: url("./assets/arrow-wave-down.png");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  transform: rotate(4deg);
+  opacity: 0.85;
+}
+
+/* Section-head arrow — zigzag pointing left at "THE BIG BOARD." headline */
+.sec-deco-arrow {
+  top: 6%; left: 38%;
+  width: 240px; height: 70px;
+  background: var(--signal);
+  -webkit-mask-image: url("./assets/arrow-zigzag.png");
+  mask-image: url("./assets/arrow-zigzag.png");
+  transform: rotate(-6deg) scaleX(-1);  /* mirror so arrowhead points at title */
+  opacity: 0.80;
+}
+
+/* Picks-bar arrow — long thin arrow pointing left at "YOUR PICKS →" label */
+.picks-bar { position: relative; }
+.picks-bar .mark-arrow-picks {
+  position: absolute;
+  top: 50%; left: 138px;
+  transform: translateY(-50%) rotate(2deg);
+  width: 110px; height: 36px;
+  background: var(--neon);
+  -webkit-mask-image: url("./assets/arrow-left.png");
+  mask-image: url("./assets/arrow-left.png");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  opacity: 0.55;
+  pointer-events: none;
   z-index: 1;
 }
-/* halftone strip top-right */
-.hero-marks .strip-tr {
-  position: absolute;
-  top: 8%; right: -2%;
-  width: 170px; height: 64px;
-  background-image: radial-gradient(var(--signal) 1.4px, transparent 1.6px);
-  background-size: 8px 8px;
-  opacity: 0.55;
-  transform: rotate(-8deg);
-  mask-image: linear-gradient(120deg, black 0%, transparent 95%);
-  -webkit-mask-image: linear-gradient(120deg, black 0%, transparent 95%);
-}
-/* solid tape-strip bottom-left */
-.hero-marks .strip-bl {
-  position: absolute;
-  bottom: 8%; left: -1%;
-  width: 220px; height: 12px;
-  background: var(--neon);
-  opacity: 0.85;
-  transform: rotate(-3.5deg);
-  box-shadow: 0 2px 0 rgba(0,0,0,0.3);
-  background-image: repeating-linear-gradient(90deg, rgba(0,0,0,0.10) 0 3px, transparent 3px 8px);
-}
-/* marker-circle bottom-right around stat strip */
-.hero-marks .circle-br {
-  position: absolute;
-  bottom: 4%; right: 6%;
-  width: 90px; height: 90px;
-  border: 3px solid var(--neon);
-  border-radius: 50% 48% 52% 50% / 48% 52% 48% 52%;
-  opacity: 0.5;
-  transform: rotate(-12deg);
-}
-/* tiny marker x marks scattered */
-.hero-marks .x-marks {
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'><g stroke='%23d63c1e' stroke-width='2.5' stroke-linecap='round'><path d='M120 88 L 132 100 M132 88 L 120 100'/><path d='M680 320 L 692 332 M692 320 L 680 332'/><path d='M380 520 L 390 530 M390 520 L 380 530'/></g></svg>");
-  background-size: 800px 600px;
-  opacity: 0.55;
-}
+@media (max-width: 900px) { .picks-bar .mark-arrow-picks { display: none; } }
 
 /* ============================================================
    Big Board section
@@ -921,7 +1114,7 @@ table.board {
   border-spacing: 0;
   font-size: 13px;
   font-family: "Space Grotesk", sans-serif;
-  min-width: 1500px;
+  min-width: 1320px;
 }
 table.board thead th {
   position: sticky; top: 0;
@@ -1097,36 +1290,36 @@ table.board td.src-cell.missing { color: var(--muted); }
 }
 .off-toggle.locked:hover { border-color: var(--line-2); color: var(--muted); }
 
-/* Bump control */
+/* Bump — now a tight vertical 2-stack inline with the rank number */
+.rk-row {
+  display: inline-flex; align-items: center; gap: 6px;
+  justify-content: center;
+}
 .bump-cell {
-  display: inline-flex; align-items: center; gap: 1px;
-  background: var(--bg-3);
+  display: inline-flex;
+  flex-direction: column;
   border: 1px solid var(--line-2);
+  background: var(--bg-3);
+  line-height: 0;
 }
 .bump-btn {
   background: transparent;
   border: none;
   color: var(--paper-2);
   font-family: "JetBrains Mono", monospace;
-  font-size: 13px;
+  font-size: 9px;
   font-weight: 700;
-  padding: 2px 6px;
+  padding: 0;
+  width: 14px;
+  height: 11px;
   cursor: pointer;
-  line-height: 1;
+  line-height: 11px;
 }
-.bump-btn:hover { color: var(--neon); background: rgba(184,255,53,0.08); }
+.bump-btn + .bump-btn { border-top: 1px solid var(--line-2); }
+.bump-btn:hover { color: var(--neon); background: rgba(255,255,255,0.06); }
 .bump-btn:active { transform: translate(0, 1px); }
-.bump-val {
-  min-width: 22px;
-  text-align: center;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 10px;
-  font-weight: 700;
-  padding: 0 2px;
-  color: var(--paper-2);
-}
-.bump-val.up   { color: var(--neon); }
-.bump-val.down { color: var(--signal); }
+/* The cumulative ±N delta lives below the rank number */
+.rk-merged .rank-delta { margin-top: 2px; }
 
 /* Detail row */
 tr.detail-row td {
@@ -1456,7 +1649,10 @@ footer.site-foot {
 </head>
 <body data-palette="newsprint">
 
+<div class="tex-leak warm-tr"></div>
+<div class="tex-leak cool-bl"></div>
 <div class="tex-fiber"></div>
+<div class="tex-grunge"></div>
 <div class="vignette"></div>
 
 <!-- ===== Top neon marquee ===== -->
@@ -1485,12 +1681,13 @@ footer.site-foot {
           <div class="palette-dot" data-pal="midnight"  title="Midnight — navy + lime"></div>
           <div class="palette-dot" data-pal="ember"     title="Ember — gold + red"></div>
           <div class="palette-dot" data-pal="storm"     title="Storm — cyan + yellow"></div>
+          <div class="palette-dot" data-pal="bolt"      title="Bolt — Chargers gold + powder"></div>
+          <div class="palette-dot" data-pal="carbon"    title="Carbon — cyan + magenta"></div>
+          <div class="palette-dot" data-pal="pulp"      title="Pulp — mustard + crimson"></div>
+          <div class="palette-dot" data-pal="moss"      title="Moss — tangerine + forest"></div>
         </div>
       </div>
-      <div class="viewing-block">
-        <span class="label">Viewing</span>
-        <select id="user-select"></select>
-      </div>
+      <select id="user-select" class="team-select" aria-label="Viewing team"></select>
       <button class="btn btn-neon" id="open-roster">My Roster →</button>
     </div>
   </div>
@@ -1498,6 +1695,7 @@ footer.site-foot {
 
 <!-- ===== Picks ticker ===== -->
 <div class="picks-bar">
+  <div class="mark mark-arrow-picks" aria-hidden="true"></div>
   <div class="inner container">
     <span class="your-picks">Your picks →</span>
     <div id="pick-pills" style="display:flex; gap:6px; flex-wrap:wrap;"></div>
@@ -1510,10 +1708,11 @@ footer.site-foot {
   <div class="hero-bg-word">Rookies</div>
 
   <div class="hero-marks" aria-hidden="true">
-    <div class="strip-tr"></div>
-    <div class="strip-bl"></div>
-    <div class="circle-br"></div>
-    <div class="x-marks"></div>
+    <div class="mark mark-loops-tr"></div>
+    <div class="mark mark-zigzag-br"></div>
+    <div class="mark mark-tangle-l"></div>
+    <div class="mark mark-boldn-bl"></div>
+    <div class="mark mark-arrow-down"></div>
   </div>
 
   <div class="container hero-grid">
@@ -1567,13 +1766,16 @@ footer.site-foot {
 <!-- ===== Big Board ===== -->
 <section class="container" id="board">
   <div class="section-head">
+    <div class="sec-deco sec-deco-marker" aria-hidden="true"></div>
+    <div class="sec-deco sec-deco-loops"  aria-hidden="true"></div>
+    <div class="sec-deco sec-deco-arrow"  aria-hidden="true"></div>
     <div class="left">
       <div class="sec-cap">Section 02 / Sixty Deep</div>
       <h2 class="sec-title">The Big Board<span style="color: var(--signal);">.</span></h2>
     </div>
     <div class="right">
       <div class="helper">
-        Click a row to expand · Use ± to bump rank up or down · Saved per browser
+        Click a row to expand · Use ▲▼ to bump rank up or down · Saved per browser
       </div>
     </div>
   </div>
@@ -1595,7 +1797,7 @@ footer.site-foot {
       <button class="btn xs" data-sort="consensus">Consensus</button>
       <button class="btn xs" data-sort="src:ktc">KTC</button>
       <button class="btn xs" data-sort="src:fc">FC</button>
-      <button class="btn xs" data-sort="spread">Spread</button>
+      <button class="btn xs" data-sort="cap_rk">Cap</button>
     </div>
     <div class="sep"></div>
     <div class="group">
@@ -1686,11 +1888,11 @@ function bucketRookiePos(pos) {
 }
 
 // Static columns. Per-source columns get appended in init() from data.sources
-// so the table stays in sync with sources/sources.json.
+// so the table stays in sync with sources/sources.json. Bump moved INTO
+// the rk cell as inline ▲▼ buttons, sprd dropped (still in detail row).
 const COLUMNS_STATIC_LEFT = [
   { key: 'off',     label: 'Off',    cls: 'center',     sortable: false },
   { key: 'my_rk',   label: 'Rk',     cls: 'num center', sortable: true  },
-  { key: 'bump',    label: 'Bump',   cls: 'center',     sortable: false },
   { key: 'tier',    label: 'Tier',   cls: 'center',     sortable: true  },
   { key: 'name',    label: 'Player', cls: '',           sortable: true  },
   { key: 'pos',     label: 'Pos',    cls: 'center',     sortable: true  },
@@ -1699,7 +1901,6 @@ const COLUMNS_STATIC_LEFT = [
 ];
 const COLUMNS_STATIC_RIGHT = [
   { key: 'consensus', label: 'Avg',  cls: 'num',        sortable: true  },
-  { key: 'spread',    label: 'Sprd', cls: 'num',        sortable: true  },
   { key: 'cap_rk',    label: 'Cap',  cls: 'num',        sortable: true  },
 ];
 let COLUMNS = COLUMNS_STATIC_LEFT.slice(); // rebuilt in init()
@@ -2298,7 +2499,6 @@ function rowHtml(p) {
     ? `<div class="rank-delta ${p._bump > 0 ? 'up' : 'down'}">${p._bump > 0 ? '▲' : '▼'}${Math.abs(p._bump)}</div>`
     : '';
   const cons = p._consensus != null ? p._consensus : '–';
-  const spread = p.spread != null ? p.spread : '–';
   const team = p.team || 'FA';
   const isManual = !!STATE.drafted[p._pid];
   const isSleep  = isSleeperDrafted(p);
@@ -2325,8 +2525,12 @@ function rowHtml(p) {
 
   return `
     <td class="center">${draftedBtn}</td>
-    <td class="num center"><div>${slot}<span class="rank-cell">${p._effective_rk}</span></div>${bumpDelta}</td>
-    <td class="center">${bump}</td>
+    <td class="num center rk-merged">
+      <div class="rk-row">
+        ${slot}<span class="rank-cell">${p._effective_rk}</span>${bump}
+      </div>
+      ${bumpDelta}
+    </td>
     <td class="center">${tier}</td>
     <td class="player-cell">
       <div class="name">${escapeHtml(p.name)}</div>
@@ -2337,19 +2541,14 @@ function rowHtml(p) {
     <td class="center mono" style="font-size:11px;">${draftCell}</td>
     ${srcCells}
     <td class="num mono">${cons}</td>
-    <td class="num mono">${spread}</td>
     <td class="num mono">${p.cap_rk}</td>
   `;
 }
 
 function bumpHtml(p) {
-  const v = p._bump;
-  const cls = v > 0 ? 'up' : v < 0 ? 'down' : '';
-  const display = v === 0 ? '·' : (v > 0 ? `+${v}` : `${v}`);
   return `
     <span class="bump-cell">
       <button class="bump-btn" data-pid="${p._pid}" data-dir="1"  title="Bump up">▲</button>
-      <span class="bump-val ${cls}">${display}</span>
       <button class="bump-btn" data-pid="${p._pid}" data-dir="-1" title="Bump down">▼</button>
     </span>
   `;
