@@ -1218,7 +1218,16 @@ table.board tbody tr.bumped-down  td .rank-cell { color: var(--signal); }
 .pos-DB,
 .pos-S     { background: #d3a4ff; color: #0a0a08; }
 
-/* Player cell */
+/* Pin the Player column so it doesn't absorb all the table's slack
+   space — without this, the wide whitespace between the player name
+   and the Pos chip is the player column hogging all leftover width. */
+table.board th[data-key="name"],
+table.board td.player-cell {
+  width: 175px;
+  max-width: 175px;
+  min-width: 150px;
+  padding-right: 4px;
+}
 .player-cell .name {
   font-family: "Anton", Impact, sans-serif;
   font-size: 16px;
@@ -2379,7 +2388,7 @@ function renderTable(need) {
   const targetRanks = new Map();   // overall_pick_number -> pick label
   for (const pk of myPicks) targetRanks.set(pk.overall, pk);
 
-  // attach computed
+  // attach computed (pass 1) — per-player stats independent of others
   for (const p of rows) {
     p._pid = pidFor(p);
     p._bump = STATE.bumps[p._pid] || 0;
@@ -2389,7 +2398,21 @@ function renderTable(need) {
     p._consensus = vals.length ? Math.round(vals.reduce((a,b) => a+b, 0) / vals.length) : null;
     p._minRank   = vals.length ? Math.min(...vals) : null;
     p._maxRank   = vals.length ? Math.max(...vals) : null;
-    p._targetPick = targetRanks.get(p._effective_rk) || null;
+  }
+  // Pass 2 — assign each undrafted player a live "draft order index"
+  // (their position among UNDRAFTED players by effective rank). When a
+  // player above gets marked drafted, every player below shifts up one
+  // slot. The projected-pick label and the target-pick highlight both
+  // key off this so they update live as picks come off the board.
+  const undraftedByRk = rows
+    .filter(p => !p._drafted)
+    .slice()
+    .sort((a, b) => a._effective_rk - b._effective_rk);
+  undraftedByRk.forEach((p, i) => { p._undraftedIndex = i + 1; });
+  for (const p of rows) {
+    if (p._drafted) p._undraftedIndex = null;
+    p._targetPick = (p._undraftedIndex != null)
+      ? (targetRanks.get(p._undraftedIndex) || null) : null;
   }
 
   // filter
@@ -2524,9 +2547,13 @@ function rowHtml(p) {
   const slot = p._targetPick
     ? `<span style="color:var(--tape); font-weight:700;" title="Your pick ${escapeHtml(p._targetPick.label)} · ${escapeHtml(p._targetPick.origin)}">●</span> `
     : '';
-  const proj = projectedPick(p._effective_rk);
+  // Live projected pick: based on how many UNDRAFTED players are above
+  // this one, not on the absolute rank. So as picks get marked off, the
+  // projection shifts — if someone above gets drafted, this player's
+  // projected pick moves up one slot.
+  const proj = projectedPick(p._undraftedIndex);
   const projHtml = proj
-    ? `<div class="proj-pick${p._targetPick ? ' is-target' : ''}">${proj}</div>`
+    ? `<div class="proj-pick${p._targetPick ? ' is-target' : ''}" title="Projected pick if everyone takes the consensus best player available">${proj}</div>`
     : '';
   const draftCell = p.rd
     ? `R${p.rd}.${(p.pk || '').toString().padStart(2,'0')}`
