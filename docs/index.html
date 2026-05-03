@@ -1321,6 +1321,28 @@ table.board td.src-cell.missing { color: var(--muted); }
 /* The cumulative ±N delta lives below the rank number */
 .rk-merged .rank-delta { margin-top: 2px; }
 
+/* Projected pick label under the rank number — `2.02` style.
+   When the row is also a target pick (gold dot), highlight in tape. */
+.proj-pick {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.10em;
+  color: var(--paper-2);
+  margin-top: 2px;
+  font-weight: 600;
+}
+.proj-pick.is-target { color: var(--tape); font-weight: 700; }
+
+/* Spread / arbitrage cell — color-coded by how much sources disagree */
+.spread-num {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--paper-2);
+}
+.spread-num.mid  { color: var(--tape); font-weight: 600; }
+.spread-num.wide { color: var(--signal); font-weight: 700; }
+
 /* Detail row */
 tr.detail-row td {
   background: var(--bg-3) !important;
@@ -1797,7 +1819,7 @@ footer.site-foot {
       <button class="btn xs" data-sort="consensus">Consensus</button>
       <button class="btn xs" data-sort="src:ktc">KTC</button>
       <button class="btn xs" data-sort="src:fc">FC</button>
-      <button class="btn xs" data-sort="cap_rk">Cap</button>
+      <button class="btn xs" data-sort="spread">Spread</button>
     </div>
     <div class="sep"></div>
     <div class="group">
@@ -1900,8 +1922,8 @@ const COLUMNS_STATIC_LEFT = [
   { key: 'rd',      label: 'NFL',    cls: 'center',     sortable: true  },
 ];
 const COLUMNS_STATIC_RIGHT = [
-  { key: 'consensus', label: 'Avg',  cls: 'num',        sortable: true  },
-  { key: 'cap_rk',    label: 'Cap',  cls: 'num',        sortable: true  },
+  { key: 'consensus', label: 'Avg',    cls: 'num', sortable: true  },
+  { key: 'spread',    label: 'Spread', cls: 'num', sortable: true  },
 ];
 let COLUMNS = COLUMNS_STATIC_LEFT.slice(); // rebuilt in init()
 
@@ -2365,6 +2387,8 @@ function renderTable(need) {
     p._drafted = isDrafted(p);
     const vals = Object.values(p.source_ranks || {});
     p._consensus = vals.length ? Math.round(vals.reduce((a,b) => a+b, 0) / vals.length) : null;
+    p._minRank   = vals.length ? Math.min(...vals) : null;
+    p._maxRank   = vals.length ? Math.max(...vals) : null;
     p._targetPick = targetRanks.get(p._effective_rk) || null;
   }
 
@@ -2486,10 +2510,23 @@ function sortValue(p, k) {
   return p[k];
 }
 
+// Convert an effective rank into a projected pick label like "2.02"
+// (12-team league × 4 rounds = 48 picks). Beyond 48 returns null.
+function projectedPick(rk) {
+  if (rk == null || rk < 1 || rk > 48) return null;
+  const round = Math.ceil(rk / 12);
+  const slot  = ((rk - 1) % 12) + 1;
+  return `${round}.${String(slot).padStart(2, '0')}`;
+}
+
 function rowHtml(p) {
   const tier = `<span class="tier-badge t${p.tier}">${p.tier}</span>`;
   const slot = p._targetPick
     ? `<span style="color:var(--tape); font-weight:700;" title="Your pick ${escapeHtml(p._targetPick.label)} · ${escapeHtml(p._targetPick.origin)}">●</span> `
+    : '';
+  const proj = projectedPick(p._effective_rk);
+  const projHtml = proj
+    ? `<div class="proj-pick${p._targetPick ? ' is-target' : ''}">${proj}</div>`
     : '';
   const draftCell = p.rd
     ? `R${p.rd}.${(p.pk || '').toString().padStart(2,'0')}`
@@ -2499,6 +2536,16 @@ function rowHtml(p) {
     ? `<div class="rank-delta ${p._bump > 0 ? 'up' : 'down'}">${p._bump > 0 ? '▲' : '▼'}${Math.abs(p._bump)}</div>`
     : '';
   const cons = p._consensus != null ? p._consensus : '–';
+  // Spread = arbitrage signal. Wide spread = sources disagree = opportunity.
+  let spreadHtml = '<span class="mono" style="color:var(--muted);">–</span>';
+  if (p.spread != null) {
+    let spreadCls = 'spread-num';
+    if (p.spread >= 15)      spreadCls += ' wide';
+    else if (p.spread >= 8)  spreadCls += ' mid';
+    const range = (p._minRank != null && p._maxRank != null)
+      ? `${p._minRank}–${p._maxRank}` : '';
+    spreadHtml = `<span class="${spreadCls}" title="Range ${range} across ${p.n_sources} sources">${p.spread}</span>`;
+  }
   const team = p.team || 'FA';
   const isManual = !!STATE.drafted[p._pid];
   const isSleep  = isSleeperDrafted(p);
@@ -2529,6 +2576,7 @@ function rowHtml(p) {
       <div class="rk-row">
         ${slot}<span class="rank-cell">${p._effective_rk}</span>${bump}
       </div>
+      ${projHtml}
       ${bumpDelta}
     </td>
     <td class="center">${tier}</td>
@@ -2541,7 +2589,7 @@ function rowHtml(p) {
     <td class="center mono" style="font-size:11px;">${draftCell}</td>
     ${srcCells}
     <td class="num mono">${cons}</td>
-    <td class="num mono">${p.cap_rk}</td>
+    <td class="num">${spreadHtml}</td>
   `;
 }
 
