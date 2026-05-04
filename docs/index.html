@@ -2399,16 +2399,18 @@ function renderTable(need) {
     p._minRank   = vals.length ? Math.min(...vals) : null;
     p._maxRank   = vals.length ? Math.max(...vals) : null;
   }
-  // Pass 2 — assign each undrafted player a live "draft order index"
-  // (their position among UNDRAFTED players by effective rank). When a
-  // player above gets marked drafted, every player below shifts up one
-  // slot. The projected-pick label and the target-pick highlight both
-  // key off this so they update live as picks come off the board.
+  // Pass 2 — assign each undrafted player a live OVERALL pick number
+  // they'd be taken at. If N players are already off the board, the
+  // best-available player will be the (N+1)th overall pick. As more
+  // players get drafted, every projection below shifts up by one.
+  const draftedCount = rows.filter(p => p._drafted).length;
   const undraftedByRk = rows
     .filter(p => !p._drafted)
     .slice()
     .sort((a, b) => a._effective_rk - b._effective_rk);
-  undraftedByRk.forEach((p, i) => { p._undraftedIndex = i + 1; });
+  undraftedByRk.forEach((p, i) => {
+    p._undraftedIndex = draftedCount + i + 1;
+  });
   for (const p of rows) {
     if (p._drafted) p._undraftedIndex = null;
     p._targetPick = (p._undraftedIndex != null)
